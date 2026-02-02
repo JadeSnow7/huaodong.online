@@ -4,12 +4,14 @@
 
     const STATE_KEY = "chatbot_open";
     const MODE_KEY = "chatbot_mode";
+    const MESSAGE_MODE = "message";
 
     const FALLBACK = {
         ui: {
             title: "Resume Assistant",
             subtitlePro: "Projects, stack, and resume Q&A",
             subtitleFun: "Interests mode (optional)",
+            subtitleMessage: "Leave a message",
             greetingPro: "Hi! I'm Hu Aodong's resume assistant.",
             greetingFun: "Hi! You're in interests mode.",
             inputPlaceholder: "Type a question",
@@ -18,6 +20,7 @@
             clearLabel: "Clear",
             modePro: "Pro",
             modeFun: "Fun",
+            modeMessage: "Message",
             switchToFun: "Switch to Fun",
             switchToPro: "Switch to Pro",
             funDisclaimer: "Astrology/tarot is for fun only.",
@@ -25,6 +28,7 @@
             unknown: "Try a quick action below.",
             modeChangedPro: "Switched to Pro mode.",
             modeChangedFun: "Switched to Fun mode.",
+            modeChangedMessage: "Switched to Message mode.",
             error: "Sorry, failed to send.",
         },
         labels: {
@@ -63,11 +67,26 @@
             modeFun: "Switch to Fun",
             modePro: "Switch to Pro",
         },
+        form: {
+            title: "Leave a message",
+            note: "This will open your email client to send the message.",
+            nameLabel: "Name",
+            namePlaceholder: "Your name",
+            emailLabel: "Email",
+            emailPlaceholder: "you@example.com",
+            messageLabel: "Message",
+            messagePlaceholder: "What would you like to share?",
+            submit: "Send message",
+            subject: "Website message",
+            success: "Email client opened. Please send the message.",
+            invalid: "Please fill in name, email, and message.",
+            invalidEmail: "Please enter a valid email address.",
+        },
         profile: { summary: "", highlights: [] },
         projects: [],
         stack: { languages: [], systems: [], ai: [], env: [] },
         essays: { intro: "", link: "essays/index.html" },
-        contact: { email: "", phone: "", github: "", resumePage: "resume.html", resumePdf: "assets/resume.pdf" },
+        contact: { email: "1079249368@qq.com", phone: "", github: "", resumePage: "resume.html", resumePdf: "assets/resume.pdf" },
         hobbies: { summary: "", culture: [], history: [], tarot: [] },
     };
 
@@ -114,6 +133,7 @@
           <div class="chatbot-mode-switch" role="group" aria-label="Chat mode">
             <button class="chatbot-mode-btn" type="button" data-mode="pro"></button>
             <button class="chatbot-mode-btn" type="button" data-mode="fun"></button>
+            <button class="chatbot-mode-btn" type="button" data-mode="message"></button>
           </div>
           <button class="chatbot-clear" type="button"></button>
         </div>
@@ -142,15 +162,18 @@
     const messagesEl = container.querySelector(".chatbot-messages");
     const inputEl = container.querySelector(".chatbot-input");
     const sendBtn = container.querySelector(".chatbot-send");
+    const inputArea = container.querySelector(".chatbot-input-area");
 
     let isOpen = false;
     let mode = "pro";
+    let cachedMessages = null;
 
     const FUN_INTENTS = new Set(["hobbies", "culture", "history", "tarot"]);
 
     const ACTIONS_BY_MODE = {
         pro: ["projects", "stack", "resume", "essays", "contact", "hobbies"],
         fun: ["culture", "history", "tarot", "projects", "stack", "contact"],
+        message: [],
     };
 
     const ACTION_INTENTS = {
@@ -202,6 +225,7 @@
 
     const setMode = (nextMode, options = {}) => {
         if (mode === nextMode) return;
+        const prevMode = mode;
         mode = nextMode;
         updateModeButtons();
         updateStrings();
@@ -210,9 +234,23 @@
         } catch (e) {
             /* ignore */
         }
+        if (nextMode === MESSAGE_MODE) {
+            renderMessageForm();
+            return;
+        }
+
+        if (prevMode === MESSAGE_MODE) {
+            restoreMessages();
+        }
+
         if (options.announce) {
             const strings = getStrings(getLang());
-            addMessage("system", nextMode === "fun" ? strings.ui.modeChangedFun : strings.ui.modeChangedPro);
+            const ui = strings.ui || FALLBACK.ui;
+            if (nextMode === "fun") {
+                addMessage("system", ui.modeChangedFun || FALLBACK.ui.modeChangedFun);
+            } else if (nextMode === "pro") {
+                addMessage("system", ui.modeChangedPro || FALLBACK.ui.modeChangedPro);
+            }
         }
         renderQuickActions();
     };
@@ -229,13 +267,17 @@
         const strings = getStrings(getLang());
         const ui = strings.ui || FALLBACK.ui;
         if (titleEl) titleEl.textContent = ui.title || FALLBACK.ui.title;
-        if (subtitleEl) subtitleEl.textContent = mode === "fun" ? ui.subtitleFun : ui.subtitlePro;
+        if (subtitleEl) {
+            subtitleEl.textContent =
+                mode === "message" ? ui.subtitleMessage : mode === "fun" ? ui.subtitleFun : ui.subtitlePro;
+        }
         if (toggleBtn) toggleBtn.setAttribute("aria-label", ui.openLabel || FALLBACK.ui.openLabel);
         if (closeBtn) closeBtn.setAttribute("aria-label", ui.closeLabel || FALLBACK.ui.closeLabel);
         if (clearBtn) clearBtn.textContent = ui.clearLabel || FALLBACK.ui.clearLabel;
         modeButtons.forEach((btn) => {
             if (btn.dataset.mode === "pro") btn.textContent = ui.modePro || FALLBACK.ui.modePro;
             if (btn.dataset.mode === "fun") btn.textContent = ui.modeFun || FALLBACK.ui.modeFun;
+            if (btn.dataset.mode === "message") btn.textContent = ui.modeMessage || FALLBACK.ui.modeMessage;
         });
         if (inputEl) inputEl.placeholder = ui.inputPlaceholder || FALLBACK.ui.inputPlaceholder;
         updateActionLabels();
@@ -250,6 +292,172 @@
         });
     };
 
+    const toggleInputArea = (visible) => {
+        if (!inputArea) return;
+        if (visible) {
+            inputArea.removeAttribute("hidden");
+            inputEl.disabled = false;
+            sendBtn.disabled = !inputEl.value.trim();
+        } else {
+            inputArea.setAttribute("hidden", "");
+            inputEl.disabled = true;
+            sendBtn.disabled = true;
+        }
+    };
+
+    const buildMessageForm = () => {
+        const strings = getStrings(getLang());
+        const formStrings = strings.form || FALLBACK.form;
+        const contactEmail = strings.contact?.email || FALLBACK.contact.email || "";
+
+        const form = document.createElement("form");
+        form.className = "chatbot-message-form";
+
+        const title = document.createElement("h4");
+        title.className = "chatbot-form-title";
+        title.textContent = formStrings.title;
+        form.appendChild(title);
+
+        if (formStrings.note) {
+            const note = document.createElement("p");
+            note.className = "chatbot-form-note";
+            note.textContent = formStrings.note;
+            form.appendChild(note);
+        }
+
+        const buildField = ({ name, label, placeholder, type = "text" }) => {
+            const field = document.createElement("label");
+            field.className = "chatbot-form-field";
+            const labelEl = document.createElement("span");
+            labelEl.className = "chatbot-form-label";
+            labelEl.textContent = label;
+            const input = document.createElement(type === "textarea" ? "textarea" : "input");
+            input.className = type === "textarea" ? "chatbot-form-textarea" : "chatbot-form-input";
+            input.name = name;
+            input.placeholder = placeholder || "";
+            if (type !== "textarea") input.type = type;
+            input.required = true;
+            if (name === "name") input.autocomplete = "name";
+            if (name === "email") input.autocomplete = "email";
+            if (type === "textarea") input.rows = 4;
+            input.addEventListener("input", () => input.classList.remove("is-invalid"));
+            field.append(labelEl, input);
+            return { field, input };
+        };
+
+        const nameField = buildField({
+            name: "name",
+            label: formStrings.nameLabel,
+            placeholder: formStrings.namePlaceholder,
+            type: "text",
+        });
+        const emailField = buildField({
+            name: "email",
+            label: formStrings.emailLabel,
+            placeholder: formStrings.emailPlaceholder,
+            type: "email",
+        });
+        const messageField = buildField({
+            name: "message",
+            label: formStrings.messageLabel,
+            placeholder: formStrings.messagePlaceholder,
+            type: "textarea",
+        });
+
+        form.append(nameField.field, emailField.field, messageField.field);
+
+        const status = document.createElement("p");
+        status.className = "chatbot-form-status";
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        form.appendChild(status);
+
+        const submit = document.createElement("button");
+        submit.type = "submit";
+        submit.className = "chatbot-form-submit";
+        submit.textContent = formStrings.submit;
+        form.appendChild(submit);
+
+        const setStatus = (text, isError = false) => {
+            status.textContent = text;
+            status.classList.toggle("is-error", isError);
+        };
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const name = nameField.input.value.trim();
+            const email = emailField.input.value.trim();
+            const message = messageField.input.value.trim();
+            const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            nameField.input.classList.toggle("is-invalid", !name);
+            emailField.input.classList.toggle("is-invalid", !email || !emailOk);
+            messageField.input.classList.toggle("is-invalid", !message);
+
+            if (!name || !email || !message) {
+                setStatus(formStrings.invalid, true);
+                return;
+            }
+
+            if (!emailOk) {
+                setStatus(formStrings.invalidEmail || formStrings.invalid, true);
+                return;
+            }
+
+            if (!contactEmail) {
+                setStatus(formStrings.error || FALLBACK.ui.error, true);
+                return;
+            }
+
+            const subject = encodeURIComponent(formStrings.subject || "Website message");
+            const bodyLines = [
+                `${formStrings.nameLabel}: ${name}`,
+                `${formStrings.emailLabel}: ${email}`,
+                "",
+                `${formStrings.messageLabel}:`,
+                message,
+            ];
+            const body = encodeURIComponent(bodyLines.join("\n"));
+            const mailto = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+
+            setStatus(formStrings.success, false);
+            window.location.href = mailto;
+        });
+
+        return form;
+    };
+
+    const renderMessageForm = () => {
+        toggleInputArea(false);
+        if (cachedMessages === null && messagesEl.innerHTML.trim()) {
+            cachedMessages = messagesEl.innerHTML;
+        }
+        messagesEl.innerHTML = "";
+        messagesEl.appendChild(buildMessageForm());
+        messagesEl.scrollTop = 0;
+    };
+
+    const restoreMessages = () => {
+        toggleInputArea(true);
+        if (cachedMessages !== null) {
+            messagesEl.innerHTML = cachedMessages;
+            cachedMessages = null;
+            updateActionLabels();
+            return;
+        }
+        renderWelcome();
+    };
+
+    const focusPrimaryInput = () => {
+        if (mode === MESSAGE_MODE) {
+            const field = messagesEl.querySelector(".chatbot-message-form input, .chatbot-message-form textarea");
+            if (field && typeof field.focus === "function") field.focus();
+            return;
+        }
+        if (inputEl && typeof inputEl.focus === "function") inputEl.focus();
+    };
+
     const toggleChat = (forceState) => {
         isOpen = forceState !== undefined ? forceState : !isOpen;
 
@@ -257,7 +465,7 @@
             windowEl.classList.add("is-open");
             windowEl.removeAttribute("hidden");
             toggleBtn.setAttribute("aria-expanded", "true");
-            setTimeout(() => inputEl.focus(), 50);
+            setTimeout(() => focusPrimaryInput(), 50);
         } else {
             windowEl.classList.remove("is-open");
             toggleBtn.setAttribute("aria-expanded", "false");
@@ -344,6 +552,7 @@
     };
 
     const renderQuickActions = () => {
+        if (mode === MESSAGE_MODE) return;
         messagesEl.querySelectorAll(".message.panel").forEach((node) => node.remove());
         const strings = getStrings(getLang());
         const actions = strings.actions || FALLBACK.actions;
@@ -362,6 +571,11 @@
     };
 
     const renderWelcome = () => {
+        if (mode === MESSAGE_MODE) {
+            renderMessageForm();
+            return;
+        }
+        toggleInputArea(true);
         const strings = getStrings(getLang());
         const ui = strings.ui || FALLBACK.ui;
         messagesEl.innerHTML = "";
@@ -578,6 +792,7 @@
     };
 
     const sendMessage = async (text, options = {}) => {
+        if (mode === MESSAGE_MODE) return;
         addMessage("user", text);
         inputEl.value = "";
         sendBtn.disabled = true;
@@ -600,12 +815,13 @@
             addMessage("system", strings.ui.error || FALLBACK.ui.error);
         } finally {
             sendBtn.disabled = false;
-            inputEl.focus();
+            if (mode !== MESSAGE_MODE) inputEl.focus();
         }
     };
 
     const handleAction = (action) => {
         if (!action) return;
+        if (mode === MESSAGE_MODE) return;
         const strings = getStrings(getLang());
         if (action === "mode-fun") {
             setMode("fun", { announce: true });
@@ -633,6 +849,10 @@
     });
 
     clearBtn.addEventListener("click", () => {
+        if (mode === MESSAGE_MODE) {
+            renderMessageForm();
+            return;
+        }
         renderWelcome();
     });
 
@@ -665,19 +885,24 @@
 
     window.addEventListener("site:lang-change", () => {
         updateStrings();
+        if (mode === MESSAGE_MODE) renderMessageForm();
     });
 
     const initialize = () => {
         try {
             const saved = localStorage.getItem(MODE_KEY);
-            if (saved === "fun" || saved === "pro") mode = saved;
+            if (saved === "fun" || saved === "pro" || saved === MESSAGE_MODE) mode = saved;
         } catch (e) {
             /* ignore */
         }
 
         updateModeButtons();
         updateStrings();
-        renderWelcome();
+        if (mode === MESSAGE_MODE) {
+            renderMessageForm();
+        } else {
+            renderWelcome();
+        }
 
         try {
             const savedState = localStorage.getItem(STATE_KEY);

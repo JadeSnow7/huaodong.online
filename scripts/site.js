@@ -2,6 +2,8 @@
   const root = document.documentElement;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const prefersCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const THEME_KEY = "site_theme";
+  const THEMES = ["default", "tech"];
 
   const getLang = () => {
     const raw = (window.__SITE_LANG__ || root.lang || "").toLowerCase();
@@ -25,6 +27,42 @@
       fullstack: "Full-stack Delivery",
       platform: "Platform & Tooling",
     },
+  };
+
+  const applyTheme = (theme) => {
+    if (theme === "tech") {
+      root.dataset.theme = "tech";
+    } else {
+      delete root.dataset.theme;
+    }
+  };
+
+  const setupThemeToggle = () => {
+    const toggle = document.querySelector("[data-theme-toggle]");
+    if (!toggle) return;
+
+    let current = "default";
+    try {
+      const saved = localStorage.getItem(THEME_KEY);
+      if (saved && THEMES.includes(saved)) current = saved;
+    } catch {
+      /* ignore */
+    }
+
+    applyTheme(current);
+    toggle.setAttribute("aria-pressed", current === "tech" ? "true" : "false");
+
+    toggle.addEventListener("click", () => {
+      const next = current === "tech" ? "default" : "tech";
+      current = next;
+      applyTheme(next);
+      toggle.setAttribute("aria-pressed", next === "tech" ? "true" : "false");
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch {
+        /* ignore */
+      }
+    });
   };
 
   const PROJECT_DETAILS = {
@@ -552,6 +590,7 @@
 
   const init = () => {
     const lang = getLang();
+    setupThemeToggle();
     renderCardAbilities(lang);
     setupFilter();
     setupScrollProgress();
