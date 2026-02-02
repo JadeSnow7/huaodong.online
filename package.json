@@ -1,0 +1,11 @@
+{
+  "name": "huaodong.online",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "resume:pdf": "node tools/render-resume-pdf.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.1"
+  }
+}

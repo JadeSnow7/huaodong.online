@@ -16,6 +16,27 @@
 			size: A4;
 		}
 
+		@media print {
+			body {
+				background: #fff !important;
+				min-height: auto;
+			}
+
+			.nav-bar,
+			.download-section {
+				display: none !important;
+			}
+
+			.resume-wrapper {
+				padding: 0 !important;
+			}
+
+			.resume-container {
+				border-radius: 0 !important;
+				box-shadow: none !important;
+			}
+		}
+
 		* {
 			margin: 0;
 			padding: 0;
@@ -565,12 +586,12 @@
 	<nav class="nav-bar">
 		<div class="brand">HU AODONG</div>
 		<div class="nav-links">
-			<a href="index.html" data-i18n="nav.home">首页</a>
-			<a href="index.html#projects" data-i18n="nav.projects">项目</a>
-			<a href="index.html#skills" data-i18n="nav.skills">技能</a>
-			<a href="notes/index.html" data-i18n="nav.notes">学习笔记</a>
-			<a href="essays/index.html" data-i18n="nav.essays">随笔与记录</a>
-			<a href="index.html#contact" data-i18n="nav.contact">联系</a>
+			<a href="https://huaodong.online/" data-i18n="nav.home">首页</a>
+			<a href="https://huaodong.online/#projects" data-i18n="nav.projects">项目</a>
+			<a href="https://huaodong.online/#skills" data-i18n="nav.skills">技能</a>
+			<a href="https://huaodong.online/notes/index.html" data-i18n="nav.notes">学习笔记</a>
+			<a href="https://huaodong.online/essays/index.html" data-i18n="nav.essays">随笔与记录</a>
+			<a href="https://huaodong.online/#contact" data-i18n="nav.contact">联系</a>
 			<button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
 		</div>
 	</nav>
@@ -759,7 +780,7 @@
 			</div>
 
 			<div class="download-section">
-				<a href="assets/resume.pdf" class="btn-download" target="_blank" rel="noopener">
+				<a href="https://huaodong.online/assets/resume.pdf" class="btn-download" target="_blank" rel="noopener">
 					<span data-i18n="download.pdf">📄 下载 PDF 版本</span>
 				</a>
 			</div>
@@ -985,7 +1006,7 @@
 				});
 			}
 
-			const links = document.querySelectorAll('a[href^="assets/resume.pdf"]');
+			const links = document.querySelectorAll('a[href*="assets/resume.pdf"]');
 			if (!links.length) return;
 
 			const updateHref = (link) => {
