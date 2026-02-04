@@ -43,9 +43,9 @@ jobs:
       - name: Render PDF
         run: npm run resume:pdf
 
-      - name: Verify PDF is 1 page
+      - name: Verify PDF is 1 page (AI Role)
         run: |
-          pages="$(pdfinfo assets/resume.pdf | awk '/^Pages:/ {print $2}')"
+          pages="$(pdfinfo assets/resume-ai.pdf | awk '/^Pages:/ {print $2}')"
           echo "Pages: ${pages}"
           test "${pages}" = "1"
 
