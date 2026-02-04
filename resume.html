@@ -116,6 +116,63 @@
 			outline-offset: 3px;
 		}
 
+		.role-switcher {
+			display: flex;
+			gap: 8px;
+			margin-left: 20px;
+			align-items: center;
+		}
+
+		.role-btn {
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			color: rgba(255, 255, 255, 0.8);
+			padding: 4px 10px;
+			border-radius: 6px;
+			font-size: 9pt;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+
+		.role-btn:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		.role-btn.active {
+			background: #0071e3;
+			color: white;
+			border-color: #0071e3;
+		}
+
+		.role-item {
+			display: none;
+		}
+
+		body.role-all .role-item.show-all,
+		body.role-ai .role-item.show-ai,
+		body.role-client .role-item.show-client,
+		body.role-fullstack .role-item.show-fullstack {
+			display: block;
+		}
+
+		/* Grid items need to be handled differently to maintain grid layout (though display:none breaks grid flow anyway which is what we want) */
+		body.role-all .role-item-grid.show-all,
+		body.role-ai .role-item-grid.show-ai,
+		body.role-client .role-item-grid.show-client,
+		body.role-fullstack .role-item-grid.show-fullstack {
+			display: block;
+		}
+
+		.role-item-grid {
+			display: none;
+		}
+
+		@media print {
+			.role-switcher {
+				display: none;
+			}
+		}
+
 		.resume-wrapper {
 			max-width: 900px;
 			margin: 0 auto;
@@ -592,6 +649,12 @@
 			<a href="https://huaodong.online/notes/index.html" data-i18n="nav.notes">学习笔记</a>
 			<a href="https://huaodong.online/essays/index.html" data-i18n="nav.essays">随笔与记录</a>
 			<a href="https://huaodong.online/#contact" data-i18n="nav.contact">联系</a>
+			<div class="role-switcher">
+				<button class="role-btn active" data-role-btn="all">通用</button>
+				<button class="role-btn" data-role-btn="ai">AI</button>
+				<button class="role-btn" data-role-btn="client">端侧</button>
+				<button class="role-btn" data-role-btn="fullstack">全栈</button>
+			</div>
 			<button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
 		</div>
 	</nav>
@@ -611,7 +674,7 @@
 			<div class="content">
 				<div class="section section-core">
 					<div class="section-title" data-i18n="section.core">核心竞争力</div>
-					<div class="profile-summary">
+					<div class="profile-summary role-item show-all">
 						<p data-i18n-html="core.summary">
 							<span class="highlight">全栈工程师 + AI 多模态开发者</span>，侧重于<span
 								class="highlight">客户端架构设计</span>与<span class="highlight">端到端 AI
@@ -624,6 +687,53 @@
 							<span class="core-tag">全栈工程交付</span>
 							<span class="core-tag">iOS 原生开发</span>
 							<span class="core-tag">React Native</span>
+						</div>
+					</div>
+
+					<div class="profile-summary role-item show-ai">
+						<p data-i18n-html="core.summary_ai">
+							<span class="highlight">AI 应用工程师</span>，专注于<span class="highlight">大模型落地</span>与<span
+								class="highlight">Agent 系统设计</span>。
+							精通 RAG、提示词工程与模型微调，擅长使用 Python/LangChain 构建可扩展的智能应用，具备从数据蒸馏到模型部署的全流程经验。
+						</p>
+						<div class="core-tags" data-i18n-html="core.tags_ai">
+							<span class="core-tag primary">Python</span>
+							<span class="core-tag primary">LLM Agent</span>
+							<span class="core-tag">RAG / GraphRAG</span>
+							<span class="core-tag">Model Fine-tuning</span>
+							<span class="core-tag">Qwen / Llama</span>
+							<span class="core-tag">LangChain</span>
+						</div>
+					</div>
+
+					<div class="profile-summary role-item show-client">
+						<p data-i18n-html="core.summary_client">
+							<span class="highlight">客户端开发工程师</span>，专注于<span class="highlight">macOS/iOS
+								原生开发</span>与<span class="highlight">性能极致优化</span>。
+							精通 Swift、C++ 与系统级编程，深入理解 OS 内存管理与多线程机制，具备丰富的跨平台架构设计与调试经验。
+						</p>
+						<div class="core-tags" data-i18n-html="core.tags_client">
+							<span class="core-tag primary">Swift / SwiftUI</span>
+							<span class="core-tag primary">C++ / Qt</span>
+							<span class="core-tag">macOS / iOS</span>
+							<span class="core-tag">Performance Optimization</span>
+							<span class="core-tag">System Architecture</span>
+							<span class="core-tag">XPC / IPC</span>
+						</div>
+					</div>
+
+					<div class="profile-summary role-item show-fullstack">
+						<p data-i18n-html="core.summary_fullstack">
+							<span class="highlight">全栈工程师</span>，具备<span class="highlight">端到端产品交付能力</span>。
+							精通现代 Web 技术栈（React/Go/Python）与分布式系统设计，擅长解决复杂工程问题，从数据库设计到前端交互实现闭环落地。
+						</p>
+						<div class="core-tags" data-i18n-html="core.tags_fullstack">
+							<span class="core-tag primary">Go / Gin</span>
+							<span class="core-tag primary">React / TypeScript</span>
+							<span class="core-tag">Python / FastAPI</span>
+							<span class="core-tag">Docker / K8s</span>
+							<span class="core-tag">Microservices</span>
+							<span class="core-tag">Database Design</span>
 						</div>
 					</div>
 				</div>
@@ -642,22 +752,22 @@
 				<div class="section section-skills">
 					<div class="section-title" data-i18n="section.skills">专业技能</div>
 					<div class="skills-grid">
-						<div class="skill-card">
+						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack">
 							<div class="label" data-i18n="skills.lang.label">语言/框架</div>
 							<div class="value" data-i18n="skills.lang.value">
 								C++、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React</div>
 						</div>
-						<div class="skill-card">
+						<div class="skill-card role-item-grid show-all show-ai show-fullstack">
 							<div class="label" data-i18n="skills.ai.label">AI / 多模态</div>
 							<div class="value" data-i18n="skills.ai.value">LLM Agent (微调/Tool Calling)、SD/SVD 图像视频生成、TTS
 								语音合成、GraphRAG、pHash/LSH 相似检测</div>
 						</div>
-						<div class="skill-card">
+						<div class="skill-card role-item-grid show-all show-client show-fullstack">
 							<div class="label" data-i18n="skills.platform.label">系统 / 平台</div>
 							<div class="value" data-i18n="skills.platform.value">macOS 原生开发 (App
 								Sandbox/Notarization/XPC)、Linux 运维、Docker 容器化、PostgreSQL/Redis/MySQL</div>
 						</div>
-						<div class="skill-card">
+						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack">
 							<div class="label" data-i18n="skills.tools.label">架构 / 工具</div>
 							<div class="value" data-i18n="skills.tools.value">MVVM/Clean Architecture、GDB/LLDB
 								调试、Instruments 性能分析、CMake/Makefile 构建、Git 协作</div>
@@ -668,7 +778,7 @@
 				<div class="section section-projects">
 					<div class="section-title" data-i18n="section.projects">项目经历</div>
 
-					<div class="project featured">
+					<div class="project featured role-item show-all show-ai show-client show-fullstack">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag" data-i18n="tag.fullstack">全栈</span>
@@ -690,7 +800,7 @@
 						</ul>
 					</div>
 
-					<div class="project featured">
+					<div class="project featured role-item show-all show-ai show-fullstack">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag" data-i18n="tag.fullstack">全栈</span>
@@ -714,7 +824,7 @@
 						</ul>
 					</div>
 
-					<div class="project">
+					<div class="project role-item show-all show-client show-fullstack">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag apple">Apple</span>
@@ -738,7 +848,7 @@
 						</ul>
 					</div>
 
-					<div class="project">
+					<div class="project role-item show-all show-client">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag apple" data-i18n="tag.system">系统</span>
@@ -813,6 +923,18 @@
 							'<span class="highlight">全栈工程师 + AI 多模态开发者</span>，侧重于<span class="highlight">客户端架构设计</span>与<span class="highlight">端到端 AI 应用落地</span>。具备复杂系统分析与设计能力，擅长将 AI 能力与工程实践深度结合，具有良好的项目规范管理与团队协作能力。',
 						tags:
 							'<span class="core-tag primary">C++</span><span class="core-tag primary">AI Agent / RAG</span><span class="core-tag">系统架构设计</span><span class="core-tag">全栈工程交付</span><span class="core-tag">iOS 原生开发</span><span class="core-tag">React Native</span>',
+						summary_ai:
+							'<span class="highlight">AI 应用工程师</span>，专注于<span class="highlight">大模型落地</span>与<span class="highlight">Agent 系统设计</span>。精通 RAG、提示词工程与模型微调，擅长使用 Python/LangChain 构建可扩展的智能应用，具备从数据蒸馏到模型部署的全流程经验。',
+						tags_ai:
+							'<span class="core-tag primary">Python</span><span class="core-tag primary">LLM Agent</span><span class="core-tag">RAG / GraphRAG</span><span class="core-tag">Model Fine-tuning</span><span class="core-tag">Qwen / Llama</span><span class="core-tag">LangChain</span>',
+						summary_client:
+							'<span class="highlight">客户端开发工程师</span>，专注于<span class="highlight">macOS/iOS 原生开发</span>与<span class="highlight">性能极致优化</span>。精通 Swift、C++ 与系统级编程，深入理解 OS 内存管理与多线程机制，具备丰富的跨平台架构设计与调试经验。',
+						tags_client:
+							'<span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag primary">C++ / Qt</span><span class="core-tag">macOS / iOS</span><span class="core-tag">Performance Optimization</span><span class="core-tag">System Architecture</span><span class="core-tag">XPC / IPC</span>',
+						summary_fullstack:
+							'<span class="highlight">全栈工程师</span>，具备<span class="highlight">端到端产品交付能力</span>。精通现代 Web 技术栈（React/Go/Python）与分布式系统设计，擅长解决复杂工程问题，从数据库设计到前端交互实现闭环落地。',
+						tags_fullstack:
+							'<span class="core-tag primary">Go / Gin</span><span class="core-tag primary">React / TypeScript</span><span class="core-tag">Python / FastAPI</span><span class="core-tag">Docker / K8s</span><span class="core-tag">Microservices</span><span class="core-tag">Database Design</span>',
 					},
 					education: {
 						school: "华中科技大学",
@@ -884,6 +1006,18 @@
 							'<span class="highlight">Full-stack engineer & AI multimodal builder</span>, focusing on <span class="highlight">client architecture</span> and <span class="highlight">end-to-end AI product delivery</span>. Strong in system analysis and design, integrating AI capabilities into engineering practices with solid ownership and collaboration.',
 						tags:
 							'<span class="core-tag primary">C++</span><span class="core-tag primary">AI Agent / RAG</span><span class="core-tag">System Architecture</span><span class="core-tag">Full-stack Delivery</span><span class="core-tag">iOS Native</span><span class="core-tag">React Native</span>',
+						summary_ai:
+							'<span class="highlight">AI Application Engineer</span>, specialized in <span class="highlight">LLM deployment</span> and <span class="highlight">Agent system design</span>. Expert in RAG, prompt engineering and fine-tuning. Proficient in building scalable intelligent applications with Python/LangChain.',
+						tags_ai:
+							'<span class="core-tag primary">Python</span><span class="core-tag primary">LLM Agent</span><span class="core-tag">RAG / GraphRAG</span><span class="core-tag">Model Fine-tuning</span><span class="core-tag">Qwen / Llama</span><span class="core-tag">LangChain</span>',
+						summary_client:
+							'<span class="highlight">Client Developer</span>, focused on <span class="highlight">macOS/iOS native development</span> and <span class="highlight">performance optimization</span>. Expert in Swift, C++ and system programming with deep understanding of OS architecture.',
+						tags_client:
+							'<span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag primary">C++ / Qt</span><span class="core-tag">macOS / iOS</span><span class="core-tag">Performance Optimization</span><span class="core-tag">System Architecture</span><span class="core-tag">XPC / IPC</span>',
+						summary_fullstack:
+							'<span class="highlight">Full-stack Engineer</span> with <span class="highlight">end-to-end product delivery capability</span>. Proficient in modern web stack (React/Go/Python) and distributed system design. Capable of handling complex engineering challenges.',
+						tags_fullstack:
+							'<span class="core-tag primary">Go / Gin</span><span class="core-tag primary">React / TypeScript</span><span class="core-tag">Python / FastAPI</span><span class="core-tag">Docker / K8s</span><span class="core-tag">Microservices</span><span class="core-tag">Database Design</span>',
 					},
 					education: {
 						school: "Huazhong University of Science and Technology",
@@ -1006,23 +1140,101 @@
 				});
 			}
 
+			// --- Role Switching Logic ---
+			const STORAGE_ROLE_KEY = "site_role";
+			const SUPPORTED_ROLES = new Set(["all", "ai", "client", "fullstack"]);
+			const DEFAULT_ROLE = "all";
+
+			const readPreferredRole = () => {
+				const url = new URL(window.location.href);
+				const fromQuery = url.searchParams.get("role")?.toLowerCase();
+				if (fromQuery && SUPPORTED_ROLES.has(fromQuery)) return fromQuery;
+				try {
+					const saved = localStorage.getItem(STORAGE_ROLE_KEY);
+					if (saved && SUPPORTED_ROLES.has(saved)) return saved;
+				} catch { /* ignore */ }
+				return DEFAULT_ROLE;
+			};
+
+			let currentRole = readPreferredRole();
+
 			const links = document.querySelectorAll('a[href*="assets/resume.pdf"]');
-			if (!links.length) return;
 
 			const updateHref = (link) => {
 				const rawHref = link.getAttribute("href") || "assets/resume.pdf";
 				const baseHref = rawHref.split("?")[0];
-				const url = new URL(baseHref, window.location.href);
+
+				// Determine filename based on current role
+				let filename = "resume.pdf";
+				if (currentRole === "ai") filename = "resume-ai.pdf";
+				else if (currentRole === "client") filename = "resume-client.pdf";
+				else if (currentRole === "fullstack") filename = "resume-fullstack.pdf";
+
+				// Update the base href to point to the correct file
+				const newHref = baseHref.replace(/resume(-[a-z]+)?\.pdf$/, filename);
+				const url = new URL(newHref, window.location.href);
+
 				url.searchParams.set("v", Date.now().toString());
+				// Also propagate the role param, though usually file is static
+				// url.searchParams.set("role", currentRole);
 				link.href = url.toString();
 			};
 
-			for (const link of links) {
-				link.addEventListener("pointerdown", () => updateHref(link));
-				link.addEventListener("keydown", (event) => {
-					if (event.key === "Enter" || event.key === " ") updateHref(link);
+			const applyRole = (role) => {
+				const picked = SUPPORTED_ROLES.has(role) ? role : DEFAULT_ROLE;
+
+				// Update Body Class
+				document.body.classList.remove("role-all", "role-ai", "role-client", "role-fullstack");
+				document.body.classList.add(`role-${picked}`);
+
+				// Update Buttons
+				document.querySelectorAll("[data-role-btn]").forEach(btn => {
+					if (btn.dataset.roleBtn === picked) {
+						btn.classList.add("active");
+					} else {
+						btn.classList.remove("active");
+					}
 				});
+
+				// Update PDF Link immediately
+				if (links.length) {
+					for (const link of links) {
+						updateHref(link);
+					}
+				}
+
+				try {
+					localStorage.setItem(STORAGE_ROLE_KEY, picked);
+				} catch { /* ignore */ }
+			};
+
+			applyRole(currentRole);
+
+			if (links.length) {
+				for (const link of links) {
+					link.addEventListener("pointerdown", () => updateHref(link));
+					link.addEventListener("keydown", (event) => {
+						if (event.key === "Enter" || event.key === " ") updateHref(link);
+					});
+					updateHref(link);
+				}
 			}
+
+			document.querySelectorAll("[data-role-btn]").forEach(btn => {
+				btn.addEventListener("click", () => {
+					currentRole = btn.dataset.roleBtn;
+					applyRole(currentRole);
+					try {
+						const url = new URL(window.location.href);
+						if (currentRole === DEFAULT_ROLE) {
+							url.searchParams.delete("role");
+						} else {
+							url.searchParams.set("role", currentRole);
+						}
+						history.replaceState(null, "", url.toString());
+					} catch { /* ignore */ }
+				});
+			});
 		})();
 	</script>
 </body>
