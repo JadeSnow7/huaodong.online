@@ -8,3 +8,4 @@ backend/.venv/
 # Local deploy helpers that may contain credentials. Keep locally, don't commit.
 deploy_full_stack.sh
 deploy_backend.sh
+wecom-deploy/
