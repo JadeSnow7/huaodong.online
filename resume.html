@@ -791,10 +791,11 @@
 						<ul data-i18n-html="projects.story.points">
 							<li><strong>项目定位</strong>：端到端 AI 视频生成系统（文本→智能分镜→图像/配音/视频→FFmpeg 合成），Windows/macOS
 								桌面端支持实时编辑/预览/导出</li>
-							<li><strong>核心职责</strong>：小组长，主导模型应用、多任务网关、任务链路实现，协调前后端联调与版本迭代</li>
-							<li><strong>设计思维</strong>：采用 MVVM 架构分离视图/状态/网络层，确保可测试性与复用性；设计任务网关 +
-								优先级队列实现暂停/恢复/取消/重试/降级，提升用户体验与系统鲁棒性</li>
-							<li><strong>核心成果</strong>：实现 8GB 显存下稳定 30s 720p 视频生成，缓存复用率提升 40%，渲染帧率提升至 60fps</li>
+							<li><strong>核心职责</strong>：小组长（5人），主导架构设计与任务分工，建立 Code Review + CI/CD 流程，2 周内完成 MVP 上线</li>
+							<li><strong>技术挑战</strong>：多模态任务（图像/语音/视频）并行执行易导致 OOM 和任务阻塞；设计任务网关 +
+								优先级队列实现智能调度（暂停/恢复/取消/重试/降级），长任务中断恢复率 95%+，内存峰值降低 30%</li>
+							<li><strong>核心成果</strong>：8GB 显存下稳定生成 30s 720p 视频；缓存复用率从 25% 提升至 65%（+40%），减少重复 SD 推理；渲染帧率从
+								30fps 优化至 60fps</li>
 							<li><strong>技术栈</strong>：Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg ·
 								Qwen/SD/SVD/TTS · MySQL/MinIO</li>
 						</ul>
@@ -811,12 +812,14 @@
 								至今</div>
 						</div>
 						<ul data-i18n-html="projects.teaching.points">
-							<li><strong>项目定位</strong>：以学生为中心的高校 AI 教学平台：长期追踪学生学习状态，提供个性化答疑/批改与学习建议；支持桌面端、企业微信 H5 及
-								iOS/Android 原生 App，并与教师沟通预备在华中科技大学研究生《专业英文写作》课程中试点使用</li>
-							<li><strong>核心职责</strong>：独立完成全栈开发（React 前端 / Go 后端 / Python AI 服务），并新增 iOS/Android 移动端
-								App，形成桌面端/企业微信 H5/App 多端覆盖</li>
-							<li><strong>设计思维</strong>：采用微服务架构解耦业务与 AI 能力；从课程中心重构为学生中心（学生画像/学习档案/长期学情轨迹），结合 Qwen3 +
-								GraphRAG 实现个性化答疑与批改；JWT + RBAC 实现多角色权限体系</li>
+							<li><strong>项目定位</strong>：以学生为中心的高校 AI 教学平台，支持学习状态追踪、个性化答疑/批改与学习建议；覆盖桌面端、企业微信 H5 及
+								iOS/Android 原生 App，与导师合作在华中科技大学《专业英文写作》课程试点（预计覆盖 50+ 研究生）</li>
+							<li><strong>核心职责</strong>：独立完成全栈开发（React 前端 / Go 后端 / Python AI 服务），新增 iOS/Android
+								移动端，形成多端覆盖</li>
+							<li><strong>架构重构</strong>：发现现有平台以课程为核心，无法追踪学生跨课程学习进展；重构为学生中心架构，设计学生画像 +
+								学习档案，支持长期学情追踪与知识点薄弱分析</li>
+							<li><strong>技术选型</strong>：对比 BM25/向量检索/Hybrid 检索后选择 GraphRAG，解决知识点关联性检索问题，答疑相关性从 68% 提升至
+								85%+</li>
 							<li><strong>核心成果</strong>：Docker Compose 一键部署，支持 200+ 并发用户；AI 答疑准确率 85%+，作业批改覆盖 80% 常见题型
 							</li>
 							<li><strong>技术栈</strong>：React/TS/Vite · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker
@@ -835,14 +838,14 @@
 							</div>
 						</div>
 						<ul data-i18n-html="projects.swiftsweep.points">
-							<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+
-								模块</li>
-							<li><strong>设计思维</strong>：统一清理执行链路（dry-run 预览、删除计划、审计日志、allowlist + symlink escape 防护），并使用
-								XPC
-								Helper 实现权限隔离；pHash + LSH 加速相似媒体检索</li>
-							<li><strong>核心成果</strong>：通过 Developer ID 签名 + Notarization 发布；内置 9 类 Insights
-								规则，支持插件系统（CapCut
-								草稿解析插件 MVP）</li>
+							<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块
+							</li>
+							<li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink
+								逃逸检测），零误删事故</li>
+							<li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService
+								注册系统级 Helper</li>
+							<li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测，50000 张图片去重仅需 12 秒（对比暴力匹配 40+ 分钟），误报率 <
+									2%；通过 Developer ID 签名 + Notarization 发布</li>
 							<li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument
 								Parser · pHash/LSH</li>
 						</ul>
@@ -859,7 +862,10 @@
 						</div>
 						<ul data-i18n-html="projects.riscv.points">
 							<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li>
-							<li><strong>核心成果</strong>：动态分支预测准确率提升 20%；完成轻量级操作系统移植与自动化验证（IPC/Cache 覆盖率 95%+）</li>
+							<li><strong>技术选型</strong>：对比静态预测（Always Taken/Not Taken）与动态预测后，选择 gshare 算法，分支预测准确率从 65% 提升至
+								85%（+20%），IPC 从 0.8 提升至 1.2</li>
+							<li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread
+								RTOS 并运行 Dhrystone 基准测试</li>
 							<li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>
 						</ul>
 					</div>
@@ -868,10 +874,10 @@
 				<div class="section section-campus">
 					<div class="section-title" data-i18n="section.campus">校园经历</div>
 					<ul class="simple-list" data-i18n-html="campus.list">
-						<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）| 媒体组（运营）：参与 C++ 网络仿真平台开发；团队公众号运营
-							5000+</li>
-						<li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导社群管理与宣讲</li>
-						<li><strong>学业发展与创新创业中心</strong> · 学业部：活动策划和媒体运营</li>
+						<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：参与 C++ 网络仿真平台开发，负责协议解析模块 | 媒体组（运营）：运营团队公众号（5000+
+							粉丝），单篇阅读量 2000+</li>
+						<li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导 500+ 人社群管理，组织线上宣讲覆盖 1000+ 考生</li>
+						<li><strong>学业发展与创新创业中心</strong> · 学业部：策划学业帮扶活动，服务 200+ 学生</li>
 					</ul>
 				</div>
 
@@ -1038,30 +1044,30 @@
 							title: "StoryToVideo: Cross-platform AI Video Generation",
 							meta: "ByteDance CapCut Bootcamp · Team Lead (Client/Multimodal)<br>2025.11 - Present",
 							points:
-								"<li><strong>Overview</strong>: End-to-end AI video generation (text → storyboard → image/voice/video → FFmpeg composition); Windows/macOS desktop client supports real-time edit/preview/export</li><li><strong>Role</strong>: Team lead driving model integration, multi-task gateway and task pipeline; coordinated FE/BE integration and iterations</li><li><strong>Design</strong>: MVVM separation of view/state/network for testability and reuse; task gateway + priority queue enabling pause/resume/cancel/retry/fallback for robustness</li><li><strong>Impact</strong>: Stable 30s 720p generation with 8GB VRAM; +40% cache reuse; render FPS up to 60</li><li><strong>Stack</strong>: Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen/SD/SVD/TTS · MySQL/MinIO</li>",
+								"<li><strong>Overview</strong>: End-to-end AI video generation (text → storyboard → image/voice/video → FFmpeg composition); Windows/macOS desktop supports real-time edit/preview/export</li><li><strong>Role</strong>: Team lead (5 members), drove architecture design and task allocation, established Code Review + CI/CD workflow, shipped MVP in 2 weeks</li><li><strong>Challenge</strong>: Parallel multimodal tasks (image/voice/video) caused OOM and blocking; designed task gateway + priority queue for smart scheduling (pause/resume/cancel/retry/fallback), achieving 95%+ long-task recovery rate and 30% lower peak memory</li><li><strong>Impact</strong>: Stable 30s 720p generation with 8GB VRAM; cache reuse from 25% to 65% (+40%), reducing duplicate SD inferences; render FPS from 30 to 60</li><li><strong>Stack</strong>: Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen/SD/SVD/TTS · MySQL/MinIO</li>",
 						},
 						teaching: {
 							title: "AI-powered Teaching Platform",
 							meta: "Undergraduate Thesis · Full-stack Developer<br>2025.11 - Present",
 							points:
-								"<li><strong>Overview</strong>: Student-centric AI teaching platform for higher education with longitudinal learning-state tracking and personalized guidance (Q&A / grading); supports desktop, WeCom H5, and iOS/Android native apps; preparing a pilot for HUST graduate “Professional English Writing” course</li><li><strong>Role</strong>: Independently delivered full stack (React FE / Go BE / Python AI service) and added iOS/Android apps for multi-client coverage</li><li><strong>Design</strong>: Re-architected from course-centric to student-centric (student profile, learning portfolio, long-term learning trajectory); microservices decoupling business and AI; Qwen3 + GraphRAG for retrieval-augmented Q&A; JWT + RBAC for access control</li><li><strong>Impact</strong>: One-command Docker Compose deployment; 200+ concurrent users; 85%+ Q&A accuracy; grading covers 80% common question types</li><li><strong>Stack</strong>: React/TS/Vite · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · iOS/Android</li>",
+								"<li><strong>Overview</strong>: Student-centric AI teaching platform for higher education with longitudinal learning-state tracking and personalized guidance (Q&A / grading); supports desktop, WeCom H5, and iOS/Android native apps; preparing a pilot for HUST graduate “Professional English Writing” course</li><li><strong>Role</strong>: Independently delivered full stack (React FE / Go BE / Python AI service), added iOS/Android for multi-client coverage</li><li><strong>Rearchitecture</strong>: Found existing platforms course-centric, unable to track cross-course learning progress; restructured to student-centric with student profile + learning portfolio for long-term tracking and knowledge-gap analysis</li><li><strong>Tech Selection</strong>: Compared BM25/vector/hybrid retrieval, chose GraphRAG to solve knowledge-point association retrieval, improving Q&A relevance from 68% to 85%+</li><li><strong>Impact</strong>: One-command Docker Compose deployment; 200+ concurrent users; 85%+ Q&A accuracy; grading covers 80% common question types</li><li><strong>Stack</strong>: React/TS/Vite · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · iOS/Android</li>",
 						},
 						swiftsweep: {
 							title: "SwiftSweep · macOS Optimization Tool",
 							meta: "Open Source (Solo)<br>2025.12 - Present",
 							points:
-								"<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Design</strong>: Unified action pipeline (dry-run preview, deletion plan, audit logs, path allowlist + symlink-escape protection) with XPC helper for privilege isolation; pHash + LSH accelerates similarity search</li><li><strong>Impact</strong>: Shipped with Developer ID signing + Notarization; built-in 9 insight rules; plugin system (CapCut draft parser MVP)</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>",
+								"<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Safety Design</strong>: To prevent accidental system file deletion, designed unified cleanup pipeline (dry-run preview + allowlist + symlink-escape detection), achieving zero accidental deletions</li><li><strong>Privilege Isolation</strong>: To avoid main process acquiring root privileges, adopted XPC Helper for privileged operation isolation via SMAppService</li><li><strong>Impact</strong>: pHash + LSH for similar image/video detection: 50,000 images deduplicated in 12 seconds (vs 40+ minutes brute force), false positive rate < 2%; shipped with Developer ID signing + Notarization</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>",
 						},
 						riscv: {
 							title: "RISC-V CPU Design",
 							meta: "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
 							points:
-								"<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Impact</strong>: +20% branch prediction accuracy; OS porting and automated verification (IPC/Cache coverage 95%+)</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>",
+								"<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>",
 						},
 					},
 					campus: {
 						list:
-							"<li><strong>Dian Team (Qiming College)</strong> · HiSilicon (Engineering) | Media (Ops): contributed to a C++ network simulation platform; official account 5,000+ followers</li><li><strong>HUST Guizhou Admissions Team</strong> · Core member: led community operations and outreach</li><li><strong>Academic Development & Innovation Center</strong> · Academic Dept: event planning and media operations</li>",
+							"<li><strong>Dian Team (Qiming College)</strong> · HiSilicon (Engineering): Contributed to C++ network simulation platform, responsible for protocol parsing module | Media (Ops): Managed team account (5,000+ followers), single post reached 2,000+ views</li><li><strong>HUST Guizhou Admissions Team</strong> · Core member: Led 500+ person community, organized online sessions reaching 1,000+ prospective students</li><li><strong>Academic Development & Innovation Center</strong> · Academic Dept: Planned academic support activities serving 200+ students</li>",
 					},
 					hobbies: {
 						list:
