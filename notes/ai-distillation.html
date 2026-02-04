@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>大模型蒸馏：从数据蒸馏到 LoRA 微调 | 学习笔记</title>
+    <meta name="description" content="理解大模型蒸馏与微调技术，掌握 LoRA/QLoRA 训练策略与数据准备方法。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="note-style.css" />
+</head>
+
+<body>
+    <div class="backdrop" aria-hidden="true">
+        <span class="orb orb--one"></span>
+        <span class="orb orb--two"></span>
+        <span class="orb orb--three"></span>
+        <span class="grid"></span>
+    </div>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">HU AODONG</a>
+        <nav class="nav">
+            <a href="../index.html#projects">精选项目</a>
+            <a href="index.html" class="active">学习笔记</a>
+            <a href="../resume.html">在线简历</a>
+        </nav>
+    </header>
+
+    <main class="note-container">
+        <article class="note-article">
+            <header class="note-header">
+                <a href="index.html" class="note-back">← 返回笔记列表</a>
+                <span class="note-category ai">AI/LLM</span>
+                <h1>大模型蒸馏：从数据蒸馏到 LoRA 微调</h1>
+                <div class="note-meta">
+                    <span>📅 2026-02-04</span>
+                    <span>⏱️ 约 15 分钟</span>
+                    <span>🏷️ 蒸馏, LoRA, QLoRA, SFT</span>
+                </div>
+            </header>
+
+            <div class="note-content">
+                <h2>1. 什么是数据蒸馏？</h2>
+                <p><strong>数据蒸馏（Instruction Distillation）</strong>是指通过规则抽取、教师模型生成与筛选，将"多轮对话/写作反馈"转换成可训练的样本，用于后续的
+                    SFT（Supervised Fine-Tuning）。</p>
+
+                <div class="info-box">
+                    <h4>📦 蒸馏的目的</h4>
+                    <ul>
+                        <li><strong>对齐运行时协议</strong>：保持训练数据与推理时的格式一致</li>
+                        <li><strong>可控的数据质量</strong>：统一格式并过滤低质量样本</li>
+                        <li><strong>快速回归</strong>：用轻量 smoke 指标验证数据→指标→报告的链路</li>
+                    </ul>
+                </div>
+
+                <h2>2. 两条蒸馏路径</h2>
+
+                <h3>2.1 规则蒸馏（chat-style → prompt/response）</h3>
+                <p>将多轮对话格式转换为标准的 prompt/response 格式：</p>
+
+                <pre><code class="language-bash">python3 scripts/ai/distill_data.py \
+  --input assets/training_samples/processed/style_sft_sample.jsonl \
+  --output outputs/distilled/style_sft_distilled.jsonl \
+  --report outputs/distillation_report.json</code></pre>
+
+                <h3>2.2 指令蒸馏（教师模型生成）</h3>
+                <p>用"更强的上游模型"生成样本，作为 SFT 的补充：</p>
+                <ul>
+                    <li>生成题目 → 生成参考解 → 自检 → 改写为教学口吻</li>
+                    <li>用工具生成可验证的数值结果，再反向生成讲解文本</li>
+                </ul>
+
+                <h2>3. 后训练阶段路线</h2>
+
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>阶段</th>
+                            <th>目标</th>
+                            <th>方法</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A: 数据清洗</td>
+                            <td>去重、纠错、脱敏、统一符号</td>
+                            <td>规则 + 人工抽检</td>
+                        </tr>
+                        <tr>
+                            <td>B: 教学风格 SFT</td>
+                            <td>学会课堂式讲解结构</td>
+                            <td>LoRA/QLoRA</td>
+                        </tr>
+                        <tr>
+                            <td>C: 工具调用 SFT</td>
+                            <td>识别调用时机，构造参数</td>
+                            <td>Tool-use SFT</td>
+                        </tr>
+                        <tr>
+                            <td>D: RAG 落地 SFT</td>
+                            <td>引用正确，不编造</td>
+                            <td>Grounded SFT</td>
+                        </tr>
+                        <tr>
+                            <td>E: 偏好优化</td>
+                            <td>降低幻觉，提高可读性</td>
+                            <td>DPO/RLHF</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>4. LoRA/QLoRA 微调</h2>
+
+                <h3>4.1 什么是 LoRA？</h3>
+                <p><strong>LoRA（Low-Rank Adaptation）</strong>通过在预训练权重旁添加低秩分解矩阵，实现参数高效微调。</p>
+
+                <pre><code class="language-text">原始权重 W (frozen)
+       ↓
+W + ΔW = W + B × A
+         └─ 低秩矩阵（可训练）</code></pre>
+
+                <h3>4.2 QLoRA 关键参数（1×4090 24GB）</h3>
+
+                <pre><code class="language-python"># 量化配置
+use_qlora = True
+bnb_4bit_compute_dtype = "bf16"
+bnb_4bit_quant_type = "nf4"
+bnb_4bit_use_double_quant = True
+
+# LoRA 配置
+lora_r = 16                    # 秩，不够再升到 32
+lora_alpha = 32                # 缩放因子
+lora_dropout = 0.05
+target_modules = [
+    "q_proj", "k_proj", "v_proj", "o_proj",
+    "gate_proj", "up_proj", "down_proj"
+]
+
+# 训练配置
+max_seq_len = 2048             # RAG/长推导可升到 4096
+per_device_train_batch_size = 1
+gradient_accumulation_steps = 8  # 有效 batch = 8
+learning_rate = 1e-4
+num_train_epochs = 2</code></pre>
+
+                <div class="warning-box">
+                    <h4>⚠️ 参数调优建议</h4>
+                    <p>每次只改一个变量，并用固定测试集对比：</p>
+                    <ol>
+                        <li>先调 <code>max_seq_len</code>（决定显存与信息覆盖）</li>
+                        <li>再调 <code>lr</code>（决定收敛速度/稳定性）</li>
+                        <li>最后调 <code>r/alpha</code>（决定适配容量）</li>
+                    </ol>
+                </div>
+
+                <h2>5. 训练数据格式</h2>
+
+                <h3>5.1 JSONL 格式规范</h3>
+                <pre><code class="language-json">{
+  "id": "style-0001",
+  "mode": "tutor",
+  "messages": [
+    {"role": "system", "content": "你是高校课程助教..."},
+    {"role": "user", "content": "什么是边界条件？"},
+    {"role": "assistant", "content": "### 结论\n...\n\n### 推导\n..."}
+  ]
+}</code></pre>
+
+                <h3>5.2 样本类型配比</h3>
+                <ul>
+                    <li><strong>教学解释类</strong>：概念解释、推导步骤（tutor/problem_solver）</li>
+                    <li><strong>批改类</strong>：按 rubric 输出扣分点（grader）</li>
+                    <li><strong>RAG 落地类</strong>：基于检索片段作答 + 正确引用</li>
+                    <li><strong>工具调用类</strong>：识别调用时机、构造参数、解读结果</li>
+                </ul>
+
+                <h2>6. 评测指标</h2>
+
+                <div class="info-box">
+                    <h4>📊 自动化评测指标</h4>
+                    <ul>
+                        <li><strong>引用一致性</strong>：<code>[n]</code> 必须来自检索片段编号</li>
+                        <li><strong>工具调用准确率</strong>：函数名/参数是否正确</li>
+                        <li><strong>数值正确性</strong>：相对误差 < 1e-3</li>
+                        <li><strong>格式合规率</strong>：是否符合 <code>### 结论/推导/检查</code> 结构</li>
+                        <li><strong>拒答准确率</strong>：应拒答时是否正确拒答</li>
+                    </ul>
+                </div>
+
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>目标阈值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>引用正确率</td>
+                            <td>≥ 85%</td>
+                        </tr>
+                        <tr>
+                            <td>工具调用准确率</td>
+                            <td>≥ 90%</td>
+                        </tr>
+                        <tr>
+                            <td>关键点覆盖率</td>
+                            <td>≥ 80%</td>
+                        </tr>
+                        <tr>
+                            <td>拒答准确率</td>
+                            <td>≥ 95%</td>
+                        </tr>
+                        <tr>
+                            <td>格式合规率</td>
+                            <td>≥ 90%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>7. 最佳实践</h2>
+
+                <div class="tip-box">
+                    <h4>💡 训练流程建议</h4>
+                    <ol>
+                        <li>先固定离线评测集（200-500 条），作为回归基准</li>
+                        <li>用小数据（1k-3k）验证格式约束，再扩到可用规模</li>
+                        <li>频繁保存 checkpoint（10-30 分钟/次），支持断点续训</li>
+                        <li>每次训练后做回归集验证，记录对比报告</li>
+                        <li>设置止损点：关键指标提升 < 5% 则停止扩展数据</li>
+                    </ol>
+                </div>
+
+                <h2>8. 常见问题</h2>
+
+                <div class="qa-box">
+                    <p class="question">Q: 什么时候选 LoRA vs QLoRA？</p>
+                    <p class="answer">A: QLoRA 将基座模型量化为 4-bit，显存占用更低，适合单卡 24GB 场景。如果显存充足（48GB+），LoRA 的训练速度和精度略优。</p>
+                </div>
+
+                <div class="qa-box">
+                    <p class="question">Q: 如何处理"教学风格漂移"问题？</p>
+                    <p class="answer">A: 将 B/C/D 阶段的数据合并做一次"统一 SFT"（多任务训练），减少 mode 切换时的风格漂移。</p>
+                </div>
+            </div>
+
+            <footer class="note-footer">
+                <div class="note-nav">
+                    <a href="ai-graphrag.html" class="prev">← GraphRAG 图结构检索</a>
+                    <a href="ai-agent-skills.html" class="next">Agent Skills 工具调用 →</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© Hu Aodong · Crafted for GitHub Pages</p>
+    </footer>
+</body>
+
+</html>

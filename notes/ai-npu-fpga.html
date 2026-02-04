@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NPU/FPGA 加速：大模型推理优化 | 学习笔记</title>
+    <meta name="description" content="探索 GPU、NPU 与 FPGA 异构计算方案在大模型推理中的应用与优化策略。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="note-style.css" />
+</head>
+
+<body>
+    <div class="backdrop" aria-hidden="true">
+        <span class="orb orb--one"></span>
+        <span class="orb orb--two"></span>
+        <span class="orb orb--three"></span>
+        <span class="grid"></span>
+    </div>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">HU AODONG</a>
+        <nav class="nav">
+            <a href="../index.html#projects">精选项目</a>
+            <a href="index.html" class="active">学习笔记</a>
+            <a href="../resume.html">在线简历</a>
+        </nav>
+    </header>
+
+    <main class="note-container">
+        <article class="note-article">
+            <header class="note-header">
+                <a href="index.html" class="note-back">← 返回笔记列表</a>
+                <span class="note-category ai">AI/LLM</span>
+                <h1>NPU/FPGA 加速：大模型推理优化</h1>
+                <div class="note-meta">
+                    <span>📅 2026-02-04</span>
+                    <span>⏱️ 约 12 分钟</span>
+                    <span>🏷️ NPU, FPGA, 异构计算, 推理加速</span>
+                </div>
+            </header>
+
+            <div class="note-content">
+                <h2>1. 异构计算架构概述</h2>
+                <p>大模型推理服务可采用 <strong>GPU、NPU 与 FPGA</strong> 三种异构加速后端，根据场景需求选择最优方案。</p>
+
+                <div class="info-box">
+                    <h4>📦 三种后端对比</h4>
+                    <table class="note-table">
+                        <thead>
+                            <tr>
+                                <th>后端</th>
+                                <th>代表硬件</th>
+                                <th>典型功耗</th>
+                                <th>适用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>GPU</strong></td>
+                                <td>NVIDIA RTX 4090</td>
+                                <td>~180W</td>
+                                <td>算力充足、通用推理</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NPU</strong></td>
+                                <td>华为 Ascend</td>
+                                <td>~140W</td>
+                                <td>国产化适配、功耗敏感</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FPGA</strong></td>
+                                <td>Xilinx Alveo</td>
+                                <td>~45W</td>
+                                <td>Embedding 加速、低延迟</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>2. GPU 推理方案</h2>
+
+                <h3>2.1 推理引擎选择</h3>
+                <ul>
+                    <li><strong>vLLM</strong>：高吞吐量，支持 PagedAttention，适合生产部署</li>
+                    <li><strong>TGI（Text Generation Inference）</strong>：HuggingFace 官方方案</li>
+                    <li><strong>Ollama</strong>：本地开发调试，开箱即用</li>
+                </ul>
+
+                <h3>2.2 显存估算</h3>
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>模型规模</th>
+                            <th>FP16</th>
+                            <th>4-bit 量化</th>
+                            <th>推荐显卡</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7B</td>
+                            <td>~14GB</td>
+                            <td>~4GB</td>
+                            <td>RTX 4090 24GB</td>
+                        </tr>
+                        <tr>
+                            <td>14B</td>
+                            <td>~28GB</td>
+                            <td>~8GB</td>
+                            <td>L40S 48GB</td>
+                        </tr>
+                        <tr>
+                            <td>32B+</td>
+                            <td>~64GB</td>
+                            <td>~16GB</td>
+                            <td>A100 80GB</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <h4>⚠️ KV Cache 占用</h4>
+                    <p>长上下文与高并发场景下，KV Cache 会额外占用大量显存。8k 上下文 × 8 并发可能需要额外 8-16GB 显存。</p>
+                </div>
+
+                <h2>3. NPU 推理方案</h2>
+
+                <h3>3.1 华为 Ascend 部署</h3>
+                <p>NPU 方案采用 <strong>MindIE</strong> 加载模型，功耗比 GPU 降低约 <strong>20%</strong>，适合国产化适配需求。</p>
+
+                <pre><code class="language-bash"># Ascend NPU 部署示例
+source /usr/local/Ascend/ascend-toolkit/set_env.sh
+python3 -m mindie.serving.server \
+  --model_path /models/qwen3-8b \
+  --host 0.0.0.0 \
+  --port 8001</code></pre>
+
+                <h3>3.2 NPU vs GPU 对比</h3>
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>GPU (RTX 4090)</th>
+                            <th>NPU (Ascend 910B)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>典型功耗</td>
+                            <td>180W</td>
+                            <td>140W</td>
+                        </tr>
+                        <tr>
+                            <td>吞吐量</td>
+                            <td>基准</td>
+                            <td>~0.9x</td>
+                        </tr>
+                        <tr>
+                            <td>国产化</td>
+                            <td>否</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>生态成熟度</td>
+                            <td>高</td>
+                            <td>中</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>4. FPGA 加速方案</h2>
+
+                <h3>4.1 适用场景</h3>
+                <p>FPGA 适合加速 <strong>Embedding 计算</strong>，将检索链路与 LLM 推理解耦：</p>
+
+                <pre><code class="language-text">┌─────────────────┐     ┌─────────────────┐
+│   用户查询       │────▶│  FPGA Embedding │
+└─────────────────┘     │  (INT8 量化)    │
+                        └────────┬────────┘
+                                 │ 向量
+                                 ▼
+                        ┌─────────────────┐
+                        │   向量检索       │
+                        │   (FAISS)       │
+                        └────────┬────────┘
+                                 │ 检索结果
+                                 ▼
+                        ┌─────────────────┐
+                        │  GPU/NPU LLM    │
+                        │  推理服务       │
+                        └─────────────────┘</code></pre>
+
+                <h3>4.2 FPGA 加速优势</h3>
+
+                <div class="info-box">
+                    <h4>📊 性能指标</h4>
+                    <ul>
+                        <li><strong>功耗</strong>：~45W（GPU 的 25%）</li>
+                        <li><strong>延迟</strong>：Embedding 计算延迟降低 30-50%</li>
+                        <li><strong>质量损失</strong>：INT8 量化后 Recall@5 下降 &lt;2%</li>
+                        <li><strong>资源解耦</strong>：Embedding 与 LLM 独立扩容</li>
+                    </ul>
+                </div>
+
+                <h3>4.3 Xilinx Alveo 部署</h3>
+
+                <pre><code class="language-bash"># 1. INT8 量化 Embedding 模型
+python3 quantize_embedding.py \
+  --model qwen3-embedding-4b \
+  --output embedding_int8.xmodel \
+  --calibration_data calibration.jsonl
+
+# 2. 部署到 FPGA
+xrt-smi program -d 0 -u embedding_int8.xmodel
+
+# 3. 启动 Embedding 服务
+python3 fpga_embedding_server.py \
+  --model embedding_int8.xmodel \
+  --port 8002</code></pre>
+
+                <h2>5. 异构部署架构设计</h2>
+
+                <pre><code class="language-text">┌────────────────────────────────────────────────────────────┐
+│                     API 网关层                              │
+│              统一接口，路由分发                              │
+└────────────────────────────────────────────────────────────┘
+                              │
+         ┌────────────────────┼────────────────────┐
+         │                    │                    │
+         ▼                    ▼                    ▼
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│  GPU 推理节点    │  │  NPU 推理节点    │  │  FPGA Embedding │
+│  (vLLM)         │  │  (MindIE)       │  │  (INT8)         │
+│  Qwen3-8B       │  │  Qwen3-8B       │  │  Embedding-4B   │
+└─────────────────┘  └─────────────────┘  └─────────────────┘
+                              │
+                              ▼
+                     ┌─────────────────┐
+                     │   向量数据库     │
+                     │   (FAISS/Milvus)│
+                     └─────────────────┘</code></pre>
+
+                <h2>6. GPU 服务器选型建议</h2>
+
+                <div class="tip-box">
+                    <h4>💡 性价比推荐</h4>
+                    <table class="note-table">
+                        <thead>
+                            <tr>
+                                <th>场景</th>
+                                <th>推荐配置</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>最低成本（7B）</td>
+                                <td>1× RTX 3090 24GB + 16C CPU + 128GB RAM</td>
+                            </tr>
+                            <tr>
+                                <td>性价比主力（7B/14B）</td>
+                                <td>1× RTX 4090 24GB + 32C CPU + 128GB RAM</td>
+                            </tr>
+                            <tr>
+                                <td>稳定 14B/长上下文</td>
+                                <td>1× L40S 48GB + 48C CPU + 256GB RAM</td>
+                            </tr>
+                            <tr>
+                                <td>32B+/高并发</td>
+                                <td>1× A100 80GB + 64C CPU + 512GB RAM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>7. 量化策略对比</h2>
+
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>量化格式</th>
+                            <th>适用平台</th>
+                            <th>精度损失</th>
+                            <th>速度提升</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FP16</td>
+                            <td>GPU/NPU</td>
+                            <td>极低</td>
+                            <td>基准</td>
+                        </tr>
+                        <tr>
+                            <td>AWQ 4-bit</td>
+                            <td>vLLM</td>
+                            <td>低</td>
+                            <td>1.5-2x</td>
+                        </tr>
+                        <tr>
+                            <td>GPTQ 4-bit</td>
+                            <td>vLLM/TGI</td>
+                            <td>低</td>
+                            <td>1.5-2x</td>
+                        </tr>
+                        <tr>
+                            <td>GGUF Q4_K_M</td>
+                            <td>llama.cpp</td>
+                            <td>中</td>
+                            <td>2-3x</td>
+                        </tr>
+                        <tr>
+                            <td>INT8</td>
+                            <td>FPGA</td>
+                            <td>低</td>
+                            <td>2-4x</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>8. 最佳实践</h2>
+
+                <div class="info-box">
+                    <h4>🚀 部署建议</h4>
+                    <ol>
+                        <li><strong>分层部署</strong>：Embedding 用 FPGA，LLM 用 GPU/NPU</li>
+                        <li><strong>统一接口</strong>：三种后端对外暴露 OpenAI-compatible API</li>
+                        <li><strong>弹性扩容</strong>：Embedding 与 LLM 独立扩容</li>
+                        <li><strong>绿色部署</strong>：校园场景优先考虑 FPGA 降低能耗</li>
+                        <li><strong>断线续训</strong>：使用 Spot 实例时频繁保存 checkpoint</li>
+                    </ol>
+                </div>
+
+                <h2>9. 常见问题</h2>
+
+                <div class="qa-box">
+                    <p class="question">Q: FPGA 量化后质量损失大吗？</p>
+                    <p class="answer">A: INT8 量化的 Embedding 模型 Recall@5 通常下降 &lt;2%，对整体检索质量影响很小。</p>
+                </div>
+
+                <div class="qa-box">
+                    <p class="question">Q: 什么场景适合使用 NPU？</p>
+                    <p class="answer">A: 国产化适配需求强、对功耗敏感的场景。华为 Ascend 生态正在快速成熟，适合长期规划。</p>
+                </div>
+            </div>
+
+            <footer class="note-footer">
+                <div class="note-nav">
+                    <a href="ai-agent-skills.html" class="prev">← Agent Skills 工具调用</a>
+                    <span></span>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© Hu Aodong · Crafted for GitHub Pages</p>
+    </footer>
+</body>
+
+</html>

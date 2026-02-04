@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Skills：大模型工具调用机制 | 学习笔记</title>
+    <meta name="description" content="深入理解 LLM Agent 的工具调用机制，构建可验证、可扩展的智能代理能力。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="note-style.css" />
+</head>
+
+<body>
+    <div class="backdrop" aria-hidden="true">
+        <span class="orb orb--one"></span>
+        <span class="orb orb--two"></span>
+        <span class="orb orb--three"></span>
+        <span class="grid"></span>
+    </div>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">HU AODONG</a>
+        <nav class="nav">
+            <a href="../index.html#projects">精选项目</a>
+            <a href="index.html" class="active">学习笔记</a>
+            <a href="../resume.html">在线简历</a>
+        </nav>
+    </header>
+
+    <main class="note-container">
+        <article class="note-article">
+            <header class="note-header">
+                <a href="index.html" class="note-back">← 返回笔记列表</a>
+                <span class="note-category ai">AI/LLM</span>
+                <h1>Agent Skills：大模型工具调用机制</h1>
+                <div class="note-meta">
+                    <span>📅 2026-02-04</span>
+                    <span>⏱️ 约 12 分钟</span>
+                    <span>🏷️ Agent, Tool Calling, Function Calling</span>
+                </div>
+            </header>
+
+            <div class="note-content">
+                <h2>1. 为什么需要工具调用？</h2>
+                <p>大语言模型在数值计算时容易产生"心算"错误，工具调用机制让模型识别何时需要外部工具，并将计算委托给<strong>可验证的执行器</strong>。</p>
+
+                <div class="info-box">
+                    <h4>📦 核心优势</h4>
+                    <ul>
+                        <li><strong>精确计算</strong>：避免大模型"心算"错误</li>
+                        <li><strong>可验证性</strong>：计算过程可复现、可检验</li>
+                        <li><strong>扩展性</strong>：可添加更多领域工具</li>
+                        <li><strong>可追溯性</strong>：工具调用记录可用于审计与训练</li>
+                    </ul>
+                </div>
+
+                <h2>2. 工具调用流程</h2>
+
+                <pre><code class="language-text">┌───────────────────────────────────────────────────────────┐
+│                      用户问题                              │
+│  "计算频率 1GHz 时铜的趋肤深度"                            │
+└───────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌───────────────────────────────────────────────────────────┐
+│                 Step 1: 模型判断                           │
+│  LLM 识别需要数值计算，生成 tool_call                      │
+└───────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌───────────────────────────────────────────────────────────┐
+│                 Step 2: 执行工具                           │
+│  调用 evaluate_expression，计算 δ = √(2/ωμσ)              │
+└───────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌───────────────────────────────────────────────────────────┐
+│                 Step 3: 结果注入                           │
+│  将 tool_result 添加到对话上下文                           │
+└───────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌───────────────────────────────────────────────────────────┐
+│                 Step 4: 生成回答                           │
+│  LLM 基于工具结果生成教学化解释                            │
+└───────────────────────────────────────────────────────────┘</code></pre>
+
+                <h2>3. 工具定义规范</h2>
+
+                <pre><code class="language-python">TOOLS = [
+    {
+        "type": "function",
+        "function": {
+            "name": "evaluate_expression",
+            "description": "计算数学表达式或物理公式",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "expression": {
+                        "type": "string",
+                        "description": "数学表达式，如 'sqrt(2/(omega*mu*sigma))'"
+                    },
+                    "variables": {
+                        "type": "object",
+                        "description": "变量值映射"
+                    }
+                },
+                "required": ["expression"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "run_simulation",
+            "description": "运行课程数值仿真",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "sim_type": {
+                        "type": "string",
+                        "enum": ["laplace2d", "point_charges", "wave_1d"]
+                    },
+                    "params": {"type": "object"}
+                },
+                "required": ["sim_type"]
+            }
+        }
+    }
+]</code></pre>
+
+                <h2>4. 代码实现示例</h2>
+
+                <pre><code class="language-python">async def chat_with_tools(query: str, tools: list) -> str:
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": query}
+    ]
+    
+    # Step 1: 让模型判断是否需要工具
+    response = await llm.generate(messages, tools=tools)
+    
+    # Step 2: 如果返回 tool_call，执行工具
+    if response.tool_calls:
+        for call in response.tool_calls:
+            result = await execute_tool(
+                call.function.name, 
+                call.function.arguments
+            )
+            
+            # Step 3: 将工具结果注入上下文
+            messages.append({
+                "role": "assistant",
+                "content": None,
+                "tool_calls": [call]
+            })
+            messages.append({
+                "role": "tool",
+                "tool_call_id": call.id,
+                "content": json.dumps(result)
+            })
+        
+        # Step 4: 让模型基于结果生成回答
+        final_response = await llm.generate(messages)
+        return final_response.content
+    
+    return response.content</code></pre>
+
+                <h2>5. Skills 与 Tools 的区别</h2>
+
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>概念</th>
+                            <th>定义</th>
+                            <th>示例</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Skills</strong></td>
+                            <td>组织提示模板与交互模式</td>
+                            <td>tutor（教学）, grader（批改）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tools</strong></td>
+                            <td>可计算、可验证的外部能力</td>
+                            <td>积分计算、仿真运行、字数统计</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>6. 安全与限制</h2>
+
+                <div class="warning-box">
+                    <h4>⚠️ 工具调用安全策略</h4>
+                    <ul>
+                        <li>使用 <strong>allowlist</strong> 限制可调用的工具集合</li>
+                        <li>设置<strong>最大调用次数</strong>（如每轮对话最多 3 次）</li>
+                        <li>配置<strong>超时限制</strong>，防止长时间阻塞</li>
+                        <li>记录工具调用日志，用于审计与问题排查</li>
+                    </ul>
+                </div>
+
+                <h2>7. 工具调用 SFT 训练</h2>
+                <p>为了让模型正确识别调用时机，需要构建三类训练样本：</p>
+
+                <div class="info-box">
+                    <h4>📊 样本类型</h4>
+                    <ol>
+                        <li><strong>应调用工具</strong>：带 tool_call + tool_result + 最终解释</li>
+                        <li><strong>不应调用工具</strong>：直接推理/解释即可的问题</li>
+                        <li><strong>延迟调用</strong>：先教学解释/建模，再明确说明需要精确计算</li>
+                    </ol>
+                </div>
+
+                <pre><code class="language-json">{
+  "id": "tool-0001",
+  "mode": "sim_tutor",
+  "messages": [
+    {"role": "user", "content": "计算铜在 1GHz 的趋肤深度"},
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [{
+        "id": "call_001",
+        "function": {
+          "name": "evaluate_expression",
+          "arguments": "{\"expression\": \"sqrt(2/(omega*mu*sigma))\"}"
+        }
+      }]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_001",
+      "content": "{\"value\": 2.09e-6, \"unit\": \"m\"}"
+    },
+    {"role": "assistant", "content": "### 结论\n铜在 1GHz 时的趋肤深度约为 2.09 μm..."}
+  ]
+}</code></pre>
+
+                <h2>8. 扩展工具集</h2>
+
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>工具名称</th>
+                            <th>功能</th>
+                            <th>API 端点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>calculate_integral</td>
+                            <td>符号/数值积分</td>
+                            <td>/api/v1/calc/integrate</td>
+                        </tr>
+                        <tr>
+                            <td>calculate_derivative</td>
+                            <td>符号/数值微分</td>
+                            <td>/api/v1/calc/differentiate</td>
+                        </tr>
+                        <tr>
+                            <td>evaluate_expression</td>
+                            <td>表达式求值</td>
+                            <td>/api/v1/calc/evaluate</td>
+                        </tr>
+                        <tr>
+                            <td>run_simulation</td>
+                            <td>课程仿真</td>
+                            <td>/api/v1/sim/*</td>
+                        </tr>
+                        <tr>
+                            <td>count_words</td>
+                            <td>字数统计</td>
+                            <td>/api/v1/text/count</td>
+                        </tr>
+                        <tr>
+                            <td>check_citation_style</td>
+                            <td>引用格式检查</td>
+                            <td>/api/v1/text/citation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip-box">
+                    <h4>💡 最佳实践</h4>
+                    <ol>
+                        <li>工具接口采用结构化 JSON schema 描述入参</li>
+                        <li>工具调用记录入参、出参与执行耗时</li>
+                        <li>评测时统计工具调用准确率（函数名/参数）</li>
+                        <li>在 system prompt 中明确说明可用工具列表</li>
+                    </ol>
+                </div>
+
+                <h2>9. 常见问题</h2>
+
+                <div class="qa-box">
+                    <p class="question">Q: 模型不调用工具怎么办？</p>
+                    <p class="answer">A: 检查 system prompt 是否包含工具说明，并在 SFT 数据中增加"应调用工具"的正例样本。</p>
+                </div>
+
+                <div class="qa-box">
+                    <p class="question">Q: 如何防止工具被滥用？</p>
+                    <p class="answer">A: 使用 allowlist 限制工具集合，设置调用次数上限，并记录完整的调用日志用于审计。</p>
+                </div>
+            </div>
+
+            <footer class="note-footer">
+                <div class="note-nav">
+                    <a href="ai-distillation.html" class="prev">← 大模型蒸馏技术</a>
+                    <a href="ai-npu-fpga.html" class="next">NPU/FPGA 加速 →</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© Hu Aodong · Crafted for GitHub Pages</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GraphRAG：图结构检索增强生成 | 学习笔记</title>
+    <meta name="description" content="深入理解 GraphRAG 技术原理，探索知识图谱与向量检索的融合方案。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="note-style.css" />
+</head>
+
+<body>
+    <div class="backdrop" aria-hidden="true">
+        <span class="orb orb--one"></span>
+        <span class="orb orb--two"></span>
+        <span class="orb orb--three"></span>
+        <span class="grid"></span>
+    </div>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">HU AODONG</a>
+        <nav class="nav">
+            <a href="../index.html#projects">精选项目</a>
+            <a href="index.html" class="active">学习笔记</a>
+            <a href="../resume.html">在线简历</a>
+        </nav>
+    </header>
+
+    <main class="note-container">
+        <article class="note-article">
+            <header class="note-header">
+                <a href="index.html" class="note-back">← 返回笔记列表</a>
+                <span class="note-category ai">AI/LLM</span>
+                <h1>GraphRAG：图结构检索增强生成</h1>
+                <div class="note-meta">
+                    <span>📅 2026-02-04</span>
+                    <span>⏱️ 约 12 分钟</span>
+                    <span>🏷️ RAG, 知识图谱, 混合检索</span>
+                </div>
+            </header>
+
+            <div class="note-content">
+                <h2>1. 什么是 GraphRAG？</h2>
+                <p>GraphRAG 将传统的检索增强生成（RAG）与知识图谱相结合，通过"片段 +
+                    邻接扩展（图）"的方式检索相关内容，再注入到大模型的对话上下文中，从而<strong>降低幻觉并让回答可追溯</strong>。</p>
+
+                <div class="info-box">
+                    <h4>📦 核心优势</h4>
+                    <ul>
+                        <li><strong>可追溯性</strong>：回答基于检索片段，可标注引用 <code>[1][2]</code></li>
+                        <li><strong>多跳推理</strong>：通过图结构支持关联检索与多跳推理</li>
+                        <li><strong>降低幻觉</strong>：将模型输出锚定于已知素材</li>
+                        <li><strong>动态更新</strong>：支持在线热更新索引，无需重建全量</li>
+                    </ul>
+                </div>
+
+                <h2>2. 系统架构</h2>
+                <p>典型的 GraphRAG 系统架构分为四层：</p>
+
+                <pre><code class="language-text">┌─────────────────────────────────────────────────────────────┐
+│                    API 层 (main.py)                         │
+├─────────────────────────────────────────────────────────────┤
+│  /v1/chat          │  /v1/chat/hybrid  │  /v1/graphrag/*   │
+└─────────────────────────────────────────────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│                    检索层 (retrieve.py)                      │
+│  RetrievalContext (ACL) │ RRF 融合 │ 图扩展                  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┴─────────────────────┐
+        │                                           │
+┌───────────────────┐                     ┌───────────────────┐
+│   向量存储         │                     │   图索引           │
+│  (FAISS)          │                     │  (JSON)           │
+└───────────────────┘                     └───────────────────┘
+        │                                           │
+        └─────────────────────┬─────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│                    嵌入层 (embedding.py)                     │
+│  APIEmbedding (外部 API) │ LocalEmbedding (本地模型)         │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+
+                <h2>3. 混合检索策略</h2>
+                <p>GraphRAG 采用<strong>语义检索 + 关键词检索</strong>的混合策略，通过倒数排名融合（Reciprocal Rank Fusion, RRF）整合结果：</p>
+
+                <table class="note-table">
+                    <thead>
+                        <tr>
+                            <th>检索方式</th>
+                            <th>优势</th>
+                            <th>适用场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>向量语义检索</td>
+                            <td>理解语义相似性</td>
+                            <td>概念解释、同义词匹配</td>
+                        </tr>
+                        <tr>
+                            <td>关键词检索</td>
+                            <td>精确匹配专有名词</td>
+                            <td>公式、术语、代码</td>
+                        </tr>
+                        <tr>
+                            <td>图扩展</td>
+                            <td>关联上下文信息</td>
+                            <td>多跳推理、背景知识</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>4. 关键参数配置</h2>
+
+                <pre><code class="language-bash"># 基础开关
+GRAPH_RAG_ENABLED=true
+GRAPH_RAG_INDEX_PATH=app/data/graphrag_index.json
+
+# 向量存储
+VECTOR_STORE_PATH=app/data/vector_index
+VECTOR_STORE_TYPE=faiss
+
+# 嵌入模型
+EMBEDDING_PROVIDER=api        # api | local
+EMBEDDING_MODEL=text-embedding-v3
+
+# 检索参数
+GRAPH_RAG_SEED_TOP_K=4        # 初始检索数
+GRAPH_RAG_EXPAND_HOPS=1       # 图扩展跳数
+GRAPH_RAG_FINAL_TOP_K=8       # 最终返回数
+GRAPH_RAG_MAX_CONTEXT_CHARS=4000</code></pre>
+
+                <h2>5. 实践：构建知识库索引</h2>
+
+                <h3>5.1 离线构建（Markdown 文档）</h3>
+                <pre><code class="language-bash">cd code/ai_service
+python3 -m app.graphrag.build \
+  --input ../../docs \
+  --output app/data/graphrag_index.json \
+  --root ../..</code></pre>
+
+                <h3>5.2 在线热更新（API 调用）</h3>
+                <pre><code class="language-bash">curl -X POST http://localhost:8001/v1/graphrag/index \
+  -H "Content-Type: application/json" \
+  -d '{
+    "doc_id": "assignment:12345",
+    "content": "作业内容...",
+    "source": "assignment:12345",
+    "course_id": "course-001",
+    "doc_type": "assignment"
+  }'</code></pre>
+
+                <h2>6. 引用一致性保障</h2>
+
+                <div class="warning-box">
+                    <h4>⚠️ 引用规范要求</h4>
+                    <ul>
+                        <li>回答中的 <code>[n]</code> 必须来自检索片段编号集合</li>
+                        <li>统计"无引用/错引用/编造引用"比例作为质量指标</li>
+                        <li>片段不足时应拒答并说明信息缺口</li>
+                    </ul>
+                </div>
+
+                <h2>7. ACL 过滤与权限控制</h2>
+                <p>在多用户场景下，GraphRAG 支持基于角色的访问控制：</p>
+                <ul>
+                    <li><strong>教师/管理员</strong>：可检索课程内所有内容</li>
+                    <li><strong>学生</strong>：只能检索自己提交的内容 + 公共文档</li>
+                </ul>
+
+                <div class="tip-box">
+                    <h4>💡 最佳实践</h4>
+                    <ol>
+                        <li>在 SFT 训练中加入"引用落地"样本，强化模型遵循 <code>[编号]</code> 格式</li>
+                        <li>加入"冲突证据"样本：给出结论略有差异的片段，要求模型指出冲突</li>
+                        <li>固定检索回归集（30-50 条），定期验证召回质量</li>
+                        <li>优先用 Qwen3-Embedding 4B，在质量/速度/显存间取得平衡</li>
+                    </ol>
+                </div>
+
+                <h2>8. 常见问题</h2>
+
+                <div class="qa-box">
+                    <p class="question">Q: GraphRAG 与传统 RAG 的核心区别是什么？</p>
+                    <p class="answer">A: 传统 RAG 仅做向量相似度检索，GraphRAG 在此基础上引入图结构，支持"种子检索 → 图扩展 →
+                        融合排序"的多阶段流程，能够获取更完整的上下文关联信息。</p>
+                </div>
+
+                <div class="qa-box">
+                    <p class="question">Q: 如何处理"检索片段不足"的情况？</p>
+                    <p class="answer">A: 应训练模型在证据不足时拒答，并标注
+                        <code>refusal_type=insufficient_context</code>，明确告知用户需要补充哪些信息。</p>
+                </div>
+            </div>
+
+            <footer class="note-footer">
+                <div class="note-nav">
+                    <span></span>
+                    <a href="ai-distillation.html" class="next">大模型蒸馏技术 →</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© Hu Aodong · Crafted for GitHub Pages</p>
+    </footer>
+</body>
+
+</html>

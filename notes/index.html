@@ -123,6 +123,10 @@
             background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
         }
 
+        .note-card__category.ai {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+        }
+
         .note-card__title {
             font-size: 1.25rem;
             font-weight: 600;
@@ -190,7 +194,7 @@
     <main>
         <section class="notes-hero">
             <h1>📚 学习笔记</h1>
-            <p>记录技术成长的点点滴滴，涵盖 C++、客户端开发、计算机网络、操作系统、数据结构与算法等领域。</p>
+            <p>记录技术成长的点点滴滴，涵盖 AI/LLM、C++、客户端开发、计算机网络、操作系统、数据结构与算法等领域。</p>
         </section>
 
         <div class="notes-filter">
@@ -201,9 +205,62 @@
             <button class="filter-btn" data-filter="os">操作系统</button>
             <button class="filter-btn" data-filter="algorithm">数据结构与算法</button>
             <button class="filter-btn" data-filter="arch">体系结构</button>
+            <button class="filter-btn" data-filter="ai">AI/LLM</button>
         </div>
 
         <div class="notes-grid">
+            <a href="ai-graphrag.html" class="note-card" data-category="ai">
+                <span class="note-card__category ai">AI/LLM</span>
+                <h2 class="note-card__title">GraphRAG：图结构检索增强生成</h2>
+                <p class="note-card__excerpt">深入理解 GraphRAG 技术原理，探索知识图谱与向量检索的融合方案，实现可追溯的智能问答。</p>
+                <div class="note-card__meta">
+                    <span>2026-02-04</span>
+                    <div class="note-card__tags">
+                        <span class="note-card__tag">RAG</span>
+                        <span class="note-card__tag">知识图谱</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="ai-distillation.html" class="note-card" data-category="ai">
+                <span class="note-card__category ai">AI/LLM</span>
+                <h2 class="note-card__title">大模型蒸馏：从数据蒸馏到 LoRA 微调</h2>
+                <p class="note-card__excerpt">理解大模型蒸馏与微调技术，掌握 LoRA/QLoRA 训练策略、数据准备与评测指标。</p>
+                <div class="note-card__meta">
+                    <span>2026-02-04</span>
+                    <div class="note-card__tags">
+                        <span class="note-card__tag">蒸馏</span>
+                        <span class="note-card__tag">LoRA</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="ai-agent-skills.html" class="note-card" data-category="ai">
+                <span class="note-card__category ai">AI/LLM</span>
+                <h2 class="note-card__title">Agent Skills：大模型工具调用机制</h2>
+                <p class="note-card__excerpt">深入理解 LLM Agent 的工具调用机制，构建可验证、可扩展的智能代理能力。</p>
+                <div class="note-card__meta">
+                    <span>2026-02-04</span>
+                    <div class="note-card__tags">
+                        <span class="note-card__tag">Agent</span>
+                        <span class="note-card__tag">Tool Calling</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="ai-npu-fpga.html" class="note-card" data-category="ai">
+                <span class="note-card__category ai">AI/LLM</span>
+                <h2 class="note-card__title">NPU/FPGA 加速：大模型推理优化</h2>
+                <p class="note-card__excerpt">探索 GPU、NPU 与 FPGA 异构计算方案在大模型推理中的应用与优化策略。</p>
+                <div class="note-card__meta">
+                    <span>2026-02-04</span>
+                    <div class="note-card__tags">
+                        <span class="note-card__tag">NPU</span>
+                        <span class="note-card__tag">FPGA</span>
+                    </div>
+                </div>
+            </a>
+
             <a href="arch-superscalar.html" class="note-card" data-category="arch">
                 <span class="note-card__category arch">体系结构</span>
                 <h2 class="note-card__title">计算机体系结构：从流水线到超标量</h2>
