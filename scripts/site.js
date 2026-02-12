@@ -160,7 +160,7 @@
           caption: { zh: "任务链路与插件架构（占位）", en: "Task pipeline & plugin architecture (placeholder)" },
         },
       ],
-      links: [{ label: { zh: "GitHub", en: "GitHub" }, href: "https://github.com/JadeSnow7/SwiftSweep" }],
+      links: [{ label: { zh: "项目主页", en: "Homepage" }, href: "https://jadesnow7.github.io/SwiftSweep/" }],
     },
     graduation: {
       eyebrow: { zh: "本科毕业设计 · 2025.11 - 至今", en: "Undergraduate Thesis · 2025.11 - Present" },
@@ -208,7 +208,7 @@
           caption: { zh: "微服务 + AI 能力架构（占位）", en: "Microservices + AI architecture (placeholder)" },
         },
       ],
-      links: [{ label: { zh: "GitHub", en: "GitHub" }, href: "https://github.com/JadeSnow7/graduationDesign" }],
+      links: [{ label: { zh: "项目主页", en: "Homepage" }, href: "https://jadesnow7.github.io/graduationDesign/" }],
     },
   };
 
