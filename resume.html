@@ -694,16 +694,17 @@
 
 					<div class="profile-summary role-item show-client">
 						<p data-i18n-html="core.summary_client">
-							<span class="highlight">客户端开发工程师</span>，专注于<span class="highlight">macOS/iOS
-								原生开发</span>与<span class="highlight">性能极致优化</span>。
-							精通 Swift、C++ 与系统级编程，深入理解 OS 内存管理与多线程机制，具备丰富的跨平台架构设计与调试经验。
+							<span class="highlight">PC 客户端开发工程师</span>，专注于<span class="highlight">Windows/macOS/Linux
+								跨平台桌面端开发</span>与<span class="highlight">性能优化</span>。
+							精通 C++（STL/Modern C++）与 Swift，深入理解 OS 内存管理、进程/线程调度与 IPC 机制，具备从 UI 渲染到底层网络编程的全栈客户端开发经验，擅长使用
+							GDB/LLDB + Instruments 进行深度性能分析与调优。
 						</p>
 						<div class="core-tags" data-i18n-html="core.tags_client">
+							<span class="core-tag primary">C++ (STL/Qt)</span>
 							<span class="core-tag primary">Swift / SwiftUI</span>
-							<span class="core-tag primary">C++ / Qt</span>
-							<span class="core-tag">macOS / iOS</span>
+							<span class="core-tag">Windows / macOS / Linux</span>
 							<span class="core-tag">Performance Optimization</span>
-							<span class="core-tag">System Architecture</span>
+							<span class="core-tag">Network Programming</span>
 							<span class="core-tag">XPC / IPC</span>
 						</div>
 					</div>
@@ -741,7 +742,8 @@
 						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack">
 							<div class="label" data-i18n="skills.lang.label">语言/框架</div>
 							<div class="value" data-i18n="skills.lang.value">
-								C++、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React Native/Expo</div>
+								C++ (STL/Modern C++/Qt)、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React/Tauri
+							</div>
 						</div>
 						<div class="skill-card role-item-grid show-all show-ai show-fullstack">
 							<div class="label" data-i18n="skills.ai.label">AI / 多模态</div>
@@ -750,13 +752,19 @@
 						</div>
 						<div class="skill-card role-item-grid show-all show-client show-fullstack">
 							<div class="label" data-i18n="skills.platform.label">系统 / 平台</div>
-							<div class="value" data-i18n="skills.platform.value">macOS 原生开发 (App
-								Sandbox/Notarization/XPC)、Linux 运维、Docker 容器化、PostgreSQL/Redis/MySQL</div>
+							<div class="value" data-i18n="skills.platform.value">Windows/macOS/Linux 跨平台桌面开发、App
+								Sandbox/Notarization/XPC、网络编程 (Socket/HTTP)、Docker 容器化</div>
 						</div>
 						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack">
 							<div class="label" data-i18n="skills.tools.label">架构 / 工具</div>
-							<div class="value" data-i18n="skills.tools.value">MVVM/Clean Architecture、GDB/LLDB
-								调试、CMake/Makefile 构建、Git 协作、CI/CD、</div>
+							<div class="value" data-i18n="skills.tools.value">MVVM/Clean
+								Architecture、GDB/LLDB/Instruments
+								性能调优、CMake/Makefile 构建、Git 协作、CI/CD</div>
+						</div>
+						<div class="skill-card role-item-grid show-client">
+							<div class="label" data-i18n="skills.devflow.label">AI 驱动工程</div>
+							<div class="value" data-i18n="skills.devflow.value">架构先行设计、代码规范与 Spec 驱动、函数式/组合式解耦、Prompt
+								工程与多 Agent 协作、AI 辅助编程加速工程交付</div>
 						</div>
 					</div>
 				</div>
@@ -788,11 +796,11 @@
 						</ul>
 					</div>
 
-					<div class="project featured role-item show-all show-ai show-fullstack">
+					<div class="project featured role-item show-all show-ai show-client show-fullstack">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag" data-i18n="tag.fullstack">全栈</span>
-								<a href="https://github.com/JadeSnow7/graduationDesign" target="_blank" rel="noopener"
+								<a href="https://jadesnow7.github.io/graduationDesign/" target="_blank" rel="noopener"
 									data-i18n="projects.teaching.title">AI 智能教学平台</a>
 							</div>
 							<div class="project-meta" data-i18n-html="projects.teaching.meta">本科毕业设计 · 全栈开发<br>2025.11 -
@@ -803,14 +811,15 @@
 								iOS/Android 原生 App，与导师合作在华中科技大学《电磁场与电磁波》（本科）与《学术规范与论文写作》（研究生）课程试点（初期预计覆盖 200+ 研究生）</li>
 							<li><strong>核心职责</strong>：独立完成全栈开发（React 前端 / Go 后端 / Python AI 服务），构建跨端应用，形成移动端/桌面端多端覆盖
 							</li>
+							<li><strong>跨平台客户端</strong>：基于 Vite + React + Tauri 构建 Windows/macOS/Linux
+								跨平台桌面客户端，实现统一代码库多平台分发；集成端侧 AI 本地推理，利用 NPU 加速实现离线智能答疑</li>
 							<li><strong>架构重构</strong>：发现现有平台以课程为核心，无法追踪学生跨课程学习进展；重构为学生中心架构，设计学生画像 +
-								学习档案，支持长期学情追踪与知识点薄弱分析，并引入 LLM Agent（微调/Tool Calling）实现个性化答疑，引入 FPGA/NPU 加速 AI 推理</li>
-							<li><strong>技术选型</strong>：对比 BM25/向量检索/Hybrid 检索后选择 GraphRAG，解决知识点关联性检索问题，答疑相关性从 68% 提升至
-								85%+</li>
+								学习档案，支持长期学情追踪与知识点薄弱分析，并引入 LLM Agent（微调/Tool Calling）实现个性化答疑</li>
 							<li><strong>核心成果</strong>：Docker Compose 一键部署，支持 30+ 并发用户；AI 答疑准确率 85%+，作业批改覆盖 80% 常见题型
 							</li>
-							<li><strong>技术栈</strong>：React/TS/Vite · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker
-								Compose · Qwen3 · GraphRAG · iOS/Android</li>
+							<li><strong>技术栈</strong>：Vite/React/TS/Tauri · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO ·
+								Docker
+								Compose · Qwen3 · GraphRAG · NPU 加速</li>
 						</ul>
 					</div>
 
@@ -818,7 +827,7 @@
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag apple">Apple</span>
-								<a href="https://github.com/JadeSnow7/SwiftSweep" target="_blank" rel="noopener"
+								<a href="https://jadesnow7.github.io/SwiftSweep/" target="_blank" rel="noopener"
 									data-i18n="projects.swiftsweep.title">SwiftSweep · macOS 系统优化工具</a>
 							</div>
 							<div class="project-meta" data-i18n-html="projects.swiftsweep.meta">个人开源<br>2025.12 - 至今
@@ -861,7 +870,8 @@
 				<div class="section section-campus">
 					<div class="section-title" data-i18n="section.campus">校园经历</div>
 					<ul class="simple-list" data-i18n-html="campus.list">
-						<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：参与 C++ 网络仿真平台开发，负责时延算法 | 媒体组（运营）：运营团队公众号</li>
+						<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：将华为海思网络仿真算法移植至 NS-3 平台（C++），负责时延/端到端时延计算模块开发，深入理解
+							TCP/IP 协议栈与网络编程 | 媒体组（运营）：运营团队公众号</li>
 						<li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导 500+ 人社群管理，组织线上线下宣讲，覆盖数百人</li>
 					</ul>
 				</div>
@@ -919,9 +929,9 @@
 						tags_ai:
 							'<span class="core-tag primary">Python</span><span class="core-tag primary">LLM Agent</span><span class="core-tag">RAG / GraphRAG</span><span class="core-tag">Model Fine-tuning</span><span class="core-tag">Qwen / Llama</span><span class="core-tag">LangChain</span>',
 						summary_client:
-							'<span class="highlight">客户端开发工程师</span>，专注于<span class="highlight">macOS/iOS 原生开发</span>与<span class="highlight">性能极致优化</span>。精通 Swift、C++ 与系统级编程，深入理解 OS 内存管理与多线程机制，具备丰富的跨平台架构设计与调试经验。',
+							'<span class="highlight">PC 客户端开发工程师</span>，专注于<span class="highlight">Windows/macOS/Linux 跨平台桌面端开发</span>与<span class="highlight">性能优化</span>。精通 C++（STL/Modern C++）与 Swift，深入理解 OS 内存管理、进程/线程调度与 IPC 机制，具备从 UI 渲染到底层网络编程的全栈客户端开发经验，擅长使用 GDB/LLDB + Instruments 进行深度性能分析与调优。',
 						tags_client:
-							'<span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag primary">C++ / Qt</span><span class="core-tag">macOS / iOS</span><span class="core-tag">Performance Optimization</span><span class="core-tag">System Architecture</span><span class="core-tag">XPC / IPC</span>',
+							'<span class="core-tag primary">C++ (STL/Qt)</span><span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag">Windows / macOS / Linux</span><span class="core-tag">Performance Optimization</span><span class="core-tag">Network Programming</span><span class="core-tag">XPC / IPC</span>',
 						summary_fullstack:
 							'<span class="highlight">全栈工程师</span>，具备<span class="highlight">端到端产品交付能力</span>。精通现代 Web 技术栈（React/Go/Python）与分布式系统设计，擅长解决复杂工程问题，从数据库设计到前端交互实现闭环落地。',
 						tags_fullstack:
@@ -932,13 +942,14 @@
 						major: " · 集成电路设计与集成系统（本科）",
 					},
 					skills: {
-						lang: { label: "语言/框架", value: "C++、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React Native/Expo" },
+						lang: { label: "语言/框架", value: "C++ (STL/Modern C++/Qt)、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React/Tauri" },
 						ai: { label: "AI / 多模态", value: "LLM Agent (微调/Tool Calling)、SD/SVD 图像视频生成、TTS 语音合成、GraphRAG、pHash/LSH 相似检测" },
 						platform: {
 							label: "系统 / 平台",
-							value: "macOS 原生开发 (App Sandbox/Notarization/XPC)、Linux 运维、Docker 容器化、PostgreSQL/Redis/MySQL",
+							value: "Windows/macOS/Linux 跨平台桌面开发、App Sandbox/Notarization/XPC、网络编程 (Socket/HTTP)、Docker 容器化",
 						},
-						tools: { label: "架构 / 工具", value: "MVVM/Clean Architecture、GDB/LLDB 调试、CMake/Makefile 构建、Git 协作、CI/CD" },
+						tools: { label: "架构 / 工具", value: "MVVM/Clean Architecture、GDB/LLDB/Instruments 性能调优、CMake/Makefile 构建、Git 协作、CI/CD" },
+						devflow: { label: "AI 驱动工程", value: "架构先行设计、代码规范与 Spec 驱动、函数式/组合式解耦、Prompt 工程与多 Agent 协作、AI 辅助编程加速工程交付" },
 					},
 					tag: { fullstack: "全栈", system: "系统" },
 					projects: {
@@ -952,7 +963,7 @@
 							title: "AI 智能教学平台",
 							meta: "本科毕业设计 · 全栈开发 · 2025.11 - 至今",
 							points:
-								"<li><strong>项目定位</strong>：以学生为中心的高校 AI 教学平台，支持学习状态追踪、个性化答疑/批改与学习建议；覆盖桌面端、企业微信 H5 及 iOS/Android 原生 App，与导师合作在华中科技大学《电磁场与电磁波》（本科）与《学术规范与论文写作》（研究生）课程试点（初期预计覆盖 200+ 研究生）</li><li><strong>核心职责</strong>：独立完成全栈开发（React 前端 / Go 后端 / Python AI 服务），构建跨端应用，形成移动端/桌面端多端覆盖</li><li><strong>架构重构</strong>：发现现有平台以课程为核心，无法追踪学生跨课程学习进展；重构为学生中心架构，设计学生画像 + 学习档案，支持长期学情追踪与知识点薄弱分析，并引入 LLM Agent（微调/Tool Calling）实现个性化答疑，引入 FPGA/NPU 加速 AI 推理</li><li><strong>技术选型</strong>：对比 BM25/向量检索/Hybrid 检索后选择 GraphRAG，解决知识点关联性检索问题，答疑相关性从 68% 提升至 85%+</li><li><strong>核心成果</strong>：Docker Compose 一键部署，支持 30+ 并发用户；AI 答疑准确率 85%+，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：React/TS/Vite · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · iOS/Android</li>",
+								"<li><strong>项目定位</strong>：以学生为中心的高校 AI 教学平台，支持学习状态追踪、个性化答疑/批改与学习建议；覆盖桌面端、企业微信 H5 及 iOS/Android 原生 App，与导师合作在华中科技大学《电磁场与电磁波》（本科）与《学术规范与论文写作》（研究生）课程试点（初期预计覆盖 200+ 研究生）</li><li><strong>核心职责</strong>：独立完成全栈开发（React 前端 / Go 后端 / Python AI 服务），构建跨端应用，形成移动端/桌面端多端覆盖</li><li><strong>跨平台客户端</strong>：基于 Vite + React + Tauri 构建 Windows/macOS/Linux 跨平台桌面客户端，实现统一代码库多平台分发；集成端侧 AI 本地推理，利用 NPU 加速实现离线智能答疑</li><li><strong>架构重构</strong>：发现现有平台以课程为核心，无法追踪学生跨课程学习进展；重构为学生中心架构，设计学生画像 + 学习档案，支持长期学情追踪与知识点薄弱分析，并引入 LLM Agent（微调/Tool Calling）实现个性化答疑</li><li><strong>核心成果</strong>：Docker Compose 一键部署，支持 30+ 并发用户；AI 答疑准确率 85%+，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TS/Tauri · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU 加速</li>",
 						},
 						swiftsweep: {
 							title: "SwiftSweep · macOS 系统优化工具",
@@ -969,7 +980,7 @@
 					},
 					campus: {
 						list:
-							"<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：参与 C++ 网络仿真平台开发，负责时延算法 | 媒体组（运营）：运营团队公众号</li><li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导 500+ 人社群管理，组织线上线下宣讲，覆盖数百人</li>",
+							"<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：将华为海思网络仿真算法移植至 NS-3 平台（C++），负责时延/端到端时延计算模块开发，深入理解 TCP/IP 协议栈与网络编程 | 媒体组（运营）：运营团队公众号</li><li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导 500+ 人社群管理，组织线上线下宣讲，覆盖数百人</li>",
 					},
 					/*
 					hobbies: {
@@ -1004,9 +1015,9 @@
 						tags_ai:
 							'<span class="core-tag primary">Python</span><span class="core-tag primary">LLM Agent</span><span class="core-tag">RAG / GraphRAG</span><span class="core-tag">Model Fine-tuning</span><span class="core-tag">Qwen / Llama</span><span class="core-tag">LangChain</span>',
 						summary_client:
-							'<span class="highlight">Client Developer</span>, focused on <span class="highlight">macOS/iOS native development</span> and <span class="highlight">performance optimization</span>. Expert in Swift, C++ and system programming with deep understanding of OS architecture.',
+							'<span class="highlight">PC Client Developer</span>, focused on <span class="highlight">Windows/macOS/Linux cross-platform desktop development</span> and <span class="highlight">performance optimization</span>. Expert in C++ (STL/Modern C++) and Swift, with deep understanding of OS memory management, process/thread scheduling and IPC. Full-stack client experience from UI rendering to network programming, proficient in GDB/LLDB + Instruments profiling.',
 						tags_client:
-							'<span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag primary">C++ / Qt</span><span class="core-tag">macOS / iOS</span><span class="core-tag">Performance Optimization</span><span class="core-tag">System Architecture</span><span class="core-tag">XPC / IPC</span>',
+							'<span class="core-tag primary">C++ (STL/Qt)</span><span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag">Windows / macOS / Linux</span><span class="core-tag">Performance Optimization</span><span class="core-tag">Network Programming</span><span class="core-tag">XPC / IPC</span>',
 						summary_fullstack:
 							'<span class="highlight">Full-stack Engineer</span> with <span class="highlight">end-to-end product delivery capability</span>. Proficient in modern web stack (React/Go/Python) and distributed system design. Capable of handling complex engineering challenges.',
 						tags_fullstack:
@@ -1017,13 +1028,14 @@
 						major: " · Integrated Circuits Design and Systems (B.Eng.)",
 					},
 					skills: {
-						lang: { label: "Languages/Frameworks", value: "C++, Python (PyTorch, FastAPI), Swift (SwiftUI), TypeScript (React)" },
+						lang: { label: "Languages/Frameworks", value: "C++ (STL/Modern C++/Qt), Python (PyTorch, FastAPI), Swift (SwiftUI), TypeScript (React/Tauri)" },
 						ai: { label: "AI / Multimodal", value: "LLM agents (fine-tuning, tool calling), SD/SVD generation, TTS, GraphRAG, pHash/LSH similarity" },
 						platform: {
 							label: "Systems/Platforms",
-							value: "Native macOS (App Sandbox/Notarization/XPC), Linux, Docker, PostgreSQL/Redis/MySQL",
+							value: "Windows/macOS/Linux cross-platform desktop, App Sandbox/Notarization/XPC, Network programming (Socket/HTTP), Docker",
 						},
-						tools: { label: "Architecture/Tools", value: "MVVM/Clean Architecture, GDB/LLDB, Instruments profiling, CMake/Makefile, Git workflow" },
+						tools: { label: "Architecture/Tools", value: "MVVM/Clean Architecture, GDB/LLDB/Instruments profiling, CMake/Makefile, Git workflow, CI/CD" },
+						devflow: { label: "AI-Driven Engineering", value: "Architecture-first design, Code spec & style standards, Functional/compositional decoupling, Prompt engineering & multi-agent orchestration, AI-assisted coding for accelerated delivery" },
 					},
 					tag: { fullstack: "Full-stack", system: "System" },
 					projects: {
@@ -1037,7 +1049,7 @@
 							title: "AI-powered Teaching Platform",
 							meta: "Undergraduate Thesis · Full-stack Developer · 2025.11 - Present",
 							points:
-								"<li><strong>Overview</strong>: Student-centric AI teaching platform for higher education with longitudinal learning-state tracking and personalized guidance (Q&A / grading); supports desktop, WeCom H5, and iOS/Android native apps; preparing a pilot for HUST graduate “Professional English Writing” course</li><li><strong>Role</strong>: Independently delivered full stack (React FE / Go BE / Python AI service), added iOS/Android for multi-client coverage</li><li><strong>Rearchitecture</strong>: Found existing platforms course-centric, unable to track cross-course learning progress; restructured to student-centric with student profile + learning portfolio for long-term tracking and knowledge-gap analysis</li><li><strong>Tech Selection</strong>: Compared BM25/vector/hybrid retrieval, chose GraphRAG to solve knowledge-point association retrieval, improving Q&A relevance from 68% to 85%+</li><li><strong>Impact</strong>: One-command Docker Compose deployment; 200+ concurrent users; 85%+ Q&A accuracy; grading covers 80% common question types</li><li><strong>Stack</strong>: React/TS/Vite · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · iOS/Android</li>",
+								"<li><strong>Overview</strong>: Student-centric AI teaching platform for higher education with longitudinal learning-state tracking and personalized guidance (Q&A / grading); supports desktop, WeCom H5, and iOS/Android native apps; pilot at HUST courses (200+ graduate students)</li><li><strong>Role</strong>: Independently delivered full stack (React FE / Go BE / Python AI service), multi-client coverage across mobile and desktop</li><li><strong>Cross-platform Client</strong>: Built Windows/macOS/Linux desktop client with Vite + React + Tauri for unified codebase multi-platform distribution; integrated on-device AI local inference with NPU acceleration for offline intelligent Q&A</li><li><strong>Rearchitecture</strong>: Found existing platforms course-centric, unable to track cross-course progress; restructured to student-centric with student profile + learning portfolio, introduced LLM Agent (fine-tuning/Tool Calling) for personalized Q&A</li><li><strong>Impact</strong>: One-command Docker Compose deployment; 30+ concurrent users; 85%+ Q&A accuracy; grading covers 80% common question types</li><li><strong>Stack</strong>: Vite/React/TS/Tauri · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>",
 						},
 						swiftsweep: {
 							title: "SwiftSweep · macOS Optimization Tool",
@@ -1054,7 +1066,7 @@
 					},
 					campus: {
 						list:
-							"<li><strong>Dian Team (Qiming College)</strong> · HiSilicon/Media: C++ network simulation platform developer & Official Account manager (5k+ followers)</li><li><strong>HUST Guizhou Admissions Team</strong> · Core Member: Led 500+ community & 1000+ outreach</li>",
+							"<li><strong>Dian Team (Qiming College)</strong> \u00b7 HiSilicon Group: Ported Huawei HiSilicon network simulation algorithms to NS-3 platform (C++), developed delay/end-to-end delay calculation modules with deep TCP/IP stack understanding | Media Group: Official Account manager (5k+ followers)</li><li><strong>HUST Guizhou Admissions Team</strong> \u00b7 Core Member: Led 500+ community & 1000+ outreach</li>",
 					},
 					/*
 					hobbies: {
