@@ -847,7 +847,7 @@
 						</ul>
 					</div>
 
-					<div class="project role-item show-all show-client">
+					<div class="project role-item show-all show-ai show-fullstack">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag apple" data-i18n="tag.system">系统</span>
@@ -863,6 +863,23 @@
 							<li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread
 								RTOS 并运行 Dhrystone 基准测试</li>
 							<li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>
+						</ul>
+					</div>
+
+					<div class="project role-item show-client">
+						<div class="project-header">
+							<div class="project-title">
+								<span class="tag apple" data-i18n="tag.system">系统</span>
+								<span data-i18n="projects.riscv_client.title">RISC-V CPU 设计与仿真</span>
+							</div>
+							<div class="project-meta" data-i18n-html="projects.riscv_client.meta">集创赛二等奖<br>2025.03 -
+								2025.07
+							</div>
+						</div>
+						<ul data-i18n-html="projects.riscv_client.points">
+							<li><strong>核心工作</strong>：设计 RV32IMACFG 处理器并移植 OS；基于 C++ 构建仿真验证环境与 CI 流水线，设计 50+ 测试用例</li>
+							<li><strong>系统认知</strong>：深入理解计算机体系结构、流水线技术与软硬件协同设计</li>
+							<li><strong>技术栈</strong>：C++ · Python · Makefile · SystemVerilog · RISC-V · RTOS</li>
 						</ul>
 					</div>
 				</div>
@@ -977,6 +994,12 @@
 							points:
 								"<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>",
 						},
+						riscv_client: {
+							title: "RISC-V CPU 设计与仿真",
+							meta: "集创赛二等奖<br>2025.03 - 2025.07",
+							points:
+								"<li><strong>核心工作</strong>：设计 RV32IMACFG 处理器并移植 OS；基于 C++ 构建仿真验证环境与 CI 流水线，设计 50+ 测试用例</li><li><strong>系统认知</strong>：深入理解计算机体系结构、流水线技术与软硬件协同设计</li><li><strong>技术栈</strong>：C++ · Python · Makefile · SystemVerilog · RISC-V · RTOS</li>",
+						},
 					},
 					campus: {
 						list:
@@ -1062,6 +1085,12 @@
 							meta: "IC Innovation Contest · 2nd Prize · 2025.03 - 2025.07",
 							points:
 								"<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>",
+						},
+						riscv_client: {
+							title: "RISC-V CPU Design & Simulation",
+							meta: "IC Innovation Contest · 2nd Prize · 2025.03 - 2025.07",
+							points:
+								"<li><strong>Core Work</strong>: Designed RV32IMACFG core & ported RTOS; Built simulation/CI pipeline with C++, designed 50+ test cases</li><li><strong>System Insight</strong>: Deep understanding of computer architecture, pipelining, and HW/SW co-design</li><li><strong>Stack</strong>: C++ · Python · Makefile · SystemVerilog · RISC-V · RTOS</li>",
 						},
 					},
 					campus: {
