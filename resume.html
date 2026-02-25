@@ -151,7 +151,8 @@
 		body.role-all .role-item.show-all,
 		body.role-ai .role-item.show-ai,
 		body.role-client .role-item.show-client,
-		body.role-fullstack .role-item.show-fullstack {
+		body.role-fullstack .role-item.show-fullstack,
+		body.role-server .role-item.show-server {
 			display: block;
 		}
 
@@ -159,7 +160,8 @@
 		body.role-all .role-item-grid.show-all,
 		body.role-ai .role-item-grid.show-ai,
 		body.role-client .role-item-grid.show-client,
-		body.role-fullstack .role-item-grid.show-fullstack {
+		body.role-fullstack .role-item-grid.show-fullstack,
+		body.role-server .role-item-grid.show-server {
 			display: block;
 		}
 
@@ -640,6 +642,7 @@
 				<button class="role-btn" data-role-btn="ai">AI</button>
 				<button class="role-btn" data-role-btn="client">端侧</button>
 				<button class="role-btn" data-role-btn="fullstack">全栈</button>
+				<button class="role-btn" data-role-btn="server">服务端</button>
 			</div>
 			<button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
 		</div>
@@ -723,6 +726,23 @@
 							<span class="core-tag">Database Design</span>
 						</div>
 					</div>
+
+					<div class="profile-summary role-item show-server">
+						<p data-i18n-html="core.summary_server">
+							<span class="highlight">服务端开发工程师</span>，熟练掌握 <span class="highlight">Go / C++ / Java</span>
+							服务端开发。
+							深入理解常用数据结构与算法，熟悉 TCP/HTTP 网络协议栈；具备高并发任务调度系统、微服务 REST API 与分布式中间件（Redis/MySQL）完整落地经验；使用 Git
+							进行版本管理与团队协作，具备在校项目主导交付经验。
+						</p>
+						<div class="core-tags" data-i18n-html="core.tags_server">
+							<span class="core-tag primary">Go / C++</span>
+							<span class="core-tag primary">TCP / HTTP</span>
+							<span class="core-tag">数据结构与算法</span>
+							<span class="core-tag">Redis / MySQL</span>
+							<span class="core-tag">Linux / Docker</span>
+							<span class="core-tag">Git 版本管理</span>
+						</div>
+					</div>
 				</div>
 
 				<div class="section section-education">
@@ -739,7 +759,7 @@
 				<div class="section section-skills">
 					<div class="section-title" data-i18n="section.skills">专业技能</div>
 					<div class="skills-grid">
-						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack">
+						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack show-server">
 							<div class="label" data-i18n="skills.lang.label">语言/框架</div>
 							<div class="value" data-i18n="skills.lang.value">
 								C++ (STL/Modern C++/Qt)、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React/Tauri
@@ -750,12 +770,12 @@
 							<div class="value" data-i18n="skills.ai.value">LLM Agent (微调/Tool Calling)、SD/SVD 图像视频生成、TTS
 								语音合成、GraphRAG、pHash/LSH 相似检测</div>
 						</div>
-						<div class="skill-card role-item-grid show-all show-client show-fullstack">
+						<div class="skill-card role-item-grid show-all show-client show-fullstack show-server">
 							<div class="label" data-i18n="skills.platform.label">系统 / 平台</div>
 							<div class="value" data-i18n="skills.platform.value">Windows/macOS/Linux 跨平台桌面开发、App
 								Sandbox/Notarization/XPC、网络编程 (Socket/HTTP)、Docker 容器化</div>
 						</div>
-						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack">
+						<div class="skill-card role-item-grid show-all show-ai show-client show-fullstack show-server">
 							<div class="label" data-i18n="skills.tools.label">架构 / 工具</div>
 							<div class="value" data-i18n="skills.tools.value">MVVM/Clean
 								Architecture、GDB/LLDB/Instruments
@@ -766,13 +786,18 @@
 							<div class="value" data-i18n="skills.devflow.value">架构先行设计、代码规范与 Spec 驱动、函数式/组合式解耦、Prompt
 								工程与多 Agent 协作、AI 辅助编程加速工程交付</div>
 						</div>
+						<div class="skill-card role-item-grid show-server">
+							<div class="label">后端 / 中间件</div>
+							<div class="value">Go/Gin 高并发 API 服务、Redis + Asynq 异步任务队列、MySQL/MinIO 存储、Docker 一键部署、RESTful
+								API 设计</div>
+						</div>
 					</div>
 				</div>
 
 				<div class="section section-projects">
 					<div class="section-title" data-i18n="section.projects">项目经历</div>
 
-					<div class="project featured role-item show-all show-ai show-client show-fullstack">
+					<div class="project featured role-item show-all show-ai show-client show-fullstack show-server">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag" data-i18n="tag.fullstack">全栈</span>
@@ -796,7 +821,7 @@
 						</ul>
 					</div>
 
-					<div class="project featured role-item show-all show-ai show-client show-fullstack">
+					<div class="project featured role-item show-all show-ai show-client show-fullstack show-server">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag" data-i18n="tag.fullstack">全栈</span>
@@ -847,7 +872,7 @@
 						</ul>
 					</div>
 
-					<div class="project role-item show-all show-ai show-fullstack">
+					<div class="project role-item show-all show-ai show-fullstack show-server">
 						<div class="project-header">
 							<div class="project-title">
 								<span class="tag apple" data-i18n="tag.system">系统</span>
@@ -950,9 +975,13 @@
 						tags_client:
 							'<span class="core-tag primary">C++ (STL/Qt)</span><span class="core-tag primary">Swift / SwiftUI</span><span class="core-tag">Windows / macOS / Linux</span><span class="core-tag">Performance Optimization</span><span class="core-tag">Network Programming</span><span class="core-tag">XPC / IPC</span>',
 						summary_fullstack:
-							'<span class="highlight">全栈工程师</span>，具备<span class="highlight">端到端产品交付能力</span>。精通现代 Web 技术栈（React/Go/Python）与分布式系统设计，擅长解决复杂工程问题，从数据库设计到前端交互实现闭环落地。',
+							'<span class="highlight">服务端开发工程师</span>，侧重于<span class="highlight">高并发系统设计</span>与<span class="highlight">分布式架构落地</span>。精通现代 Go/C++ 后端技术栈，深入理解操作系统内存管理、TCP/HTTP 网络编程与分布式中间件（Redis/MySQL）。具备完整任务调度系统、多模态推理服务封装及微服务部署经验。',
 						tags_fullstack:
-							'<span class="core-tag primary">Go / Gin</span><span class="core-tag primary">React / TypeScript</span><span class="core-tag">Python / FastAPI</span><span class="core-tag">Docker / K8s</span><span class="core-tag">Microservices</span><span class="core-tag">Database Design</span>',
+							'<span class="core-tag primary">Go / C++</span><span class="core-tag primary">Linux / OS</span><span class="core-tag">高并发调度</span><span class="core-tag">Redis / MySQL</span><span class="core-tag">TCP / HTTP</span><span class="core-tag">Docker 部署</span>',
+						summary_server:
+							'<span class="highlight">服务端开发工程师</span>，熟练掌握 <span class="highlight">Go / C++ / Java</span> 服务端开发。深入理解常用数据结构与算法，熟悉 TCP/HTTP 网络协议栈；具备高并发任务调度系统、微服务 REST API 与分布式中间件（Redis/MySQL）完整落地经验；使用 Git 进行版本管理与团队协作，具备在校项目主导交付经验。',
+						tags_server:
+							'<span class="core-tag primary">Go / C++</span><span class="core-tag primary">TCP / HTTP</span><span class="core-tag">数据结构与算法</span><span class="core-tag">Redis / MySQL</span><span class="core-tag">Linux / Docker</span><span class="core-tag">Git 版本管理</span>',
 					},
 					education: {
 						school: "华中科技大学",
@@ -971,16 +1000,16 @@
 					tag: { fullstack: "全栈", system: "系统" },
 					projects: {
 						story: {
-							title: "故事成片：跨平台 AI 视频生成系统",
-							meta: "字节工程营 · 小组长（剪映客户端/多模态） · 2025.11 - 至今",
+							title: "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+							meta: "字节工程营 · 小组长（后端核心开发） · 2025.11 - 至今",
 							points:
-								"<li><strong>项目定位</strong>：端到端 AI 视频生成系统（文本→智能分镜→图像/配音/视频→FFmpeg 合成），Windows/macOS 桌面端支持实时编辑/预览/导出</li><li><strong>核心职责</strong>：小组长（5人），主导架构设计与任务分工，建立 Code Review + CI/CD 流程，2 周内完成 MVP 上线</li><li><strong>技术挑战</strong>：多模态任务（图像/语音/视频）并行执行易导致 OOM 和任务阻塞；设计任务网关 + 优先级队列实现智能调度（暂停/恢复/取消/重试/降级），通过任务拆分 + 异步执行解决阻塞问题，长任务中断恢复率 95%+，内存峰值降低 30%，prompt 优化，提升生成视频质量</li><li><strong>核心成果</strong>：8GB 显存下稳定生成 30s 720p 视频；缓存复用率从 25% 提升至 65%（+40%），减少重复 SD 推理；渲染帧率从 30fps 优化至 60fps</li><li><strong>技术栈</strong>：Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen/SD/SVD/TTS · MySQL/MinIO</li>",
+								"<li><strong>项目定位</strong>：构建文本→分镜→图像/语音/视频生成→合成导出的完整多模态推理服务系统。设计“API层 + 任务调度层 + 推理服务层”三层架构</li><li><strong>服务端架构设计</strong>：基于 Go + Gin 构建高并发 REST API；使用 Redis + Asynq 实现分布式异步任务队列；设计统一任务生命周期（创建/暂停/取消/重试/降级）机制</li><li><strong>核心优化成果</strong>：构建任务优先级调度机制，避免线程阻塞与OOM，内存峰值降低 30%；支持长任务断点恢复，恢复成功率 95%+；缓存命中率从 25% 提升至 65%；支持 8G 显存环境稳定生成 30s+ 视频</li><li><strong>技术栈</strong>：Go / Gin / FastAPI / Redis / Asynq / Docker / MySQL / MinIO</li>",
 						},
 						teaching: {
-							title: "AI 智能教学平台",
-							meta: "本科毕业设计 · 全栈开发 · 2025.11 - 至今",
+							title: "AI 智能教学平台（微服务后端设计）",
+							meta: "独立全栈开发（侧重后端架构） · 2025.11 - 至今",
 							points:
-								"<li><strong>项目定位</strong>：以学生为中心的高校 AI 教学平台，支持学习状态追踪、个性化答疑/批改与学习建议；覆盖桌面端、企业微信 H5 及 iOS/Android 原生 App，与导师合作在华中科技大学《电磁场与电磁波》（本科）与《学术规范与论文写作》（研究生）课程试点（初期预计覆盖 200+ 研究生）</li><li><strong>核心职责</strong>：独立完成全栈开发（React 前端 / Go 后端 / Python AI 服务），构建跨端应用，形成移动端/桌面端多端覆盖</li><li><strong>跨平台客户端</strong>：基于 Vite + React + Tauri 构建 Windows/macOS/Linux 跨平台桌面客户端，实现统一代码库多平台分发；集成端侧 AI 本地推理，利用 NPU 加速实现离线智能答疑</li><li><strong>架构重构</strong>：发现现有平台以课程为核心，无法追踪学生跨课程学习进展；重构为学生中心架构，设计学生画像 + 学习档案，支持长期学情追踪与知识点薄弱分析，并引入 LLM Agent（微调/Tool Calling）实现个性化答疑</li><li><strong>核心成果</strong>：Docker Compose 一键部署，支持 30+ 并发用户；AI 答疑准确率 85%+，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TS/Tauri · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU 加速</li>",
+								"<li><strong>项目定位</strong>：支持个性化答疑、学习轨迹分析与智能批改的 AI 教学系统。</li><li><strong>服务端设计</strong>：使用 Go/Gin + FastAPI 构建微服务结构。设计学生画像模型与长期数据存储结构；实现 LLM Agent Tool Calling 机制；Docker Compose 一键部署应用。</li><li><strong>系统能力</strong>：优化接口响应速度与服务稳定性，支持 30+ 并发用户。设计缓存机制与数据异步同步机制。</li><li><strong>技术栈</strong>：Go / Gin / FastAPI / Redis / MySQL / Docker</li>",
 						},
 						swiftsweep: {
 							title: "SwiftSweep · macOS 系统优化工具",
@@ -989,10 +1018,10 @@
 								"<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块</li><li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink 逃逸检测），零误删事故</li><li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService 注册系统级 Helper</li><li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测；实现鉴权机制和用户数据隔离；实现插件系统；通过 Developer ID 签名 + Notarization 发布</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>",
 						},
 						riscv: {
-							title: "RISC-V CPU 设计",
-							meta: "集创赛二等奖 · 2025.03 - 2025.07",
+							title: "基于 ns-3 的网络仿真平台",
+							meta: "华为海思 · C++核心开发 · 2023.03 - 2024.06",
 							points:
-								"<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>",
+								"<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景构建。</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与性能统计系统。</li><li><strong>架构升级</strong>：独立承担并完成 ns-3 开源版本大版本迁移（3.31 → 3.38），解决底层 C++ Make/CMake 构建环境解耦问题。</li><li><strong>技术成果</strong>：实现了吞吐率、端到端时延、丢包率等核心指标的精细化计算与分析，支撑新一代通信协议评估。</li><li><strong>技术栈</strong>：C++ / Linux / Python / CMake / Git</li>",
 						},
 						riscv_client: {
 							title: "RISC-V CPU 设计与仿真",
@@ -1045,6 +1074,10 @@
 							'<span class="highlight">Full-stack Engineer</span> with <span class="highlight">end-to-end product delivery capability</span>. Proficient in modern web stack (React/Go/Python) and distributed system design. Capable of handling complex engineering challenges.',
 						tags_fullstack:
 							'<span class="core-tag primary">Go / Gin</span><span class="core-tag primary">React / TypeScript</span><span class="core-tag">Python / FastAPI</span><span class="core-tag">Docker / K8s</span><span class="core-tag">Microservices</span><span class="core-tag">Database Design</span>',
+						summary_server:
+							'<span class="highlight">Server-side Engineer</span>, proficient in <span class="highlight">Go / C++ / Java</span> backend development. Deep understanding of common data structures and algorithms, familiar with TCP/HTTP protocol stack; hands-on experience delivering high-concurrency task scheduling, microservice REST APIs and distributed middleware (Redis/MySQL); version control with Git in collaborative team projects.',
+						tags_server:
+							'<span class="core-tag primary">Go / C++</span><span class="core-tag primary">TCP / HTTP</span><span class="core-tag">Data Structures &amp; Algorithms</span><span class="core-tag">Redis / MySQL</span><span class="core-tag">Linux / Docker</span><span class="core-tag">Git Version Control</span>',
 					},
 					education: {
 						school: "Huazhong University of Science and Technology",
@@ -1178,7 +1211,7 @@
 
 			// --- Role Switching Logic ---
 			const STORAGE_ROLE_KEY = "site_role";
-			const SUPPORTED_ROLES = new Set(["all", "ai", "client", "fullstack"]);
+			const SUPPORTED_ROLES = new Set(["all", "ai", "client", "fullstack", "server"]);
 			const DEFAULT_ROLE = "all";
 
 			const readPreferredRole = () => {
@@ -1205,6 +1238,7 @@
 				if (currentRole === "ai") filename = "resume-ai.pdf";
 				else if (currentRole === "client") filename = "resume-client.pdf";
 				else if (currentRole === "fullstack") filename = "resume-fullstack.pdf";
+				else if (currentRole === "server") filename = "resume-server.pdf";
 
 				// Update the base href to point to the correct file
 				const newHref = baseHref.replace(/resume(-[a-z]+)?\.pdf$/, filename);
@@ -1220,7 +1254,7 @@
 				const picked = SUPPORTED_ROLES.has(role) ? role : DEFAULT_ROLE;
 
 				// Update Body Class
-				document.body.classList.remove("role-all", "role-ai", "role-client", "role-fullstack");
+				document.body.classList.remove("role-all", "role-ai", "role-client", "role-fullstack", "role-server");
 				document.body.classList.add(`role-${picked}`);
 
 				// Update Buttons
