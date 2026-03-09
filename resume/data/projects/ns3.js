@@ -10,7 +10,7 @@ export default {
         en: "HiSilicon Network Simulation Platform Re-architecture",
     },
     // Which roles show this project
-    showIn: ["all", "system", "fullstack", "server"],
+    showIn: ["all", "system", "server"],
     descriptions: {
         default: {
             zh: {

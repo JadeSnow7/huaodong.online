@@ -9,7 +9,7 @@ export default {
         zh: "基於 RISC-V 架构的五级流水线 CPU 设计",
         en: "RISC-V 5-Stage Pipelined CPU",
     },
-    showIn: ["all", "system", "fullstack"],
+    showIn: ["all", "system"],
     descriptions: {
         default: {
             zh: {

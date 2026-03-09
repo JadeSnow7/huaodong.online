@@ -15,10 +15,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
 		rel="stylesheet">
 	<style>
-		@page {
-			margin: 0.15in;
-			size: A4;
-		}
+			@page {
+				margin: 0.1in;
+				size: A4;
+			}
 
 		@media print {
 			body {
@@ -511,16 +511,16 @@
 			}
 		}
 
-		@media print {
-			.nav-bar {
-				display: none;
-			}
+			@media print {
+				.nav-bar {
+					display: none;
+				}
 
-			body {
-				background: #fff;
-				font-size: 8.4pt;
-				line-height: 1.28;
-			}
+				body {
+					background: #fff;
+					font-size: 8pt;
+					line-height: 1.2;
+				}
 
 			.resume-wrapper {
 				padding: 0;
@@ -531,89 +531,100 @@
 				border-radius: 0;
 			}
 
-			.header {
-				padding: 12px 14px 8px;
-			}
+				.header {
+					padding: 8px 12px 6px;
+				}
 
-			.header h1 {
-				font-size: 23pt;
-				margin-bottom: 4px;
-			}
+				.header h1 {
+					font-size: 21pt;
+					margin-bottom: 2px;
+				}
 
-			.contact {
-				gap: 12px;
-				font-size: 8.6pt;
-			}
+				.contact {
+					gap: 8px;
+					font-size: 8.1pt;
+				}
 
-			.content {
-				padding: 8px 14px 10px;
-			}
+				.content {
+					padding: 6px 12px 8px;
+				}
 
-			.profile-summary {
-				padding: 10px 12px;
-				margin-bottom: 6px;
-			}
+				.profile-summary {
+					padding: 8px 10px;
+					margin-bottom: 4px;
+				}
 
-			.profile-summary p {
-				font-size: 8.4pt;
-				line-height: 1.3;
-			}
+				.profile-summary p {
+					font-size: 7.9pt;
+					line-height: 1.18;
+				}
 
 			.core-tags {
 				display: none;
 			}
 
-			.section {
-				margin-bottom: 8px;
-			}
+				.section {
+					margin-bottom: 6px;
+				}
 
-			.section-title {
-				font-size: 10.8pt;
-				margin-bottom: 6px;
-				padding-bottom: 3px;
-			}
+				.section-title {
+					font-size: 10pt;
+					margin-bottom: 4px;
+					padding-bottom: 2px;
+				}
 
-			.skills-grid {
-				gap: 6px;
-			}
+				.skills-grid {
+					gap: 4px;
+				}
 
-			.skill-card {
-				padding: 8px 10px;
-			}
+				.skill-card {
+					padding: 6px 8px;
+				}
 
-			.project {
-				padding: 8px 10px;
-				margin-bottom: 6px;
-			}
+				.skill-card .label {
+					font-size: 7.2pt;
+					margin-bottom: 2px;
+				}
 
-			.project-header {
-				margin-bottom: 5px;
-			}
+				.skill-card .value {
+					font-size: 8.3pt;
+					line-height: 1.15;
+				}
 
-			.project-title {
-				font-size: 10.8pt;
-			}
+				.project {
+					padding: 6px 8px;
+					margin-bottom: 4px;
+				}
 
-			.project-meta {
-				font-size: 7.6pt;
-			}
+				.project-header {
+					margin-bottom: 4px;
+				}
 
-			.project ul {
-				margin-left: 0;
-				margin-top: 2px;
-				padding-left: 0;
-				list-style: none;
-			}
+				.project-title {
+					font-size: 10pt;
+				}
 
-			.project li {
-				font-size: 8.4pt;
-				margin-bottom: 1px;
-			}
+				.project-meta {
+					font-size: 7pt;
+				}
 
-			.simple-list li {
-				font-size: 8.4pt;
-				padding: 2px 0;
-			}
+				.project ul {
+					margin-left: 0;
+					margin-top: 1px;
+					padding-left: 0;
+					list-style: none;
+				}
+
+				.project li {
+					font-size: 7.8pt;
+					line-height: 1.16;
+					margin-bottom: 1px;
+				}
+
+				.simple-list li {
+					font-size: 7.9pt;
+					padding: 1px 0;
+				}
 
 			.awards {
 				gap: 8px;
@@ -624,14 +635,18 @@
 				font-size: 9pt;
 			}
 
-			.section-hobbies {
-				display: none;
-			}
+				.section-hobbies {
+					display: none;
+				}
 
-			.download-section {
-				display: none;
+				.section-campus {
+					display: none;
+				}
+
+				.download-section {
+					display: none;
+				}
 			}
-		}
 	</style>
 </head>
 
@@ -930,36 +945,6 @@
 						</div>
 						<ul data-i18n-html="projects.teaching_ai.points"></ul>
 					</div>
-					<div class="project swiftsweep role-item show-ai">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/SwiftSweep" target="_blank" rel="noopener"><span data-i18n="projects.swiftsweep_ai.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag apple" data-i18n="tag.apple"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.swiftsweep_ai.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.swiftsweep_ai.points"></ul>
-					</div>
-					<div class="project riscv role-item show-ai">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/RISCV-Pipeline-CPU" target="_blank" rel="noopener"><span data-i18n="projects.riscv_ai.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.riscv_ai.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.riscv_ai.points"></ul>
-					</div>
-					<div class="project ns3 role-item show-ai">
-						<div class="project-header">
-							<div class="project-title">
-								<span data-i18n="projects.ns3_ai.title"></span>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.ns3_ai.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.ns3_ai.points"></ul>
-					</div>
 					<div class="project story role-item show-client featured">
 						<div class="project-header">
 							<div class="project-title">
@@ -990,26 +975,6 @@
 						</div>
 						<ul data-i18n-html="projects.swiftsweep_client.points"></ul>
 					</div>
-					<div class="project riscv role-item show-client">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/RISCV-Pipeline-CPU" target="_blank" rel="noopener"><span data-i18n="projects.riscv_client.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.riscv_client.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.riscv_client.points"></ul>
-					</div>
-					<div class="project ns3 role-item show-client">
-						<div class="project-header">
-							<div class="project-title">
-								<span data-i18n="projects.ns3_client.title"></span>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.ns3_client.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.ns3_client.points"></ul>
-					</div>
 					<div class="project story role-item show-fullstack featured">
 						<div class="project-header">
 							<div class="project-title">
@@ -1029,36 +994,6 @@
 							<div class="project-meta" data-i18n-html="projects.teaching_fullstack.meta"></div>
 						</div>
 						<ul data-i18n-html="projects.teaching_fullstack.points"></ul>
-					</div>
-					<div class="project swiftsweep role-item show-fullstack">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/SwiftSweep" target="_blank" rel="noopener"><span data-i18n="projects.swiftsweep_fullstack.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag apple" data-i18n="tag.apple"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.swiftsweep_fullstack.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.swiftsweep_fullstack.points"></ul>
-					</div>
-					<div class="project riscv role-item show-fullstack">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/RISCV-Pipeline-CPU" target="_blank" rel="noopener"><span data-i18n="projects.riscv_fullstack.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.riscv_fullstack.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.riscv_fullstack.points"></ul>
-					</div>
-					<div class="project ns3 role-item show-fullstack">
-						<div class="project-header">
-							<div class="project-title">
-								<span data-i18n="projects.ns3_fullstack.title"></span>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.ns3_fullstack.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.ns3_fullstack.points"></ul>
 					</div>
 					<div class="project story role-item show-server featured">
 						<div class="project-header">
@@ -1080,26 +1015,6 @@
 						</div>
 						<ul data-i18n-html="projects.teaching_server.points"></ul>
 					</div>
-					<div class="project swiftsweep role-item show-server">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/SwiftSweep" target="_blank" rel="noopener"><span data-i18n="projects.swiftsweep_server.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag apple" data-i18n="tag.apple"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.swiftsweep_server.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.swiftsweep_server.points"></ul>
-					</div>
-					<div class="project riscv role-item show-server">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/RISCV-Pipeline-CPU" target="_blank" rel="noopener"><span data-i18n="projects.riscv_server.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.riscv_server.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.riscv_server.points"></ul>
-					</div>
 					<div class="project ns3 role-item show-server">
 						<div class="project-header">
 							<div class="project-title">
@@ -1109,26 +1024,6 @@
 							<div class="project-meta" data-i18n-html="projects.ns3_server.meta"></div>
 						</div>
 						<ul data-i18n-html="projects.ns3_server.points"></ul>
-					</div>
-					<div class="project story role-item show-system featured">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/StoryToVideo" target="_blank" rel="noopener"><span data-i18n="projects.story_system.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag fullstack" data-i18n="tag.fullstack"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.story_system.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.story_system.points"></ul>
-					</div>
-					<div class="project teaching role-item show-system featured">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://jadesnow7.github.io/graduationDesign/" target="_blank" rel="noopener"><span data-i18n="projects.teaching_system.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag fullstack" data-i18n="tag.fullstack"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.teaching_system.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.teaching_system.points"></ul>
 					</div>
 					<div class="project swiftsweep role-item show-system">
 						<div class="project-header">
@@ -1189,26 +1084,6 @@
 							<div class="project-meta" data-i18n-html="projects.swiftsweep_frontend.meta"></div>
 						</div>
 						<ul data-i18n-html="projects.swiftsweep_frontend.points"></ul>
-					</div>
-					<div class="project riscv role-item show-frontend">
-						<div class="project-header">
-							<div class="project-title">
-								<a href="https://github.com/JadeSnow7/RISCV-Pipeline-CPU" target="_blank" rel="noopener"><span data-i18n="projects.riscv_frontend.title"></span> <span style="font-size: 10pt; color: #86868b; font-weight: 400;">↗</span></a>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.riscv_frontend.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.riscv_frontend.points"></ul>
-					</div>
-					<div class="project ns3 role-item show-frontend">
-						<div class="project-header">
-							<div class="project-title">
-								<span data-i18n="projects.ns3_frontend.title"></span>
-								<span class="tag system" data-i18n="tag.system"></span>
-							</div>
-							<div class="project-meta" data-i18n-html="projects.ns3_frontend.meta"></div>
-						</div>
-						<ul data-i18n-html="projects.ns3_frontend.points"></ul>
 					</div>
 				</div>
 
@@ -1490,21 +1365,6 @@
                 "meta": "本科毕业设计 · AI 核心开发 · 2025.11 - 至今",
                 "points": "<li><strong>项目定位</strong>：围绕高校教学场景构建学生中心的 AI 系统，把个性化答疑、智能批改与学情分析统一到可追踪的 RAG + Agent 链路中，在 200+ 研究生试点中将专业问答准确率提升至 85%+</li><li><strong>架构取舍</strong>：面对跨课程知识跳转与学生个体差异，放弃“向量检索 + 单轮 Prompt”方案，因为该方案难以处理多跳推理与学情上下文；改为 GraphRAG 组织课程知识、Tool Calling 查询学生画像与学习记录，再由 Qwen3 生成个性化回答</li><li><strong>机制设计</strong>：将检索、学情查询、答案生成与批改判定拆为可观测子步骤，并通过 Supervised Fine-Tuning 强化专业领域表达，降低 hallucination 与知识点错配；作业批改覆盖 80% 常见题型</li><li><strong>端云协同</strong>：在桌面端接入 NPU 加速本地推理，实现离线智能答疑；云端保留 FastAPI 推理服务与知识库更新链路，使本地低时延交互与中心化模型迭代能够协同演进</li><li><strong>技术栈</strong>：Qwen3 · GraphRAG · Supervised Fine-Tuning · Large Language Model Agent / Tool Calling · NPU acceleration · FastAPI · Python</li>"
             },
-            "swiftsweep_ai": {
-                "title": "macOS 系统优化工具（SwiftSweep）",
-                "meta": "个人独立项目 / 开源工具 · 2024.10 - 2024.12",
-                "points": "<li><strong>项目定位</strong>：为解决 macOS 用户存储空间焦虑与常见清理工具高授权风险，基于 Swift 5.9 与 SwiftUI 独立开发集系统深度清理、相似文件检测与特权隔离于一体的原生维护工具（GUI + CLI），实现了 14+ 核心系统维护功能并成功完成 Apple 官方公证发布</li><li><strong>架构与安全设计</strong>：摒弃传统清理软件索要全局 root 权限的危险模式，采用 XPC Helper + SMAppService 构建进程间通信隔离层，主应用在沙盒与受限权限下运行，彻底阻断了提权漏洞攻击面；设计了 dry-run 预演、基线白名单与严格的 symlink（符号链接）逃逸检测三重防护体系，实现 100% 零误删系统核心进程数据</li><li><strong>算法与性能调优</strong>：面对数以万计的相似图片与视频检测导致的内存暴涨与 CPU 满载问题，引入基于 pHash（感知哈希）与 LSH（局部敏感哈希）降维检测算法；利用 Swift Task / Async 机制实现流式处理与内存回收，将重复媒体文件扫描速度提高了 3 倍，内存峰值控制在 200MB 以内</li><li><strong>技术栈</strong>：Swift 5.9 / SwiftUI · XPC 进程间协议通信 · SMAppService · pHash / LSH 特征匹配算法 · Swift 包管理器 (SPM) · Developer ID 证书体系与 Notarization</li>"
-            },
-            "riscv_ai": {
-                "title": "基於 RISC-V 架构的五级流水线 CPU 设计",
-                "meta": "第七届全国大学生集成电路创新创业大赛（杯赛） · 核心开发 · 2023.01 - 2023.06",
-                "points": "<li><strong>项目定位</strong>：从零开始使用 Verilog 基于 RISC-V (RV32I) 指令集架构，设计并实现了一颗完整的五级流水线 CPU，并成功在 FPGA 开发板上完成综合与功能验证，荣获全国总决赛二等奖</li><li><strong>架构与冒险解决</strong>：独立完成了取指(IF)、译码(ID)、执行(EX)、访存(MEM)、回写(WB)核心数据通路的设计；面对流水线架构固有的数据冒险与控制冒险，设计了 Forwarding Unit（数据旁路转发单元）与 Hazard Detection Unit（流水线停顿检测单元），将核心运算指令在无冒险情况下的 CPI (每指令周期数) 稳定在 1.0</li><li><strong>功能验证与完备性</strong>：构建了包含 50+ 汇编指令集的定制化测试激励（Testbench），涵盖了边界条件与复杂的分支跳转回归场景。通过 ModelSim 进行了指令级时序仿真验证，确认所有算术运算与跳跃指令行为符合 RISC-V 官方规范，保证了流片前 RTL 代码的高门级综合成功率</li><li><strong>技术栈</strong>：Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (仿真与综合) · FPGA 硬件开发</li>"
-            },
-            "ns3_ai": {
-                "title": "华为海思网络仿真平台重构与效能提升",
-                "meta": "启明学院 Dian 团队 · 华为海思组核心研发 · 2023.03 - 2024.04",
-                "points": "<li><strong>项目定位</strong>：主导华为海思内部底层网络仿真核心算法从自研平台向标准开源 NS-3 仿真环境的跨平台重构与迁移，保障了芯片研发与验证流程的不中断跨端迁移，将内部验证吞吐效率提升并深度融入了业界标准组件流</li><li><strong>架构与特性适配</strong>：完成平台底层自底向上的跨版本重构（从 ns-3.31 强制演进至 ns-3.38），深入解析 Event Scheduler (事件调度器) 与 Time Model (时间步进模型) 内核代码。攻克了 C++ ABI 兼容性与内核对象生命周期管理痛点，大规模引入现代 C++ 智能指针体系接管手写内存释放，彻底消除了历史遗留的内存泄漏风险</li><li><strong>工程化指标建设</strong>：针对复杂网络拥塞与拓扑场景，独立设计并开发了高精度的网络性能统计观测节点（Metrics Sink Modules），实现了对端到端时延、实时吞吐率、丢包率及多级队列占用率的毫秒级无切入式探针采集；在十万级并发包规模下，其统计开销占比低于总仿真时长的 5%，极大加速了拥塞控制算法与 PHY/MAC 层协议的调优迭代周期</li><li><strong>技术栈</strong>：C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator内核机制 · Python 脚本自动化编排 · Linux (GDB/Valgrind 性能剖析) · TCP/IP 协议栈及多层拥塞模型</li>"
-            },
             "story_client": {
                 "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
                 "meta": "字节剪映 · 工程营实习生小组长（客户端/多模态） · 2025.11 - 至今",
@@ -1520,16 +1380,6 @@
                 "meta": "个人独立项目 / 开源工具 · 2024.10 - 2024.12",
                 "points": "<li><strong>项目定位</strong>：为解决 macOS 用户存储空间焦虑与常见清理工具高授权风险，基于 Swift 5.9 与 SwiftUI 独立开发集系统深度清理、相似文件检测与特权隔离于一体的原生维护工具（GUI + CLI），实现了 14+ 核心系统维护功能并成功完成 Apple 官方公证发布</li><li><strong>架构与安全设计</strong>：摒弃传统清理软件索要全局 root 权限的危险模式，采用 XPC Helper + SMAppService 构建进程间通信隔离层，主应用在沙盒与受限权限下运行，彻底阻断了提权漏洞攻击面；设计了 dry-run 预演、基线白名单与严格的 symlink（符号链接）逃逸检测三重防护体系，实现 100% 零误删系统核心进程数据</li><li><strong>算法与性能调优</strong>：面对数以万计的相似图片与视频检测导致的内存暴涨与 CPU 满载问题，引入基于 pHash（感知哈希）与 LSH（局部敏感哈希）降维检测算法；利用 Swift Task / Async 机制实现流式处理与内存回收，将重复媒体文件扫描速度提高了 3 倍，内存峰值控制在 200MB 以内</li><li><strong>技术栈</strong>：Swift 5.9 / SwiftUI · XPC 进程间协议通信 · SMAppService · pHash / LSH 特征匹配算法 · Swift 包管理器 (SPM) · Developer ID 证书体系与 Notarization</li>"
             },
-            "riscv_client": {
-                "title": "基於 RISC-V 架构的五级流水线 CPU 设计",
-                "meta": "第七届全国大学生集成电路创新创业大赛（杯赛） · 核心开发 · 2023.01 - 2023.06",
-                "points": "<li><strong>项目定位</strong>：从零开始使用 Verilog 基于 RISC-V (RV32I) 指令集架构，设计并实现了一颗完整的五级流水线 CPU，并成功在 FPGA 开发板上完成综合与功能验证，荣获全国总决赛二等奖</li><li><strong>架构与冒险解决</strong>：独立完成了取指(IF)、译码(ID)、执行(EX)、访存(MEM)、回写(WB)核心数据通路的设计；面对流水线架构固有的数据冒险与控制冒险，设计了 Forwarding Unit（数据旁路转发单元）与 Hazard Detection Unit（流水线停顿检测单元），将核心运算指令在无冒险情况下的 CPI (每指令周期数) 稳定在 1.0</li><li><strong>功能验证与完备性</strong>：构建了包含 50+ 汇编指令集的定制化测试激励（Testbench），涵盖了边界条件与复杂的分支跳转回归场景。通过 ModelSim 进行了指令级时序仿真验证，确认所有算术运算与跳跃指令行为符合 RISC-V 官方规范，保证了流片前 RTL 代码的高门级综合成功率</li><li><strong>技术栈</strong>：Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (仿真与综合) · FPGA 硬件开发</li>"
-            },
-            "ns3_client": {
-                "title": "华为海思网络仿真平台重构与效能提升",
-                "meta": "启明学院 Dian 团队 · 华为海思组核心研发 · 2023.03 - 2024.04",
-                "points": "<li><strong>项目定位</strong>：主导华为海思内部底层网络仿真核心算法从自研平台向标准开源 NS-3 仿真环境的跨平台重构与迁移，保障了芯片研发与验证流程的不中断跨端迁移，将内部验证吞吐效率提升并深度融入了业界标准组件流</li><li><strong>架构与特性适配</strong>：完成平台底层自底向上的跨版本重构（从 ns-3.31 强制演进至 ns-3.38），深入解析 Event Scheduler (事件调度器) 与 Time Model (时间步进模型) 内核代码。攻克了 C++ ABI 兼容性与内核对象生命周期管理痛点，大规模引入现代 C++ 智能指针体系接管手写内存释放，彻底消除了历史遗留的内存泄漏风险</li><li><strong>工程化指标建设</strong>：针对复杂网络拥塞与拓扑场景，独立设计并开发了高精度的网络性能统计观测节点（Metrics Sink Modules），实现了对端到端时延、实时吞吐率、丢包率及多级队列占用率的毫秒级无切入式探针采集；在十万级并发包规模下，其统计开销占比低于总仿真时长的 5%，极大加速了拥塞控制算法与 PHY/MAC 层协议的调优迭代周期</li><li><strong>技术栈</strong>：C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator内核机制 · Python 脚本自动化编排 · Linux (GDB/Valgrind 性能剖析) · TCP/IP 协议栈及多层拥塞模型</li>"
-            },
             "story_fullstack": {
                 "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
                 "meta": "字节剪映 · 工程营实习生小组长 · 2025.11 - 至今",
@@ -1539,21 +1389,6 @@
                 "title": "AI 智能教学平台",
                 "meta": "本科毕业设计 · 独立全栈开发 · 2025.11 - 至今",
                 "points": "<li><strong>项目定位</strong>：将以课程为中心的传统教学平台重构为学生中心的 AI 教学系统，支撑桌面端、企业微信 H5 与移动端统一协同，在华中科技大学课程试点覆盖 200+ 研究生，稳定支持 30+ 并发用户</li><li><strong>架构取舍</strong>：原方案将学情状态散落在课程维度表结构中，无法支撑跨课程追踪与个性化干预；因此重建学生画像、学习档案与长期学情模型，并将 React 前端、Go 服务与 Python AI 服务拆为可独立演进的三层系统</li><li><strong>AI 机制</strong>：为降低专业问答 hallucination 与检索错配，放弃仅靠关键词/向量召回的轻量方案，引入 Qwen3 + GraphRAG + Tool Calling，把知识点检索、学情查询与建议生成拆成可追踪链路，AI 答疑准确率提升至 85%+</li><li><strong>工程落地</strong>：围绕作业批改与高频答疑设计 Redis 缓存、异步数据同步与 Docker Compose 一键部署，兼顾教师试点环境的低运维成本与跨端交付效率，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
-            },
-            "swiftsweep_fullstack": {
-                "title": "macOS 系统优化工具（SwiftSweep）",
-                "meta": "个人独立项目 / 开源工具 · 2024.10 - 2024.12",
-                "points": "<li><strong>项目定位</strong>：为解决 macOS 用户存储空间焦虑与常见清理工具高授权风险，基于 Swift 5.9 与 SwiftUI 独立开发集系统深度清理、相似文件检测与特权隔离于一体的原生维护工具（GUI + CLI），实现了 14+ 核心系统维护功能并成功完成 Apple 官方公证发布</li><li><strong>架构与安全设计</strong>：摒弃传统清理软件索要全局 root 权限的危险模式，采用 XPC Helper + SMAppService 构建进程间通信隔离层，主应用在沙盒与受限权限下运行，彻底阻断了提权漏洞攻击面；设计了 dry-run 预演、基线白名单与严格的 symlink（符号链接）逃逸检测三重防护体系，实现 100% 零误删系统核心进程数据</li><li><strong>算法与性能调优</strong>：面对数以万计的相似图片与视频检测导致的内存暴涨与 CPU 满载问题，引入基于 pHash（感知哈希）与 LSH（局部敏感哈希）降维检测算法；利用 Swift Task / Async 机制实现流式处理与内存回收，将重复媒体文件扫描速度提高了 3 倍，内存峰值控制在 200MB 以内</li><li><strong>技术栈</strong>：Swift 5.9 / SwiftUI · XPC 进程间协议通信 · SMAppService · pHash / LSH 特征匹配算法 · Swift 包管理器 (SPM) · Developer ID 证书体系与 Notarization</li>"
-            },
-            "riscv_fullstack": {
-                "title": "基於 RISC-V 架构的五级流水线 CPU 设计",
-                "meta": "第七届全国大学生集成电路创新创业大赛（杯赛） · 核心开发 · 2023.01 - 2023.06",
-                "points": "<li><strong>项目定位</strong>：从零开始使用 Verilog 基于 RISC-V (RV32I) 指令集架构，设计并实现了一颗完整的五级流水线 CPU，并成功在 FPGA 开发板上完成综合与功能验证，荣获全国总决赛二等奖</li><li><strong>架构与冒险解决</strong>：独立完成了取指(IF)、译码(ID)、执行(EX)、访存(MEM)、回写(WB)核心数据通路的设计；面对流水线架构固有的数据冒险与控制冒险，设计了 Forwarding Unit（数据旁路转发单元）与 Hazard Detection Unit（流水线停顿检测单元），将核心运算指令在无冒险情况下的 CPI (每指令周期数) 稳定在 1.0</li><li><strong>功能验证与完备性</strong>：构建了包含 50+ 汇编指令集的定制化测试激励（Testbench），涵盖了边界条件与复杂的分支跳转回归场景。通过 ModelSim 进行了指令级时序仿真验证，确认所有算术运算与跳跃指令行为符合 RISC-V 官方规范，保证了流片前 RTL 代码的高门级综合成功率</li><li><strong>技术栈</strong>：Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (仿真与综合) · FPGA 硬件开发</li>"
-            },
-            "ns3_fullstack": {
-                "title": "华为海思网络仿真平台重构与效能提升",
-                "meta": "启明学院 Dian 团队 · 华为海思组核心研发 · 2023.03 - 2024.04",
-                "points": "<li><strong>项目定位</strong>：主导华为海思内部底层网络仿真核心算法从自研平台向标准开源 NS-3 仿真环境的跨平台重构与迁移，保障了芯片研发与验证流程的不中断跨端迁移，将内部验证吞吐效率提升并深度融入了业界标准组件流</li><li><strong>架构与特性适配</strong>：完成平台底层自底向上的跨版本重构（从 ns-3.31 强制演进至 ns-3.38），深入解析 Event Scheduler (事件调度器) 与 Time Model (时间步进模型) 内核代码。攻克了 C++ ABI 兼容性与内核对象生命周期管理痛点，大规模引入现代 C++ 智能指针体系接管手写内存释放，彻底消除了历史遗留的内存泄漏风险</li><li><strong>工程化指标建设</strong>：针对复杂网络拥塞与拓扑场景，独立设计并开发了高精度的网络性能统计观测节点（Metrics Sink Modules），实现了对端到端时延、实时吞吐率、丢包率及多级队列占用率的毫秒级无切入式探针采集；在十万级并发包规模下，其统计开销占比低于总仿真时长的 5%，极大加速了拥塞控制算法与 PHY/MAC 层协议的调优迭代周期</li><li><strong>技术栈</strong>：C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator内核机制 · Python 脚本自动化编排 · Linux (GDB/Valgrind 性能剖析) · TCP/IP 协议栈及多层拥塞模型</li>"
             },
             "story_server": {
                 "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
@@ -1565,30 +1400,10 @@
                 "meta": "独立全栈开发（侧重后端架构） · 2025.11 - 至今",
                 "points": "<li><strong>项目定位</strong>：为个性化答疑、学习轨迹分析与智能批改重建教学后端，使 30+ 并发场景下的学情查询、知识检索与 AI 响应可稳定协同</li><li><strong>架构取舍</strong>：未继续沿用课程中心的单体式数据组织，因为它难以表达跨课程学情与长期记忆；转而设计学生画像、学习档案与知识检索分层模型，并将 Go/Gin 业务服务与 Python/FastAPI AI 服务解耦</li><li><strong>机制设计</strong>：围绕高频问答路径引入 Redis 缓存、异步数据同步与 Tool Calling，把学情查询、知识点召回和答案生成拆成可观测链路，降低长链路调用放大的尾延迟</li><li><strong>工程结果</strong>：Docker Compose 一键部署降低试点环境接入成本，服务在 30+ 并发目标场景下保持稳定，且为后续继续扩展推荐、批改与统计模块保留独立演进空间</li><li><strong>技术栈</strong>：Go/Gin · FastAPI · Redis · MySQL · Docker Compose</li>"
             },
-            "swiftsweep_server": {
-                "title": "macOS 系统优化工具（SwiftSweep）",
-                "meta": "个人独立项目 / 开源工具 · 2024.10 - 2024.12",
-                "points": "<li><strong>项目定位</strong>：为解决 macOS 用户存储空间焦虑与常见清理工具高授权风险，基于 Swift 5.9 与 SwiftUI 独立开发集系统深度清理、相似文件检测与特权隔离于一体的原生维护工具（GUI + CLI），实现了 14+ 核心系统维护功能并成功完成 Apple 官方公证发布</li><li><strong>架构与安全设计</strong>：摒弃传统清理软件索要全局 root 权限的危险模式，采用 XPC Helper + SMAppService 构建进程间通信隔离层，主应用在沙盒与受限权限下运行，彻底阻断了提权漏洞攻击面；设计了 dry-run 预演、基线白名单与严格的 symlink（符号链接）逃逸检测三重防护体系，实现 100% 零误删系统核心进程数据</li><li><strong>算法与性能调优</strong>：面对数以万计的相似图片与视频检测导致的内存暴涨与 CPU 满载问题，引入基于 pHash（感知哈希）与 LSH（局部敏感哈希）降维检测算法；利用 Swift Task / Async 机制实现流式处理与内存回收，将重复媒体文件扫描速度提高了 3 倍，内存峰值控制在 200MB 以内</li><li><strong>技术栈</strong>：Swift 5.9 / SwiftUI · XPC 进程间协议通信 · SMAppService · pHash / LSH 特征匹配算法 · Swift 包管理器 (SPM) · Developer ID 证书体系与 Notarization</li>"
-            },
-            "riscv_server": {
-                "title": "基於 RISC-V 架构的五级流水线 CPU 设计",
-                "meta": "第七届全国大学生集成电路创新创业大赛（杯赛） · 核心开发 · 2023.01 - 2023.06",
-                "points": "<li><strong>项目定位</strong>：从零开始使用 Verilog 基于 RISC-V (RV32I) 指令集架构，设计并实现了一颗完整的五级流水线 CPU，并成功在 FPGA 开发板上完成综合与功能验证，荣获全国总决赛二等奖</li><li><strong>架构与冒险解决</strong>：独立完成了取指(IF)、译码(ID)、执行(EX)、访存(MEM)、回写(WB)核心数据通路的设计；面对流水线架构固有的数据冒险与控制冒险，设计了 Forwarding Unit（数据旁路转发单元）与 Hazard Detection Unit（流水线停顿检测单元），将核心运算指令在无冒险情况下的 CPI (每指令周期数) 稳定在 1.0</li><li><strong>功能验证与完备性</strong>：构建了包含 50+ 汇编指令集的定制化测试激励（Testbench），涵盖了边界条件与复杂的分支跳转回归场景。通过 ModelSim 进行了指令级时序仿真验证，确认所有算术运算与跳跃指令行为符合 RISC-V 官方规范，保证了流片前 RTL 代码的高门级综合成功率</li><li><strong>技术栈</strong>：Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (仿真与综合) · FPGA 硬件开发</li>"
-            },
             "ns3_server": {
                 "title": "华为海思网络仿真平台重构与效能提升",
                 "meta": "启明学院 Dian 团队 · 华为海思组核心研发 · 2023.03 - 2024.04",
                 "points": "<li><strong>项目定位</strong>：主导华为海思内部底层网络仿真核心算法从自研平台向标准开源 NS-3 仿真环境的跨平台重构与迁移，保障了芯片研发与验证流程的不中断跨端迁移，将内部验证吞吐效率提升并深度融入了业界标准组件流</li><li><strong>架构与特性适配</strong>：完成平台底层自底向上的跨版本重构（从 ns-3.31 强制演进至 ns-3.38），深入解析 Event Scheduler (事件调度器) 与 Time Model (时间步进模型) 内核代码。攻克了 C++ ABI 兼容性与内核对象生命周期管理痛点，大规模引入现代 C++ 智能指针体系接管手写内存释放，彻底消除了历史遗留的内存泄漏风险</li><li><strong>工程化指标建设</strong>：针对复杂网络拥塞与拓扑场景，独立设计并开发了高精度的网络性能统计观测节点（Metrics Sink Modules），实现了对端到端时延、实时吞吐率、丢包率及多级队列占用率的毫秒级无切入式探针采集；在十万级并发包规模下，其统计开销占比低于总仿真时长的 5%，极大加速了拥塞控制算法与 PHY/MAC 层协议的调优迭代周期</li><li><strong>技术栈</strong>：C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator内核机制 · Python 脚本自动化编排 · Linux (GDB/Valgrind 性能剖析) · TCP/IP 协议栈及多层拥塞模型</li>"
-            },
-            "story_system": {
-                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
-                "meta": "字节剪映 · 工程营实习生小组长（C++/Qt 系统层开发） · 2025.11 - 至今",
-                "points": "<li><strong>项目定位</strong>：将 Qt/C++ 跨平台视频生成系统从“前端壳 + 后端推理”重构为深度感知资源压力的桌面端协同系统，在 Linux/Windows 环境下稳定承载长任务生成</li><li><strong>系统取舍</strong>：未采用计算与交互共享事件循环的常规模式，因为该模式会在长任务、轮询和预览回刷叠加时放大线程阻塞；改为在 Qt 事件循环之上定义异步任务调度框架，并通过 QThread + Signal-Slot 隔离 UI 与计算线程</li><li><strong>资源治理</strong>：围绕 GPU/内存竞争建立优先级队列、令牌桶限速与帧缓冲复用三层治理机制，使多模态混部任务在 8GB 显存目标场景下不再出现 OOM，内存峰值降低 30%，渲染帧率从 30fps 提升至 60fps</li><li><strong>恢复机制</strong>：客户端与 Go/FastAPI 推理侧通过可恢复任务协议协作，支持异步结果拉取、断点续跑与失败补偿，长任务恢复率提升至 95%+</li><li><strong>技术栈</strong>：C++ 17 / Qt 6 / QML / QThread · FFmpeg · Linux/Windows 跨平台</li>"
-            },
-            "teaching_system": {
-                "title": "AI 智能教学平台",
-                "meta": "本科毕业设计 · 独立全栈开发 · 2025.11 - 至今",
-                "points": "<li><strong>项目定位</strong>：将以课程为中心的传统教学平台重构为学生中心的 AI 教学系统，支撑桌面端、企业微信 H5 与移动端统一协同，在华中科技大学课程试点覆盖 200+ 研究生，稳定支持 30+ 并发用户</li><li><strong>架构取舍</strong>：原方案将学情状态散落在课程维度表结构中，无法支撑跨课程追踪与个性化干预；因此重建学生画像、学习档案与长期学情模型，并将 React 前端、Go 服务与 Python AI 服务拆为可独立演进的三层系统</li><li><strong>AI 机制</strong>：为降低专业问答 hallucination 与检索错配，放弃仅靠关键词/向量召回的轻量方案，引入 Qwen3 + GraphRAG + Tool Calling，把知识点检索、学情查询与建议生成拆成可追踪链路，AI 答疑准确率提升至 85%+</li><li><strong>工程落地</strong>：围绕作业批改与高频答疑设计 Redis 缓存、异步数据同步与 Docker Compose 一键部署，兼顾教师试点环境的低运维成本与跨端交付效率，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
             },
             "swiftsweep_system": {
                 "title": "macOS 系统优化工具（SwiftSweep）",
@@ -1619,16 +1434,6 @@
                 "title": "macOS 系统优化工具（SwiftSweep）",
                 "meta": "个人独立项目 / 开源工具 · 2024.10 - 2024.12",
                 "points": "<li><strong>项目定位</strong>：为解决 macOS 用户存储空间焦虑与常见清理工具高授权风险，基于 Swift 5.9 与 SwiftUI 独立开发集系统深度清理、相似文件检测与特权隔离于一体的原生维护工具（GUI + CLI），实现了 14+ 核心系统维护功能并成功完成 Apple 官方公证发布</li><li><strong>架构与安全设计</strong>：摒弃传统清理软件索要全局 root 权限的危险模式，采用 XPC Helper + SMAppService 构建进程间通信隔离层，主应用在沙盒与受限权限下运行，彻底阻断了提权漏洞攻击面；设计了 dry-run 预演、基线白名单与严格的 symlink（符号链接）逃逸检测三重防护体系，实现 100% 零误删系统核心进程数据</li><li><strong>算法与性能调优</strong>：面对数以万计的相似图片与视频检测导致的内存暴涨与 CPU 满载问题，引入基于 pHash（感知哈希）与 LSH（局部敏感哈希）降维检测算法；利用 Swift Task / Async 机制实现流式处理与内存回收，将重复媒体文件扫描速度提高了 3 倍，内存峰值控制在 200MB 以内</li><li><strong>技术栈</strong>：Swift 5.9 / SwiftUI · XPC 进程间协议通信 · SMAppService · pHash / LSH 特征匹配算法 · Swift 包管理器 (SPM) · Developer ID 证书体系与 Notarization</li>"
-            },
-            "riscv_frontend": {
-                "title": "基於 RISC-V 架构的五级流水线 CPU 设计",
-                "meta": "第七届全国大学生集成电路创新创业大赛（杯赛） · 核心开发 · 2023.01 - 2023.06",
-                "points": "<li><strong>项目定位</strong>：从零开始使用 Verilog 基于 RISC-V (RV32I) 指令集架构，设计并实现了一颗完整的五级流水线 CPU，并成功在 FPGA 开发板上完成综合与功能验证，荣获全国总决赛二等奖</li><li><strong>架构与冒险解决</strong>：独立完成了取指(IF)、译码(ID)、执行(EX)、访存(MEM)、回写(WB)核心数据通路的设计；面对流水线架构固有的数据冒险与控制冒险，设计了 Forwarding Unit（数据旁路转发单元）与 Hazard Detection Unit（流水线停顿检测单元），将核心运算指令在无冒险情况下的 CPI (每指令周期数) 稳定在 1.0</li><li><strong>功能验证与完备性</strong>：构建了包含 50+ 汇编指令集的定制化测试激励（Testbench），涵盖了边界条件与复杂的分支跳转回归场景。通过 ModelSim 进行了指令级时序仿真验证，确认所有算术运算与跳跃指令行为符合 RISC-V 官方规范，保证了流片前 RTL 代码的高门级综合成功率</li><li><strong>技术栈</strong>：Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (仿真与综合) · FPGA 硬件开发</li>"
-            },
-            "ns3_frontend": {
-                "title": "华为海思网络仿真平台重构与效能提升",
-                "meta": "启明学院 Dian 团队 · 华为海思组核心研发 · 2023.03 - 2024.04",
-                "points": "<li><strong>项目定位</strong>：主导华为海思内部底层网络仿真核心算法从自研平台向标准开源 NS-3 仿真环境的跨平台重构与迁移，保障了芯片研发与验证流程的不中断跨端迁移，将内部验证吞吐效率提升并深度融入了业界标准组件流</li><li><strong>架构与特性适配</strong>：完成平台底层自底向上的跨版本重构（从 ns-3.31 强制演进至 ns-3.38），深入解析 Event Scheduler (事件调度器) 与 Time Model (时间步进模型) 内核代码。攻克了 C++ ABI 兼容性与内核对象生命周期管理痛点，大规模引入现代 C++ 智能指针体系接管手写内存释放，彻底消除了历史遗留的内存泄漏风险</li><li><strong>工程化指标建设</strong>：针对复杂网络拥塞与拓扑场景，独立设计并开发了高精度的网络性能统计观测节点（Metrics Sink Modules），实现了对端到端时延、实时吞吐率、丢包率及多级队列占用率的毫秒级无切入式探针采集；在十万级并发包规模下，其统计开销占比低于总仿真时长的 5%，极大加速了拥塞控制算法与 PHY/MAC 层协议的调优迭代周期</li><li><strong>技术栈</strong>：C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator内核机制 · Python 脚本自动化编排 · Linux (GDB/Valgrind 性能剖析) · TCP/IP 协议栈及多层拥塞模型</li>"
             }
         }
     },
@@ -1873,21 +1678,6 @@
                 "meta": "Undergraduate Thesis · AI Core Developer · 2025.11 - Present",
                 "points": "<li><strong>Overview</strong>: Built a student-centric AI layer for higher education that unifies personalized Q&amp;A, grading, and learning analytics under a traceable RAG + agent pipeline; the HUST pilot covered 200+ graduate students and raised domain Q&amp;A accuracy to 85%+</li><li><strong>Trade-off</strong>: Faced with cross-course reasoning and student-specific context, rejected the common vector-retrieval + single-prompt pattern because it struggles with multi-hop reasoning and learning-state grounding; replaced it with GraphRAG for course knowledge, Tool Calling for student profiles and records, and Qwen3 for personalized responses</li><li><strong>Mechanism</strong>: Split retrieval, learning-state lookup, answer generation, and grading judgment into observable substeps, then applied Supervised Fine-Tuning to strengthen domain expression and reduce hallucination and knowledge mismatch; grading now covers 80% of common assignment types</li><li><strong>Edge-Cloud Collaboration</strong>: Added NPU-accelerated local inference on the desktop client for offline Q&amp;A, while FastAPI services and central knowledge-base updates remain in the cloud so low-latency local interaction and centralized model iteration can evolve together</li><li><strong>Stack</strong>: Qwen3 · GraphRAG · Supervised Fine-Tuning · Large Language Model Agent / Tool Calling · NPU acceleration · FastAPI · Python</li>"
             },
-            "swiftsweep_ai": {
-                "title": "macOS System Optimization Tool (SwiftSweep)",
-                "meta": "Independent Tool Developer · 2024.10 - 2024.12",
-                "points": "<li><strong>Overview</strong>: Developed a comprehensive macOS native system optimization tool tackling storage bloat and high-authorization risks associated with common cleaners. Built with Swift 5.9 and SwiftUI, integrated 14+ core maintenance modules including deep system cleaning and similarity detection, and successfully completed Apple's Notarization deployment process.</li><li><strong>Architecture & Security</strong>: Eliminated the hazardous practice of requiring global root access by designing an XPC Helper + SMAppService inter-process communication bridge. The main GUI operates under restricted privileges while sandboxing privileged tasks, structurally preventing privilege escalation attacks. Engineered a three-layer safeguard—dry-run staging, baseline allowlisting, and rigorous symlink escape detection—ensuring absolutely zero accidental deletion of critical OS data.</li><li><strong>Algorithms & Performance Tuning</strong>: Addressed severe CPU/Memory spikes during massive duplicate media scans by implementing pHash (Perceptual Hashing) combined with LSH (Locality-Sensitive Hashing) for dimensionality reduction. Re-architected the scanning pipeline using Swift async/await concurrency for streaming I/O and rapid memory deallocation, tripling the detection speed for duplicate media while strictly bounding peak memory usage below 200MB.</li><li><strong>Stack</strong>: Swift 5.9 / SwiftUI · XPC IPC Protocol · SMAppService · pHash / LSH Algorithms · Swift Package Manager (SPM) · Developer ID Signing & Apple Notarization</li>"
-            },
-            "riscv_ai": {
-                "title": "RISC-V 5-Stage Pipelined CPU",
-                "meta": "7th National IC Innovation Competition · Core Designer · 2023.01 - 2023.06",
-                "points": "<li><strong>Overview</strong>: Designed and implemented a complete 5-stage pipelined CPU from scratch based on the RISC-V (RV32I) Instruction Set Architecture using Verilog. Successfully synthesized and verified on FPGA hardware, winning the Second Prize in the National Finals.</li><li><strong>Architecture & Hazard Resolution</strong>: Independently engineered the core datapath spanning Instruction Fetch (IF), Decode (ID), Execute (EX), Memory (MEM), and Write-back (WB) stages. To address inherent structural, data, and control hazards, implemented a granular Forwarding Unit (Bypassing) and Hazard Detection Unit (Stalling), successfully achieving a persistent CPI (Cycles Per Instruction) of exactly 1.0 during non-hazard execution cycles.</li><li><strong>Verification & Test Benches</strong>: Constructed comprehensive testbenches comprising 50+ tailored assembly instruction suites covering edge cases, pipeline flushes, and complex branch prediction regression scenarios. Conducted rigorous instruction-level timing simulations via ModelSim to guarantee absolute compliance with the official RISC-V specification, ensuring a high yield rate for pre-silicon RTL synthesis.</li><li><strong>Stack</strong>: Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (Simulation & Synthesis) · FPGA Development</li>"
-            },
-            "ns3_ai": {
-                "title": "HiSilicon Network Simulation Platform Re-architecture",
-                "meta": "Dian Team (Huawei HiSilicon Group) · Core R&D · 2023.03 - 2024.04",
-                "points": "<li><strong>Overview</strong>: Spearheaded the cross-platform migration of Huawei HiSilicon's proprietary network simulation algorithms into the standardized open-source NS-3 simulator, maintaining uninterrupted chip R&D and verification pipelines while aligning proprietary logic with industry-standard discrete-event modules.</li><li><strong>Architecture & ABI Modernization</strong>: Managed a complex, ground-up version migration of the underlying simulation framework (ns-3.31 to ns-3.38). Deeply reverse-engineered the ns-3 Event Scheduler and Time Model kernels to resolve intricate C++ ABI incompatibilities. Systematically replaced legacy manual memory management with Modern C++ smart pointer idioms, structurally preventing historic memory leak crashes across millions of concurrent packet events.</li><li><strong>Telemetry & Metrics Engineering</strong>: Engineered deterministic, low-overhead observation sinks to monitor highly congested topologies. Implemented millisecond-precise, non-intrusive probes calculating end-to-end latency, real-time throughput, packet loss, and multi-tier queue occupancies. Sustained telemetry overhead under 5% of total execution time even during hundred-thousand packet bursts, substantially accelerating the tuning cycles for congestion control and PHY/MAC layer protocols.</li><li><strong>Stack</strong>: C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator Architecture · Python Build Automation · Linux (GDB/Valgrind Memory Profiling) · TCP/IP Stack & Congestion Avoidance Algorithms</li>"
-            },
             "story_client": {
                 "title": "StoryToVideo: Cross-platform AI Video Generation",
                 "meta": "ByteDance CapCut Bootcamp · Team Lead (Client/Multimodal) · 2025.11 - Present",
@@ -1903,16 +1693,6 @@
                 "meta": "Independent Tool Developer · 2024.10 - 2024.12",
                 "points": "<li><strong>Overview</strong>: Developed a comprehensive macOS native system optimization tool tackling storage bloat and high-authorization risks associated with common cleaners. Built with Swift 5.9 and SwiftUI, integrated 14+ core maintenance modules including deep system cleaning and similarity detection, and successfully completed Apple's Notarization deployment process.</li><li><strong>Architecture & Security</strong>: Eliminated the hazardous practice of requiring global root access by designing an XPC Helper + SMAppService inter-process communication bridge. The main GUI operates under restricted privileges while sandboxing privileged tasks, structurally preventing privilege escalation attacks. Engineered a three-layer safeguard—dry-run staging, baseline allowlisting, and rigorous symlink escape detection—ensuring absolutely zero accidental deletion of critical OS data.</li><li><strong>Algorithms & Performance Tuning</strong>: Addressed severe CPU/Memory spikes during massive duplicate media scans by implementing pHash (Perceptual Hashing) combined with LSH (Locality-Sensitive Hashing) for dimensionality reduction. Re-architected the scanning pipeline using Swift async/await concurrency for streaming I/O and rapid memory deallocation, tripling the detection speed for duplicate media while strictly bounding peak memory usage below 200MB.</li><li><strong>Stack</strong>: Swift 5.9 / SwiftUI · XPC IPC Protocol · SMAppService · pHash / LSH Algorithms · Swift Package Manager (SPM) · Developer ID Signing & Apple Notarization</li>"
             },
-            "riscv_client": {
-                "title": "RISC-V 5-Stage Pipelined CPU",
-                "meta": "7th National IC Innovation Competition · Core Designer · 2023.01 - 2023.06",
-                "points": "<li><strong>Overview</strong>: Designed and implemented a complete 5-stage pipelined CPU from scratch based on the RISC-V (RV32I) Instruction Set Architecture using Verilog. Successfully synthesized and verified on FPGA hardware, winning the Second Prize in the National Finals.</li><li><strong>Architecture & Hazard Resolution</strong>: Independently engineered the core datapath spanning Instruction Fetch (IF), Decode (ID), Execute (EX), Memory (MEM), and Write-back (WB) stages. To address inherent structural, data, and control hazards, implemented a granular Forwarding Unit (Bypassing) and Hazard Detection Unit (Stalling), successfully achieving a persistent CPI (Cycles Per Instruction) of exactly 1.0 during non-hazard execution cycles.</li><li><strong>Verification & Test Benches</strong>: Constructed comprehensive testbenches comprising 50+ tailored assembly instruction suites covering edge cases, pipeline flushes, and complex branch prediction regression scenarios. Conducted rigorous instruction-level timing simulations via ModelSim to guarantee absolute compliance with the official RISC-V specification, ensuring a high yield rate for pre-silicon RTL synthesis.</li><li><strong>Stack</strong>: Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (Simulation & Synthesis) · FPGA Development</li>"
-            },
-            "ns3_client": {
-                "title": "HiSilicon Network Simulation Platform Re-architecture",
-                "meta": "Dian Team (Huawei HiSilicon Group) · Core R&D · 2023.03 - 2024.04",
-                "points": "<li><strong>Overview</strong>: Spearheaded the cross-platform migration of Huawei HiSilicon's proprietary network simulation algorithms into the standardized open-source NS-3 simulator, maintaining uninterrupted chip R&D and verification pipelines while aligning proprietary logic with industry-standard discrete-event modules.</li><li><strong>Architecture & ABI Modernization</strong>: Managed a complex, ground-up version migration of the underlying simulation framework (ns-3.31 to ns-3.38). Deeply reverse-engineered the ns-3 Event Scheduler and Time Model kernels to resolve intricate C++ ABI incompatibilities. Systematically replaced legacy manual memory management with Modern C++ smart pointer idioms, structurally preventing historic memory leak crashes across millions of concurrent packet events.</li><li><strong>Telemetry & Metrics Engineering</strong>: Engineered deterministic, low-overhead observation sinks to monitor highly congested topologies. Implemented millisecond-precise, non-intrusive probes calculating end-to-end latency, real-time throughput, packet loss, and multi-tier queue occupancies. Sustained telemetry overhead under 5% of total execution time even during hundred-thousand packet bursts, substantially accelerating the tuning cycles for congestion control and PHY/MAC layer protocols.</li><li><strong>Stack</strong>: C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator Architecture · Python Build Automation · Linux (GDB/Valgrind Memory Profiling) · TCP/IP Stack & Congestion Avoidance Algorithms</li>"
-            },
             "story_fullstack": {
                 "title": "StoryToVideo: Cross-platform AI Video Generation",
                 "meta": "ByteDance CapCut Bootcamp · Team Lead · 2025.11 - Present",
@@ -1922,21 +1702,6 @@
                 "title": "AI-powered Teaching Platform",
                 "meta": "Undergraduate Thesis · Full-stack Developer · 2025.11 - Present",
                 "points": "<li><strong>Overview</strong>: Rebuilt a course-centric teaching platform into a student-centric AI learning system spanning desktop, WeCom H5, and mobile clients; the pilot covered 200+ graduate students at HUST and remained stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: The original schema scattered learning state across course-level tables, which broke cross-course tracking and personalized intervention; replaced it with student profiles, learning portfolios, and long-horizon learning records, then split the system into independently evolving React, Go, and Python AI layers</li><li><strong>AI Mechanism</strong>: To reduce domain-specific hallucinations and retrieval mismatch, rejected lightweight keyword/vector-only lookup and introduced Qwen3 + GraphRAG + Tool Calling, separating knowledge retrieval, learning-state lookup, and recommendation generation into traceable steps; domain Q&amp;A accuracy reached 85%+</li><li><strong>Operational Delivery</strong>: Added Redis caching, asynchronous data synchronization, and one-command Docker Compose deployment for grading and high-frequency Q&amp;A, keeping pilot rollout lightweight while covering 80% of common assignment types</li><li><strong>Stack</strong>: Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
-            },
-            "swiftsweep_fullstack": {
-                "title": "macOS System Optimization Tool (SwiftSweep)",
-                "meta": "Independent Tool Developer · 2024.10 - 2024.12",
-                "points": "<li><strong>Overview</strong>: Developed a comprehensive macOS native system optimization tool tackling storage bloat and high-authorization risks associated with common cleaners. Built with Swift 5.9 and SwiftUI, integrated 14+ core maintenance modules including deep system cleaning and similarity detection, and successfully completed Apple's Notarization deployment process.</li><li><strong>Architecture & Security</strong>: Eliminated the hazardous practice of requiring global root access by designing an XPC Helper + SMAppService inter-process communication bridge. The main GUI operates under restricted privileges while sandboxing privileged tasks, structurally preventing privilege escalation attacks. Engineered a three-layer safeguard—dry-run staging, baseline allowlisting, and rigorous symlink escape detection—ensuring absolutely zero accidental deletion of critical OS data.</li><li><strong>Algorithms & Performance Tuning</strong>: Addressed severe CPU/Memory spikes during massive duplicate media scans by implementing pHash (Perceptual Hashing) combined with LSH (Locality-Sensitive Hashing) for dimensionality reduction. Re-architected the scanning pipeline using Swift async/await concurrency for streaming I/O and rapid memory deallocation, tripling the detection speed for duplicate media while strictly bounding peak memory usage below 200MB.</li><li><strong>Stack</strong>: Swift 5.9 / SwiftUI · XPC IPC Protocol · SMAppService · pHash / LSH Algorithms · Swift Package Manager (SPM) · Developer ID Signing & Apple Notarization</li>"
-            },
-            "riscv_fullstack": {
-                "title": "RISC-V 5-Stage Pipelined CPU",
-                "meta": "7th National IC Innovation Competition · Core Designer · 2023.01 - 2023.06",
-                "points": "<li><strong>Overview</strong>: Designed and implemented a complete 5-stage pipelined CPU from scratch based on the RISC-V (RV32I) Instruction Set Architecture using Verilog. Successfully synthesized and verified on FPGA hardware, winning the Second Prize in the National Finals.</li><li><strong>Architecture & Hazard Resolution</strong>: Independently engineered the core datapath spanning Instruction Fetch (IF), Decode (ID), Execute (EX), Memory (MEM), and Write-back (WB) stages. To address inherent structural, data, and control hazards, implemented a granular Forwarding Unit (Bypassing) and Hazard Detection Unit (Stalling), successfully achieving a persistent CPI (Cycles Per Instruction) of exactly 1.0 during non-hazard execution cycles.</li><li><strong>Verification & Test Benches</strong>: Constructed comprehensive testbenches comprising 50+ tailored assembly instruction suites covering edge cases, pipeline flushes, and complex branch prediction regression scenarios. Conducted rigorous instruction-level timing simulations via ModelSim to guarantee absolute compliance with the official RISC-V specification, ensuring a high yield rate for pre-silicon RTL synthesis.</li><li><strong>Stack</strong>: Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (Simulation & Synthesis) · FPGA Development</li>"
-            },
-            "ns3_fullstack": {
-                "title": "HiSilicon Network Simulation Platform Re-architecture",
-                "meta": "Dian Team (Huawei HiSilicon Group) · Core R&D · 2023.03 - 2024.04",
-                "points": "<li><strong>Overview</strong>: Spearheaded the cross-platform migration of Huawei HiSilicon's proprietary network simulation algorithms into the standardized open-source NS-3 simulator, maintaining uninterrupted chip R&D and verification pipelines while aligning proprietary logic with industry-standard discrete-event modules.</li><li><strong>Architecture & ABI Modernization</strong>: Managed a complex, ground-up version migration of the underlying simulation framework (ns-3.31 to ns-3.38). Deeply reverse-engineered the ns-3 Event Scheduler and Time Model kernels to resolve intricate C++ ABI incompatibilities. Systematically replaced legacy manual memory management with Modern C++ smart pointer idioms, structurally preventing historic memory leak crashes across millions of concurrent packet events.</li><li><strong>Telemetry & Metrics Engineering</strong>: Engineered deterministic, low-overhead observation sinks to monitor highly congested topologies. Implemented millisecond-precise, non-intrusive probes calculating end-to-end latency, real-time throughput, packet loss, and multi-tier queue occupancies. Sustained telemetry overhead under 5% of total execution time even during hundred-thousand packet bursts, substantially accelerating the tuning cycles for congestion control and PHY/MAC layer protocols.</li><li><strong>Stack</strong>: C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator Architecture · Python Build Automation · Linux (GDB/Valgrind Memory Profiling) · TCP/IP Stack & Congestion Avoidance Algorithms</li>"
             },
             "story_server": {
                 "title": "StoryToVideo: Cross-platform AI Video Generation",
@@ -1948,30 +1713,10 @@
                 "meta": "Full-stack Developer (Backend-focused) · 2025.11 - Present",
                 "points": "<li><strong>Overview</strong>: Rebuilt the teaching backend for personalized Q&amp;A, learning trajectory analysis, and intelligent grading so learning-state lookup, retrieval, and AI responses remain stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: Rejected the original course-centric monolithic data model because it could not represent cross-course learning state or long-term memory; replaced it with layered student profiles, learning portfolios, and retrieval domains, then decoupled Go/Gin business services from Python/FastAPI AI services</li><li><strong>Mechanism</strong>: Added Redis caching, asynchronous data synchronization, and Tool Calling around the hot Q&amp;A path so learning-state lookup, knowledge retrieval, and answer generation become observable steps instead of a single opaque long chain, reducing amplified tail latency</li><li><strong>Engineering Outcome</strong>: One-command Docker Compose deployment lowered rollout cost for the pilot environment, while the service remained stable in the 30+ concurrency target scenario and preserved room for future recommendation, grading, and analytics modules to evolve independently</li><li><strong>Stack</strong>: Go/Gin · FastAPI · Redis · MySQL · Docker Compose</li>"
             },
-            "swiftsweep_server": {
-                "title": "macOS System Optimization Tool (SwiftSweep)",
-                "meta": "Independent Tool Developer · 2024.10 - 2024.12",
-                "points": "<li><strong>Overview</strong>: Developed a comprehensive macOS native system optimization tool tackling storage bloat and high-authorization risks associated with common cleaners. Built with Swift 5.9 and SwiftUI, integrated 14+ core maintenance modules including deep system cleaning and similarity detection, and successfully completed Apple's Notarization deployment process.</li><li><strong>Architecture & Security</strong>: Eliminated the hazardous practice of requiring global root access by designing an XPC Helper + SMAppService inter-process communication bridge. The main GUI operates under restricted privileges while sandboxing privileged tasks, structurally preventing privilege escalation attacks. Engineered a three-layer safeguard—dry-run staging, baseline allowlisting, and rigorous symlink escape detection—ensuring absolutely zero accidental deletion of critical OS data.</li><li><strong>Algorithms & Performance Tuning</strong>: Addressed severe CPU/Memory spikes during massive duplicate media scans by implementing pHash (Perceptual Hashing) combined with LSH (Locality-Sensitive Hashing) for dimensionality reduction. Re-architected the scanning pipeline using Swift async/await concurrency for streaming I/O and rapid memory deallocation, tripling the detection speed for duplicate media while strictly bounding peak memory usage below 200MB.</li><li><strong>Stack</strong>: Swift 5.9 / SwiftUI · XPC IPC Protocol · SMAppService · pHash / LSH Algorithms · Swift Package Manager (SPM) · Developer ID Signing & Apple Notarization</li>"
-            },
-            "riscv_server": {
-                "title": "RISC-V 5-Stage Pipelined CPU",
-                "meta": "7th National IC Innovation Competition · Core Designer · 2023.01 - 2023.06",
-                "points": "<li><strong>Overview</strong>: Designed and implemented a complete 5-stage pipelined CPU from scratch based on the RISC-V (RV32I) Instruction Set Architecture using Verilog. Successfully synthesized and verified on FPGA hardware, winning the Second Prize in the National Finals.</li><li><strong>Architecture & Hazard Resolution</strong>: Independently engineered the core datapath spanning Instruction Fetch (IF), Decode (ID), Execute (EX), Memory (MEM), and Write-back (WB) stages. To address inherent structural, data, and control hazards, implemented a granular Forwarding Unit (Bypassing) and Hazard Detection Unit (Stalling), successfully achieving a persistent CPI (Cycles Per Instruction) of exactly 1.0 during non-hazard execution cycles.</li><li><strong>Verification & Test Benches</strong>: Constructed comprehensive testbenches comprising 50+ tailored assembly instruction suites covering edge cases, pipeline flushes, and complex branch prediction regression scenarios. Conducted rigorous instruction-level timing simulations via ModelSim to guarantee absolute compliance with the official RISC-V specification, ensuring a high yield rate for pre-silicon RTL synthesis.</li><li><strong>Stack</strong>: Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (Simulation & Synthesis) · FPGA Development</li>"
-            },
             "ns3_server": {
                 "title": "HiSilicon Network Simulation Platform Re-architecture",
                 "meta": "Dian Team (Huawei HiSilicon Group) · Core R&D · 2023.03 - 2024.04",
                 "points": "<li><strong>Overview</strong>: Spearheaded the cross-platform migration of Huawei HiSilicon's proprietary network simulation algorithms into the standardized open-source NS-3 simulator, maintaining uninterrupted chip R&D and verification pipelines while aligning proprietary logic with industry-standard discrete-event modules.</li><li><strong>Architecture & ABI Modernization</strong>: Managed a complex, ground-up version migration of the underlying simulation framework (ns-3.31 to ns-3.38). Deeply reverse-engineered the ns-3 Event Scheduler and Time Model kernels to resolve intricate C++ ABI incompatibilities. Systematically replaced legacy manual memory management with Modern C++ smart pointer idioms, structurally preventing historic memory leak crashes across millions of concurrent packet events.</li><li><strong>Telemetry & Metrics Engineering</strong>: Engineered deterministic, low-overhead observation sinks to monitor highly congested topologies. Implemented millisecond-precise, non-intrusive probes calculating end-to-end latency, real-time throughput, packet loss, and multi-tier queue occupancies. Sustained telemetry overhead under 5% of total execution time even during hundred-thousand packet bursts, substantially accelerating the tuning cycles for congestion control and PHY/MAC layer protocols.</li><li><strong>Stack</strong>: C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator Architecture · Python Build Automation · Linux (GDB/Valgrind Memory Profiling) · TCP/IP Stack & Congestion Avoidance Algorithms</li>"
-            },
-            "story_system": {
-                "title": "StoryToVideo: Cross-platform AI Video Generation",
-                "meta": "ByteDance CapCut Bootcamp · Team Lead (C++/Qt Systems) · 2025.11 - Present",
-                "points": "<li><strong>Overview</strong>: Reworked the Qt/C++ cross-platform generator from a thin frontend shell into a desktop system that reacts to resource pressure, keeping long-running generation stable across Linux and Windows targets</li><li><strong>Systems Trade-off</strong>: Avoided the common model where compute work and interaction share one event loop because long jobs, polling, and preview repainting would amplify thread blocking; instead built an async scheduler on top of the Qt event loop and isolated UI and compute paths via QThread + signal-slot</li><li><strong>Resource Governance</strong>: Combined priority queues, token-bucket throttling, and frame-buffer reuse to manage GPU/RAM contention so mixed multimodal jobs stopped triggering OOM in the 8GB VRAM target scenario, peak memory dropped 30%, and render FPS improved from 30 to 60</li><li><strong>Recovery Protocol</strong>: The client and Go/FastAPI inference services cooperate through a recoverable task contract that supports async result pulling, checkpoint resume, and failure compensation, pushing long-task recovery to 95%+</li><li><strong>Stack</strong>: C++ 17 / Qt 6 / QML / QThread · FFmpeg · Linux/Windows cross-platform</li>"
-            },
-            "teaching_system": {
-                "title": "AI-powered Teaching Platform",
-                "meta": "Undergraduate Thesis · Full-stack Developer · 2025.11 - Present",
-                "points": "<li><strong>Overview</strong>: Rebuilt a course-centric teaching platform into a student-centric AI learning system spanning desktop, WeCom H5, and mobile clients; the pilot covered 200+ graduate students at HUST and remained stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: The original schema scattered learning state across course-level tables, which broke cross-course tracking and personalized intervention; replaced it with student profiles, learning portfolios, and long-horizon learning records, then split the system into independently evolving React, Go, and Python AI layers</li><li><strong>AI Mechanism</strong>: To reduce domain-specific hallucinations and retrieval mismatch, rejected lightweight keyword/vector-only lookup and introduced Qwen3 + GraphRAG + Tool Calling, separating knowledge retrieval, learning-state lookup, and recommendation generation into traceable steps; domain Q&amp;A accuracy reached 85%+</li><li><strong>Operational Delivery</strong>: Added Redis caching, asynchronous data synchronization, and one-command Docker Compose deployment for grading and high-frequency Q&amp;A, keeping pilot rollout lightweight while covering 80% of common assignment types</li><li><strong>Stack</strong>: Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
             },
             "swiftsweep_system": {
                 "title": "macOS System Optimization Tool (SwiftSweep)",
@@ -2002,16 +1747,6 @@
                 "title": "macOS System Optimization Tool (SwiftSweep)",
                 "meta": "Independent Tool Developer · 2024.10 - 2024.12",
                 "points": "<li><strong>Overview</strong>: Developed a comprehensive macOS native system optimization tool tackling storage bloat and high-authorization risks associated with common cleaners. Built with Swift 5.9 and SwiftUI, integrated 14+ core maintenance modules including deep system cleaning and similarity detection, and successfully completed Apple's Notarization deployment process.</li><li><strong>Architecture & Security</strong>: Eliminated the hazardous practice of requiring global root access by designing an XPC Helper + SMAppService inter-process communication bridge. The main GUI operates under restricted privileges while sandboxing privileged tasks, structurally preventing privilege escalation attacks. Engineered a three-layer safeguard—dry-run staging, baseline allowlisting, and rigorous symlink escape detection—ensuring absolutely zero accidental deletion of critical OS data.</li><li><strong>Algorithms & Performance Tuning</strong>: Addressed severe CPU/Memory spikes during massive duplicate media scans by implementing pHash (Perceptual Hashing) combined with LSH (Locality-Sensitive Hashing) for dimensionality reduction. Re-architected the scanning pipeline using Swift async/await concurrency for streaming I/O and rapid memory deallocation, tripling the detection speed for duplicate media while strictly bounding peak memory usage below 200MB.</li><li><strong>Stack</strong>: Swift 5.9 / SwiftUI · XPC IPC Protocol · SMAppService · pHash / LSH Algorithms · Swift Package Manager (SPM) · Developer ID Signing & Apple Notarization</li>"
-            },
-            "riscv_frontend": {
-                "title": "RISC-V 5-Stage Pipelined CPU",
-                "meta": "7th National IC Innovation Competition · Core Designer · 2023.01 - 2023.06",
-                "points": "<li><strong>Overview</strong>: Designed and implemented a complete 5-stage pipelined CPU from scratch based on the RISC-V (RV32I) Instruction Set Architecture using Verilog. Successfully synthesized and verified on FPGA hardware, winning the Second Prize in the National Finals.</li><li><strong>Architecture & Hazard Resolution</strong>: Independently engineered the core datapath spanning Instruction Fetch (IF), Decode (ID), Execute (EX), Memory (MEM), and Write-back (WB) stages. To address inherent structural, data, and control hazards, implemented a granular Forwarding Unit (Bypassing) and Hazard Detection Unit (Stalling), successfully achieving a persistent CPI (Cycles Per Instruction) of exactly 1.0 during non-hazard execution cycles.</li><li><strong>Verification & Test Benches</strong>: Constructed comprehensive testbenches comprising 50+ tailored assembly instruction suites covering edge cases, pipeline flushes, and complex branch prediction regression scenarios. Conducted rigorous instruction-level timing simulations via ModelSim to guarantee absolute compliance with the official RISC-V specification, ensuring a high yield rate for pre-silicon RTL synthesis.</li><li><strong>Stack</strong>: Verilog HDL · RISC-V (RV32I) ISA · ModelSim / Vivado (Simulation & Synthesis) · FPGA Development</li>"
-            },
-            "ns3_frontend": {
-                "title": "HiSilicon Network Simulation Platform Re-architecture",
-                "meta": "Dian Team (Huawei HiSilicon Group) · Core R&D · 2023.03 - 2024.04",
-                "points": "<li><strong>Overview</strong>: Spearheaded the cross-platform migration of Huawei HiSilicon's proprietary network simulation algorithms into the standardized open-source NS-3 simulator, maintaining uninterrupted chip R&D and verification pipelines while aligning proprietary logic with industry-standard discrete-event modules.</li><li><strong>Architecture & ABI Modernization</strong>: Managed a complex, ground-up version migration of the underlying simulation framework (ns-3.31 to ns-3.38). Deeply reverse-engineered the ns-3 Event Scheduler and Time Model kernels to resolve intricate C++ ABI incompatibilities. Systematically replaced legacy manual memory management with Modern C++ smart pointer idioms, structurally preventing historic memory leak crashes across millions of concurrent packet events.</li><li><strong>Telemetry & Metrics Engineering</strong>: Engineered deterministic, low-overhead observation sinks to monitor highly congested topologies. Implemented millisecond-precise, non-intrusive probes calculating end-to-end latency, real-time throughput, packet loss, and multi-tier queue occupancies. Sustained telemetry overhead under 5% of total execution time even during hundred-thousand packet bursts, substantially accelerating the tuning cycles for congestion control and PHY/MAC layer protocols.</li><li><strong>Stack</strong>: C++ (Modern C++ / STL) · ns-3 Discrete-Event Simulator Architecture · Python Build Automation · Linux (GDB/Valgrind Memory Profiling) · TCP/IP Stack & Congestion Avoidance Algorithms</li>"
             }
         }
     }

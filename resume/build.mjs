@@ -114,7 +114,12 @@ function buildProjects(projectsData, translations) {
 
         for (const projectId of PROJECTS) {
             const project = projectsData[projectId];
-            if (!project.showIn.includes(roleId) && !project.showIn.includes("all")) {
+            const shouldShow =
+                roleId === "all"
+                    ? project.showIn.includes("all")
+                    : project.showIn.includes(roleId);
+
+            if (!shouldShow) {
                 continue;
             }
 

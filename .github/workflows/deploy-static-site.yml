@@ -38,8 +38,14 @@ jobs:
           fi
 
           install -m 700 -d ~/.ssh
-          printf '%s\n' "${DEPLOY_SSH_KEY}" > ~/.ssh/id_ed25519
+          printf '%s' "${DEPLOY_SSH_KEY}" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+
+          if ! ssh-keygen -y -f ~/.ssh/id_ed25519 >/dev/null 2>&1; then
+            echo "DEPLOY_SSH_KEY is not a valid private key."
+            exit 1
+          fi
+
           ssh-keyscan -H 106.54.188.236 >> ~/.ssh/known_hosts
 
       - name: Assemble deploy bundle

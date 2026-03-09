@@ -66,7 +66,7 @@ const main = async () => {
     // Our JS logic handles ?role=all correctly.
     const targetUrl = `${fileUrl}?role=${role.id}`;
 
-    await page.goto(targetUrl, { waitUntil: "load", timeout: 60_000 });
+    await page.goto(targetUrl, { waitUntil: "domcontentloaded", timeout: 60_000 });
     await page.waitForSelector(".resume-container", { timeout: 60_000 });
 
     // Ensure fonts loaded

@@ -10,7 +10,7 @@ export default {
         en: "macOS System Optimization Tool (SwiftSweep)",
     },
     // Which roles show this project
-    showIn: ["all", "client", "system", "frontend", "fullstack"],
+    showIn: ["all", "client", "system", "frontend"],
     descriptions: {
         default: {
             zh: {
