@@ -13,6 +13,8 @@ const ROLES = [
   { id: "client", filename: "resume-client.pdf" },
   { id: "fullstack", filename: "resume-fullstack.pdf" },
   { id: "server", filename: "resume-server.pdf" },
+  { id: "system", filename: "resume-system.pdf" },
+  { id: "frontend", filename: "resume-frontend.pdf" },
 ];
 
 const normalizePdfDates = async (pdfPath) => {
