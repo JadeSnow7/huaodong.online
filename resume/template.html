@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<!-- ============================================== -->
+<!-- THIS FILE IS AUTO-GENERATED. DO NOT EDIT.      -->
+<!-- Edit files in resume/data instead and rebuild. -->
+<!-- ============================================== -->
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>胡傲东 - 简历</title>
+	<meta name="description" content="胡傲东简历：客户端开发、系统架构与 AI 多模态。">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+	<style>
+		@page {
+			margin: 0.15in;
+			size: A4;
+		}
+
+		@media print {
+			body {
+				background: #fff !important;
+				min-height: auto;
+			}
+
+			.nav-bar,
+			.download-section {
+				display: none !important;
+			}
+
+			.resume-wrapper {
+				padding: 0 !important;
+			}
+
+			.resume-container {
+				border-radius: 0 !important;
+				box-shadow: none !important;
+			}
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans SC", "PingFang SC", sans-serif;
+			font-size: 8.5pt;
+			line-height: 1.25;
+			color: #1d1d1f;
+			background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+			min-height: 100vh;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.nav-bar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: rgba(10, 10, 15, 0.9);
+			backdrop-filter: blur(20px);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			padding: 12px 24px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 100;
+		}
+
+		.nav-bar .brand {
+			color: #fff;
+			font-weight: 600;
+			font-size: 14pt;
+			letter-spacing: -0.5px;
+		}
+
+		.nav-bar .nav-links {
+			display: flex;
+			gap: 20px;
+		}
+
+		.nav-bar a {
+			color: rgba(255, 255, 255, 0.7);
+			text-decoration: none;
+			font-size: 10pt;
+			transition: color 0.2s;
+		}
+
+		.nav-bar a:hover {
+			color: #fff;
+		}
+
+		.nav-bar .lang-toggle {
+			appearance: none;
+			border: 1px solid rgba(255, 255, 255, 0.22);
+			background: rgba(255, 255, 255, 0.08);
+			color: rgba(255, 255, 255, 0.8);
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 9pt;
+			font-weight: 600;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: transform 0.2s ease, color 0.2s ease, border 0.2s ease;
+		}
+
+		.nav-bar .lang-toggle:hover {
+			color: #fff;
+			transform: translateY(-1px);
+		}
+
+		.nav-bar .lang-toggle:focus-visible {
+			outline: 2px solid rgba(255, 255, 255, 0.6);
+			outline-offset: 3px;
+		}
+
+		.role-switcher {
+			display: flex;
+			gap: 8px;
+			margin-left: 20px;
+			align-items: center;
+		}
+
+		.role-btn {
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			color: rgba(255, 255, 255, 0.8);
+			padding: 4px 10px;
+			border-radius: 6px;
+			font-size: 9pt;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+
+		.role-btn:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		.role-btn.active {
+			background: #0071e3;
+			color: white;
+			border-color: #0071e3;
+		}
+
+		.role-item {
+			display: none;
+		}
+
+		body.role-all .role-item.show-all,
+		body.role-ai .role-item.show-ai,
+		body.role-client .role-item.show-client,
+		body.role-fullstack .role-item.show-fullstack,
+		body.role-server .role-item.show-server,
+		body.role-system .role-item.show-system,
+		body.role-frontend .role-item.show-frontend {
+			display: block;
+		}
+
+		/* Grid items need to be handled differently to maintain grid layout (though display:none breaks grid flow anyway which is what we want) */
+		body.role-all .role-item-grid.show-all,
+		body.role-ai .role-item-grid.show-ai,
+		body.role-client .role-item-grid.show-client,
+		body.role-fullstack .role-item-grid.show-fullstack,
+		body.role-server .role-item-grid.show-server,
+		body.role-system .role-item-grid.show-system,
+		body.role-frontend .role-item-grid.show-frontend {
+			display: block;
+		}
+
+		.role-item-grid {
+			display: none;
+		}
+
+		@media print {
+			.role-switcher {
+				display: none;
+			}
+		}
+
+		.resume-wrapper {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 40px 24px 20px;
+		}
+
+		.resume-container {
+			background: #fff;
+			border-radius: 12px;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+			overflow: hidden;
+		}
+
+		.header {
+			text-align: center;
+			padding: 20px 20px 16px;
+			background: linear-gradient(180deg, #fbfbfd 0%, #fff 100%);
+			border-bottom: 0.5px solid #d2d2d7;
+		}
+
+		.header h1 {
+			font-size: 26pt;
+			font-weight: 600;
+			letter-spacing: -0.5px;
+			color: #1d1d1f;
+			margin-bottom: 8px;
+		}
+
+		.contact {
+			font-size: 9pt;
+			color: #86868b;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.contact a {
+			color: #515154;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+
+		.contact a:hover {
+			color: #0071e3;
+		}
+
+		.content {
+			padding: 16px 24px 24px;
+		}
+
+		.section {
+			margin-bottom: 6px;
+		}
+
+		.section-title {
+			font-size: 11pt;
+			font-weight: 600;
+			color: #1d1d1f;
+			letter-spacing: -0.2px;
+			margin-bottom: 6px;
+			padding-bottom: 4px;
+			border-bottom: 0.5px solid #e8e8ed;
+		}
+
+		.edu-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.edu-row .school {
+			font-weight: 500;
+			color: #1d1d1f;
+		}
+
+		.edu-row .major {
+			color: #515154;
+		}
+
+		.edu-row .date {
+			color: #86868b;
+			font-size: 9pt;
+		}
+
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+		}
+
+		.skill-card {
+			background: #f5f5f7;
+			border-radius: 6px;
+			padding: 6px 10px;
+		}
+
+		.skill-card .label {
+			font-size: 8pt;
+			font-weight: 500;
+			color: #86868b;
+			text-transform: uppercase;
+			letter-spacing: 0.3px;
+			margin-bottom: 4px;
+		}
+
+		.skill-card .value {
+			font-size: 10pt;
+			color: #1d1d1f;
+		}
+
+		.proficiency-tag {
+			display: inline-block;
+			background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
+			color: white;
+			font-size: 7pt;
+			font-weight: 600;
+			padding: 2px 6px;
+			border-radius: 8px;
+			margin-left: 4px;
+		}
+
+		.proficiency-tag.familiar {
+			background: linear-gradient(135deg, #5856d6 0%, #af52de 100%);
+		}
+
+		.profile-summary {
+			background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+			border-radius: 8px;
+			padding: 10px 14px;
+			margin-bottom: 6px;
+			border-left: 3px solid #0071e3;
+		}
+
+		.profile-summary p {
+			font-size: 10pt;
+			color: #1d1d1f;
+			line-height: 1.45;
+			margin: 0;
+		}
+
+		.profile-summary .highlight {
+			color: #0071e3;
+			font-weight: 600;
+		}
+
+		.core-tags {
+			display: none;
+			/* Hide core tags to save space, redundant with Skills section */
+		}
+
+		.core-tag {
+			background: #fff;
+			border: 1px solid #d2d2d7;
+			border-radius: 16px;
+			padding: 5px 12px;
+			font-size: 9pt;
+			color: #515154;
+			font-weight: 500;
+		}
+
+		.core-tag.primary {
+			background: linear-gradient(135deg, #0071e3 0%, #42a5f5 100%);
+			color: white;
+			border: none;
+		}
+
+		.project {
+			background: #f5f5f7;
+			border-radius: 8px;
+			padding: 8px 12px;
+			margin-bottom: 8px;
+		}
+
+		.project.featured {
+			background: #f3f6ff;
+			border: 1px solid #e0e7ff;
+		}
+
+		.project-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 8px;
+		}
+
+		.project-title {
+			font-size: 12pt;
+			font-weight: 600;
+			color: #1d1d1f;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.project-title a {
+			color: #1d1d1f;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+
+		.project-title a:hover {
+			color: #0071e3;
+		}
+
+		.tag {
+			display: inline-block;
+			background: linear-gradient(135deg, #0071e3 0%, #42a5f5 100%);
+			color: white;
+			font-size: 7pt;
+			font-weight: 600;
+			padding: 3px 8px;
+			border-radius: 10px;
+			letter-spacing: 0.2px;
+		}
+
+		.tag.apple {
+			background: linear-gradient(135deg, #1d1d1f 0%, #515154 100%);
+		}
+
+		.project-meta {
+			font-size: 9pt;
+			color: #86868b;
+			text-align: right;
+		}
+
+		.project ul {
+			margin-left: 16px;
+			margin-top: 6px;
+		}
+
+		.project li {
+			font-size: 9pt;
+			color: #515154;
+			margin-bottom: 2px;
+		}
+
+		.project li strong {
+			color: #1d1d1f;
+			font-weight: 500;
+		}
+
+		.accent {
+			color: #0071e3;
+		}
+
+		.simple-list {
+			list-style: none;
+		}
+
+		.simple-list li {
+			font-size: 9pt;
+			color: #515154;
+			padding: 2px 0;
+			border-bottom: 0.5px solid #f5f5f7;
+		}
+
+		.simple-list li:last-child {
+			border-bottom: none;
+		}
+
+		.simple-list strong {
+			color: #1d1d1f;
+			font-weight: 500;
+		}
+
+		.section-hobbies,
+		.award-pill,
+		.awards {
+			display: none;
+		}
+
+		.award-icon {
+			font-size: 14pt;
+		}
+
+		.download-section {
+			text-align: center;
+			padding: 20px;
+			border-top: 0.5px solid #e8e8ed;
+			background: #fbfbfd;
+		}
+
+		.btn-download {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: linear-gradient(135deg, #0071e3 0%, #42a5f5 100%);
+			color: white;
+			padding: 12px 28px;
+			border-radius: 24px;
+			font-size: 11pt;
+			font-weight: 600;
+			text-decoration: none;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+
+		.btn-download:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 20px rgba(0, 113, 227, 0.3);
+		}
+
+		@media (max-width: 600px) {
+			.skills-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.contact {
+				flex-direction: column;
+				gap: 8px;
+			}
+
+			.edu-row {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 4px;
+			}
+
+			.project-header {
+				flex-direction: column;
+				gap: 8px;
+			}
+
+			.project-meta {
+				text-align: left;
+			}
+		}
+
+		@media print {
+			.nav-bar {
+				display: none;
+			}
+
+			body {
+				background: #fff;
+				font-size: 8.4pt;
+				line-height: 1.28;
+			}
+
+			.resume-wrapper {
+				padding: 0;
+			}
+
+			.resume-container {
+				box-shadow: none;
+				border-radius: 0;
+			}
+
+			.header {
+				padding: 12px 14px 8px;
+			}
+
+			.header h1 {
+				font-size: 23pt;
+				margin-bottom: 4px;
+			}
+
+			.contact {
+				gap: 12px;
+				font-size: 8.6pt;
+			}
+
+			.content {
+				padding: 8px 14px 10px;
+			}
+
+			.profile-summary {
+				padding: 10px 12px;
+				margin-bottom: 6px;
+			}
+
+			.profile-summary p {
+				font-size: 8.4pt;
+				line-height: 1.3;
+			}
+
+			.core-tags {
+				display: none;
+			}
+
+			.section {
+				margin-bottom: 8px;
+			}
+
+			.section-title {
+				font-size: 10.8pt;
+				margin-bottom: 6px;
+				padding-bottom: 3px;
+			}
+
+			.skills-grid {
+				gap: 6px;
+			}
+
+			.skill-card {
+				padding: 8px 10px;
+			}
+
+			.project {
+				padding: 8px 10px;
+				margin-bottom: 6px;
+			}
+
+			.project-header {
+				margin-bottom: 5px;
+			}
+
+			.project-title {
+				font-size: 10.8pt;
+			}
+
+			.project-meta {
+				font-size: 7.6pt;
+			}
+
+			.project ul {
+				margin-left: 0;
+				margin-top: 2px;
+				padding-left: 0;
+				list-style: none;
+			}
+
+			.project li {
+				font-size: 8.4pt;
+				margin-bottom: 1px;
+			}
+
+			.simple-list li {
+				font-size: 8.4pt;
+				padding: 2px 0;
+			}
+
+			.awards {
+				gap: 8px;
+			}
+
+			.award-pill {
+				padding: 6px 12px;
+				font-size: 9pt;
+			}
+
+			.section-hobbies {
+				display: none;
+			}
+
+			.download-section {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="nav-bar">
+		<div class="brand">HU AODONG</div>
+		<div class="nav-links">
+			<a href="https://huaodong.online/" data-i18n="nav.home">首页</a>
+			<a href="https://huaodong.online/#projects" data-i18n="nav.projects">项目</a>
+			<a href="https://huaodong.online/#skills" data-i18n="nav.skills">技能</a>
+			<a href="https://huaodong.online/notes/index.html" data-i18n="nav.notes">学习笔记</a>
+			<a href="https://huaodong.online/essays/index.html" data-i18n="nav.essays">随笔与记录</a>
+			<a href="https://huaodong.online/#contact" data-i18n="nav.contact">联系</a>
+			<div class="role-switcher">
+				<button class="role-btn active" data-role-btn="all" data-i18n="core.role_btn"></button>
+				<button class="role-btn" data-role-btn="ai" data-i18n="core.role_btn_ai"></button>
+				<button class="role-btn" data-role-btn="client" data-i18n="core.role_btn_client"></button>
+				<button class="role-btn" data-role-btn="fullstack" data-i18n="core.role_btn_fullstack"></button>
+				<button class="role-btn" data-role-btn="server" data-i18n="core.role_btn_server"></button>
+				<button class="role-btn" data-role-btn="system" data-i18n="core.role_btn_system"></button>
+				<button class="role-btn" data-role-btn="frontend" data-i18n="core.role_btn_frontend"></button>
+			</div>
+			<button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
+		</div>
+	</nav>
+
+	<div class="resume-wrapper">
+		<div class="resume-container">
+			<div class="header">
+				<h1>胡傲东</h1>
+				<div class="contact">
+					<a href="tel:18085741680">📱 18085741680</a>
+					<a href="mailto:hu.aodong@icloud.com">✉️ hu.aodong@icloud.com</a>
+					<a href="https://github.com/JadeSnow7" target="_blank" rel="noopener">GitHub</a>
+					<a href="https://huaodong.online/" data-i18n="header.homepage">个人主页</a>
+				</div>
+			</div>
+
+			<div class="content">
+				<div class="section section-core">
+					<div class="section-title" data-i18n="section.core">核心竞争力</div>
+            <!-- GENERATED_PROFILE_SUMMARIES -->
+					            <!-- GENERATED_PROFILE_TAGS -->
+				</div>
+
+				<div class="section section-education">
+					<div class="section-title" data-i18n="section.education">教育背景</div>
+					<div class="edu-row">
+						<div>
+							<span class="school" data-i18n="education.school">华中科技大学</span>
+							<span class="major" data-i18n="education.major"> · 集成电路设计与集成系统（本科）</span>
+						</div>
+						<span class="date">2022.09 - 2026.06</span>
+					</div>
+				</div>
+
+				<div class="section section-skills">
+					<div class="section-title" data-i18n="section.skills">专业技能</div>
+					<div class=skills-grid>
+            <!-- GENERATED_SKILLS -->
+							<div class="label" data-i18n="skills.frontend_lang.label"></div>
+							<div class="value" data-i18n-html="skills.frontend_lang.value"></div>
+						</div>
+
+						<div class="skill-card role-item-grid show-frontend">
+							<div class="label" data-i18n="skills.frontend_arch.label"></div>
+							<div class="value" data-i18n-html="skills.frontend_arch.value"></div>
+						</div>
+
+						<div class="skill-card role-item-grid show-frontend">
+							<div class="label" data-i18n="skills.frontend_cross.label"></div>
+							<div class="value" data-i18n-html="skills.frontend_cross.value"></div>
+						</div>
+
+						<div class="skill-card role-item-grid show-frontend">
+							<div class="label" data-i18n="skills.frontend_perf.label"></div>
+							<div class="value" data-i18n-html="skills.frontend_perf.value"></div>
+						</div>
+
+						<div class="skill-card role-item-grid show-frontend">
+							<div class="label" data-i18n="skills.frontend_engineering.label"></div>
+							<div class="value" data-i18n-html="skills.frontend_engineering.value"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section section-projects">
+					<div class="section-title" data-i18n="section.projects">项目经历</div>
+            <!-- GENERATED_PROJECTS -->
+
+				<div class="section section-campus">
+					<div class="section-title" data-i18n="section.campus">校园经历</div>
+					<ul class="simple-list" data-i18n-html="campus.list">
+						<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：将华为海思网络仿真算法移植至 NS-3 平台（C++），负责时延/端到端时延计算模块开发，深入理解
+							TCP/IP 协议栈与网络编程 | 媒体组（运营）：运营团队公众号</li>
+						<li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导 500+ 人社群管理，组织线上线下宣讲，覆盖数百人</li>
+					</ul>
+				</div>
+
+				<div class="section section-hobbies">
+					<div class="section-title" data-i18n="section.hobbies">兴趣爱好</div>
+					<div class="awards" data-i18n-html="hobbies.list">
+						<span class="award-pill"><span class="award-icon">🏓</span> 乒乓球</span>
+						<span class="award-pill"><span class="award-icon">🏸</span> 羽毛球</span>
+						<span class="award-pill"><span class="award-icon">🏊</span> 游泳</span>
+						<span class="award-pill"><span class="award-icon">📱</span> 数码</span>
+						<span class="award-pill"><span class="award-icon">📷</span> 摄影</span>
+						<span class="award-pill"><span class="award-icon">💰</span> 财经</span>
+						<span class="award-pill"><span class="award-icon">✈️</span> 旅游</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="download-section">
+				<a href="https://huaodong.online/assets/resume.pdf" class="btn-download" target="_blank" rel="noopener">
+					<span data-i18n="download.pdf">📄 下载 PDF 版本</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		(() => {
+			const STORAGE_KEY = "site_lang";
+			const SUPPORTED = new Set(["zh", "en"]);
+			const DEFAULT_LANG = "zh";
+
+			const translations = {
+    "zh": {
+        "meta": {
+            "title": "胡傲东 - 简历",
+            "description": "胡傲东简历：客户端开发、系统架构与 AI 多模态。"
+        },
+        "nav": {
+            "home": "首页",
+            "projects": "项目",
+            "skills": "技能",
+            "notes": "学习笔记",
+            "essays": "随笔与记录",
+            "contact": "联系"
+        },
+        "header": {
+            "homepage": "个人主页"
+        },
+        "section": {
+            "core": "核心竞争力",
+            "education": "教育背景",
+            "skills": "专业技能",
+            "projects": "项目经历",
+            "campus": "校园经历",
+            "hobbies": "兴趣爱好"
+        },
+        "download": {
+            "pdf": "📄 下载 PDF 版本"
+        },
+        "tag": {
+            "fullstack": "全栈",
+            "system": "系统",
+            "apple": "Apple"
+        },
+        "education": {
+            "school": "华中科技大学",
+            "major": " · 集成电路设计与集成系统（本科）",
+            "date": "2022.09 - 2026.06"
+        },
+        "campus": {
+            "list": "<li><strong>启明学院 Dian 团队</strong> · 华为海思组（技术）：将华为海思网络仿真算法移植至 NS-3 平台（C++），负责时延/端到端时延计算模块开发，深入理解 TCP/IP 协议栈与网络编程 | 媒体组（运营）：运营团队公众号</li><li><strong>华中科技大学贵州省招生组</strong> · 核心骨干：主导 500+ 人社群管理，组织线上线下宣讲，覆盖数百人</li>"
+        },
+        "core": {
+            "role_btn": "全栈",
+            "summary": "<span class=\"highlight\">全栈工程师 + AI 多模态开发者</span>，侧重于<span class=\"highlight\">客户端架构设计</span>与<span class=\"highlight\">端到端 AI 应用落地</span>。具备复杂系统分析与设计能力，擅长将 AI 能力与工程实践深度结合，具有良好的项目规范管理与团队协作能力。",
+            "tags": "<span class=\"core-tag primary\">C++</span><span class=\"core-tag primary\">AI Agent / RAG</span><span class=\"core-tag\">系统架构设计</span><span class=\"core-tag\">全栈工程交付</span><span class=\"core-tag\">iOS 原生开发</span><span class=\"core-tag\">React Native</span>",
+            "role_btn_ai": "AI 应用",
+            "summary_ai": "AI 研发工程师，专注于 Retrieval-Augmented Generation (RAG) 架构、Large Language Model (LLM) agent 设计与多模态应用落地，具备从知识库构建、模型调优到推理服务部署的完整链路经验。擅长围绕真实业务场景设计 GraphRAG、Tool Calling、推理调度、缓存复用与离线/在线协同策略，提升问答准确性、系统稳定性与资源利用率。具备端云协同落地经验，可将 Qwen 系列模型、Stable Diffusion、Stable Video Diffusion 与 Text-to-Speech 能力封装为可扩展服务，并结合 NPU 加速实现边缘推理。",
+            "tags_ai": "<span class=\"core-tag primary\">Python</span><span class=\"core-tag primary\">LLM Agent</span><span class=\"core-tag\">RAG / GraphRAG</span><span class=\"core-tag\">SFT 微调</span><span class=\"core-tag\">多模态编排</span><span class=\"core-tag\">端云协同</span>",
+            "role_btn_client": "客户端",
+            "summary_client": "<span class=\"highlight\">PC 客户端开发工程师</span>，专注于<span class=\"highlight\">Windows/macOS/Linux 跨平台桌面端开发</span>与<span class=\"highlight\">性能优化</span>。精通 C++（STL/Modern C++）与 Swift，深入理解 OS 内存管理、进程/线程调度与 IPC 机制，具备从 UI 渲染到底层网络编程的全栈客户端开发经验，擅长使用 GDB/LLDB + Instruments 进行深度性能分析与调优。",
+            "tags_client": "<span class=\"core-tag primary\">C++ (STL/Qt)</span><span class=\"core-tag primary\">Swift / SwiftUI</span><span class=\"core-tag\">Windows / macOS / Linux</span><span class=\"core-tag\">Performance Optimization</span><span class=\"core-tag\">Network Programming</span><span class=\"core-tag\">XPC / IPC</span>",
+            "role_btn_fullstack": "全栈",
+            "summary_fullstack": "全栈工程师，主攻 Go 服务架构与端到端产品交付，能够完成从 React/TypeScript 前端、Go 与 Python 服务到存储、中间件和部署体系的闭环设计。擅长微服务拆分、RESTful API 设计、高并发任务调度与跨端协同，在多模态推理与教学平台场景中落地稳定、可维护的业务系统。深入理解 Redis、Asynq、MySQL、MinIO 与 Linux/TCP/IP 网络编程，能够围绕吞吐、延迟、可靠性和资源利用率持续优化系统。",
+            "tags_fullstack": "<span class=\"core-tag primary\">Go / Gin</span><span class=\"core-tag primary\">React 18</span><span class=\"core-tag\">Python / FastAPI</span><span class=\"core-tag\">高并发调度</span><span class=\"core-tag\">Redis / MySQL</span><span class=\"core-tag\">微服务架构</span>",
+            "role_btn_server": "服务端",
+            "summary_server": "<span class=\"highlight\">服务端开发工程师</span>，以 <span class=\"highlight\">Go / C++</span> 为主力，专注<span class=\"highlight\">高并发系统设计</span>与<span class=\"highlight\">分布式中间件</span>的工程落地。在字节工程营项目中负责后端架构设计及服务端模型服务开发，基于 Redis + Asynq 构建分布式任务调度系统，支撑多模态推理的高并发稳定运行；有 C++ 系统研发背景（ns-3 网络仿真平台），对 TCP/IP 协议栈与 OS 底层有深入理解，具备从协议层到服务层的完整工程视野。",
+            "tags_server": "<span class=\"core-tag primary\">Go / C++</span><span class=\"core-tag primary\">高并发调度</span><span class=\"core-tag\">Redis / Asynq</span><span class=\"core-tag\">MySQL 优化</span><span class=\"core-tag\">TCP / Linux</span><span class=\"core-tag\">Docker 部署</span>",
+            "role_btn_system": "系统",
+            "summary_system": "<span class=\"highlight\">系统研发工程师</span>，专注于<span class=\"highlight\">C++ 高性能编程</span>与<span class=\"highlight\">操作系统底层机制</span>。具备从 CPU 体系结构（RISC-V）、内核通信（IPC/XPC）到网络协议栈（ns-3 / TCP）的全栈系统视野。擅长处理复杂的并发调度与内存管理问题，追求硬件与软件的极致协同优化。",
+            "tags_system": "<span class=\"core-tag primary\">C++ 17 / C</span><span class=\"core-tag primary\">OS 原理</span><span class=\"core-tag\">Linux / macOS</span><span class=\"core-tag\">多线程并发</span><span class=\"core-tag\">网络协议栈</span><span class=\"core-tag\">硬件体系结构</span>",
+            "role_btn_frontend": "前端",
+            "summary_frontend": "前端工程师，专注于复杂交互、跨端桌面界面与高性能渲染，能够将 AI 产品需求抽象为可维护、可扩展的前端架构。以 TypeScript 与 React 18 为核心，擅长组件系统设计、异步数据流管理、Server-Sent Events (SSE) 流式交互与实时预览链路优化，覆盖 Web、WeCom H5 与 Tauri 桌面端。熟悉浏览器渲染机制、事件循环与工程化体系，能够系统解决首屏加载、长列表渲染、内存泄漏和跨端一致性等问题。",
+            "tags_frontend": "<span class=\"core-tag primary\">React 18</span><span class=\"core-tag primary\">TypeScript</span><span class=\"core-tag\">Tauri / Qt</span><span class=\"core-tag\">前端架构</span><span class=\"core-tag\">性能调优</span><span class=\"core-tag\">工程化体系</span>"
+        },
+        "skills": {
+            "all_lang": {
+                "label": "语言/框架",
+                "value": "C++ (STL/Modern C++/Qt)、Python/PyTorch/FastAPI、Swift/SwiftUI、TypeScript/React/Tauri"
+            },
+            "all_ai": {
+                "label": "AI / 多模态",
+                "value": "LLM Agent (微调/Tool Calling)、SD/SVD 图像视频生成、TTS 语音合成、GraphRAG、pHash/LSH 相似检测"
+            },
+            "all_platform": {
+                "label": "系统 / 平台",
+                "value": "Windows/macOS/Linux 跨平台桌面开发、App Sandbox/Notarization/XPC、网络编程 (Socket/HTTP)、Docker 容器化"
+            },
+            "all_tools": {
+                "label": "架构 / 工具",
+                "value": "MVVM/Clean Architecture、GDB/LLDB/Instruments 性能调优、CMake/Makefile 构建、Git 协作、CI/CD"
+            },
+            "all_devflow": {
+                "label": "AI 驱动工程",
+                "value": "架构先行设计、代码规范与 Spec 驱动、函数式/组合式解耦、Prompt 工程与多 Agent 协作、AI 辅助编程加速工程交付"
+            },
+            "ai_lang": {
+                "label": "模型与框架",
+                "value": "Python、PyTorch、FastAPI、Qwen、Stable Diffusion、Stable Video Diffusion、Text-to-Speech"
+            },
+            "ai_ai": {
+                "label": "RAG 与 Agent",
+                "value": "Retrieval-Augmented Generation (RAG)、GraphRAG、Large Language Model (LLM) agents、Tool Calling、Prompt Engineering、知识库构建"
+            },
+            "ai_perf": {
+                "label": "调优与推理",
+                "value": "Supervised Fine-Tuning (SFT)、模型服务化、异步推理链路、缓存复用、限流调度、断点恢复"
+            },
+            "ai_platform": {
+                "label": "端云协同与部署",
+                "value": "Docker、Linux、NPU acceleration、边缘推理、端云协同、服务部署落地"
+            },
+            "ai_sys": {
+                "label": "数据与系统",
+                "value": "Redis、Asynq、MySQL、MinIO、多模态任务编排、推理服务接口设计"
+            },
+            "client_lang": {
+                "label": "语言/框架",
+                "value": "C++ (STL/Modern C++/Qt)、Swift/SwiftUI、Python、TypeScript/React/Tauri"
+            },
+            "client_platform": {
+                "label": "系统 / 平台",
+                "value": "Windows/macOS/Linux 跨平台桌面开发、网络编程 (Socket/HTTP)、Docker 容器化"
+            },
+            "client_tools": {
+                "label": "架构 / 工具",
+                "value": "MVVM/Clean Architecture、GDB/LLDB/Instruments 性能调优、CMake/Makefile 构建、Git 协作、CI/CD"
+            },
+            "client_devflow": {
+                "label": "AI 驱动工程",
+                "value": "架构先行设计、代码规范与 Spec 驱动、函数式/组合式解耦、Prompt 工程与多 Agent 协作、AI 辅助编程加速工程交付"
+            },
+            "fullstack_lang": {
+                "label": "语言与框架",
+                "value": "Go、Gin、Python、FastAPI、TypeScript、React 18、GORM、Tauri"
+            },
+            "fullstack_arch": {
+                "label": "服务端架构",
+                "value": "微服务架构、RESTful API、服务分层设计、异步任务调度、限流与熔断、缓存设计"
+            },
+            "fullstack_dist": {
+                "label": "中间件与存储",
+                "value": "Redis、Asynq、MySQL、MinIO、对象存储、数据建模"
+            },
+            "fullstack_deploy": {
+                "label": "部署与交付",
+                "value": "Docker、Docker Compose、Linux、环境隔离、配置化部署、CI/CD"
+            },
+            "fullstack_perf": {
+                "label": "系统与性能",
+                "value": "TCP/IP、HTTP、Goroutine 并发模型、任务生命周期管理、内存优化、高并发稳定性治理"
+            },
+            "server_lang": {
+                "label": "语言/框架",
+                "value": "Go/Gin、C++ (STL/Modern C++)、Python/FastAPI、TypeScript/React"
+            },
+            "server_os": {
+                "label": "系统 / OS",
+                "value": "Linux 系统编程、TCP/IP 协议栈与网络编程（Socket/HTTP）、进程/线程调度原理、Docker 容器化部署"
+            },
+            "server_backend": {
+                "label": "后端 / 中间件",
+                "value": "Go/Gin RESTful API · Redis + Asynq 分布式任务队列 · MySQL 索引优化 · MinIO 对象存储 · Docker Compose 一键部署 · Goroutine 并发调度"
+            },
+            "server_tools": {
+                "label": "架构 / 工具",
+                "value": "微服务架构、GDB/LLDB 性能调优、CMake/Makefile 构建、Git 协作、CI/CD"
+            },
+            "system_lang": {
+                "label": "语言与库",
+                "value": "精通 C/C++ (STL/Modern C++)，熟悉 SystemVerilog、Python，了解汇编与 CPU 指令集"
+            },
+            "system_os": {
+                "label": "操作系统",
+                "value": "深入理解 Linux/macOS 内存管理、进程/线程调度、IPC（XPC/Mach）、POSIX API、App Sandbox"
+            },
+            "system_arch": {
+                "label": "体系结构",
+                "value": "熟悉 RISC-V 处理器微架构、动态分支预测、流水线设计与乱序执行"
+            },
+            "system_network": {
+                "label": "网络与仿真",
+                "value": "熟悉 TCP/HTTP 协议栈、Socket 编程、离散事件驱动模型（ns-3）"
+            },
+            "system_tools": {
+                "label": "工程工具",
+                "value": "CMake/Makefile、GDB/LLDB/Instruments 性能调优、Git 协作、CI/CD 自动化构建"
+            },
+            "frontend_lang": {
+                "label": "语言与框架",
+                "value": "TypeScript、JavaScript (ES6+)、HTML5、CSS3、React 18、Vue 3、Tailwind CSS"
+            },
+            "frontend_arch": {
+                "label": "前端架构",
+                "value": "组件化设计、状态管理、Redux、Zustand、React Query、SWR、可维护前端分层"
+            },
+            "frontend_cross": {
+                "label": "跨端与交互",
+                "value": "Tauri、Qt/QML、WeCom H5、响应式布局、Server-Sent Events (SSE)、实时预览链路"
+            },
+            "frontend_perf": {
+                "label": "性能优化",
+                "value": "浏览器渲染机制、事件循环、首屏加载优化、长列表虚拟化、帧渲染优化、内存泄漏排查"
+            },
+            "frontend_engineering": {
+                "label": "工程化体系",
+                "value": "Vite、Webpack、模块化构建、代码规范治理、自动化构建、CI/CD"
+            }
+        },
+        "projects": {
+            "story_all": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长 · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将文本生成、分镜规划、图像/配音/视频推理到 FFmpeg 合成的串行工作流重构为桌面端 + 服务端协同系统，带领 5 人在 2 周内交付 MVP，并在 8GB 显存下稳定生成 30s 720p 视频</li><li><strong>架构取舍</strong>：多模态任务混跑时，常规 FIFO 队列与同步编排会放大 GPU/内存争用并拖垮尾任务；因此拆分 API 层、调度层、推理层，采用 Redis + Asynq 优先级队列与令牌桶限速，按任务类型、显存占用和时延敏感度动态调度</li><li><strong>机制设计</strong>：定义创建/执行/暂停/恢复/取消/重试/降级的统一状态机，引入 checkpoint-resume 与素材指纹缓存，避免单阶段失败触发全链路重跑，长任务恢复率 95%+，缓存复用率从 25% 提升至 65%</li><li><strong>端侧优化</strong>：针对实时预览阶段的 UI 卡顿与线程阻塞，采用 Qt/QML MVVM 分层、QThread + Signal-Slot 线程解耦与帧缓冲复用，内存峰值降低 30%，渲染帧率从 30fps 提升至 60fps</li><li><strong>技术栈</strong>：Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen / Stable Diffusion / Stable Video Diffusion / Text-to-Speech · MySQL/MinIO</li>"
+            },
+            "teaching_all": {
+                "title": "AI 智能教学平台",
+                "meta": "本科毕业设计 · 独立全栈开发 · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将以课程为中心的传统教学平台重构为学生中心的 AI 教学系统，支撑桌面端、企业微信 H5 与移动端统一协同，在华中科技大学课程试点覆盖 200+ 研究生，稳定支持 30+ 并发用户</li><li><strong>架构取舍</strong>：原方案将学情状态散落在课程维度表结构中，无法支撑跨课程追踪与个性化干预；因此重建学生画像、学习档案与长期学情模型，并将 React 前端、Go 服务与 Python AI 服务拆为可独立演进的三层系统</li><li><strong>AI 机制</strong>：为降低专业问答 hallucination 与检索错配，放弃仅靠关键词/向量召回的轻量方案，引入 Qwen3 + GraphRAG + Tool Calling，把知识点检索、学情查询与建议生成拆成可追踪链路，AI 答疑准确率提升至 85%+</li><li><strong>工程落地</strong>：围绕作业批改与高频答疑设计 Redis 缓存、异步数据同步与 Docker Compose 一键部署，兼顾教师试点环境的低运维成本与跨端交付效率，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
+            },
+            "swiftsweep_all": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块</li><li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink 逃逸检测），零误删事故</li><li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService 注册系统级 Helper</li><li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测；实现鉴权机制和用户数据隔离；实现插件系统；通过 Developer ID 签名 + Notarization 发布</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_all": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_all": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_ai": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长（多模态 AI 核心开发） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将“文本直接生成视频”的粗放式流程重构为脚本理解、结构化分镜、提示词编译、多模型执行和视频合成五阶段链路，在 8GB 显存下稳定生成 30s 720p 视频，并降低脚本与画面漂移</li><li><strong>架构取舍</strong>：放弃单轮大模型自由生成长视频脚本的方案，因为该方案在长文本场景下容易放大 hallucination、分镜跳变和角色设定不一致；改为由 Qwen 先生成结构化分镜，再驱动 Stable Diffusion、Stable Video Diffusion 与 Text-to-Speech 分阶段执行</li><li><strong>机制设计</strong>：将 Prompt 编译、模型调用、素材落盘与合成导出纳入统一任务抽象，结合 Redis + Asynq 优先级调度、令牌桶限速与缓存复用，在异构模型混部场景下控制显存竞争，内存峰值降低 30%</li><li><strong>工程结果</strong>：FastAPI 推理服务支持多模型并行编排与断点恢复，长任务恢复率 95%+；分层缓存减少重复 Stable Diffusion 推理，缓存复用率从 25% 提升至 65%，同时把端侧预览帧率从 30fps 提升至 60fps</li><li><strong>技术栈</strong>：Qwen · Stable Diffusion · Stable Video Diffusion · Text-to-Speech · FastAPI · Go/Gin · Redis/Asynq · Docker · FFmpeg</li>"
+            },
+            "teaching_ai": {
+                "title": "AI 智能教学平台",
+                "meta": "本科毕业设计 · AI 核心开发 · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：围绕高校教学场景构建学生中心的 AI 系统，把个性化答疑、智能批改与学情分析统一到可追踪的 RAG + Agent 链路中，在 200+ 研究生试点中将专业问答准确率提升至 85%+</li><li><strong>架构取舍</strong>：面对跨课程知识跳转与学生个体差异，放弃“向量检索 + 单轮 Prompt”方案，因为该方案难以处理多跳推理与学情上下文；改为 GraphRAG 组织课程知识、Tool Calling 查询学生画像与学习记录，再由 Qwen3 生成个性化回答</li><li><strong>机制设计</strong>：将检索、学情查询、答案生成与批改判定拆为可观测子步骤，并通过 Supervised Fine-Tuning 强化专业领域表达，降低 hallucination 与知识点错配；作业批改覆盖 80% 常见题型</li><li><strong>端云协同</strong>：在桌面端接入 NPU 加速本地推理，实现离线智能答疑；云端保留 FastAPI 推理服务与知识库更新链路，使本地低时延交互与中心化模型迭代能够协同演进</li><li><strong>技术栈</strong>：Qwen3 · GraphRAG · Supervised Fine-Tuning · Large Language Model Agent / Tool Calling · NPU acceleration · FastAPI · Python</li>"
+            },
+            "swiftsweep_ai": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块</li><li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink 逃逸检测），零误删事故</li><li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService 注册系统级 Helper</li><li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测；实现鉴权机制和用户数据隔离；实现插件系统；通过 Developer ID 签名 + Notarization 发布</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_ai": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_ai": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_client": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长（客户端/多模态） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将跨平台桌面端从“提交任务后等待结果”的弱交互工具重构为支持实时分镜编辑、进度反馈、断点恢复与视频导出的 AI 生成工作台，在 2 周内完成 MVP 并将预览帧率从 30fps 提升至 60fps</li><li><strong>架构取舍</strong>：直接在 UI 线程轮询推理状态与刷新预览会导致长任务场景下界面冻结；因此采用 Qt/QML MVVM 分层、QThread + Signal-Slot 解耦交互线程与计算线程，并将任务状态、预览帧和导出链路拆成可独立刷新的异步模块</li><li><strong>机制设计</strong>：统一创建/暂停/恢复/取消/重试的任务协议，前端仅消费可追踪的状态流与增量结果，避免页面级状态纠缠；结合帧缓冲复用与异步回填，让多模态实时预览在长任务下仍保持可操作性</li><li><strong>协同优化</strong>：客户端侧按资源压力触发任务降级与后端限流协作，减少显存争用导致的卡顿与失败，长任务恢复率 95%+，内存峰值降低 30%，缓存复用率从 25% 提升至 65%</li><li><strong>技术栈</strong>：Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen / Stable Diffusion / Stable Video Diffusion / Text-to-Speech</li>"
+            },
+            "teaching_client": {
+                "title": "AI 智能教学平台",
+                "meta": "本科毕业设计 · 全栈开发（侧重跨平台客户端） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将教学系统客户端重构为覆盖 Windows/macOS/Linux 桌面端、企业微信 H5 与移动端的统一交互层，使学生画像、学习轨迹与 AI 问答能够跨端连续使用</li><li><strong>架构取舍</strong>：未继续采用课程中心驱动的静态页面流，因为该模式难以承载跨课程学情追踪与端侧智能交互；转而以学生画像和学习档案为核心抽象前后端协议，并让桌面端与 Web 端共享同一套业务语义</li><li><strong>机制设计</strong>：桌面端通过 Vite + React + Tauri 承载统一代码库分发，并接入 NPU 本地推理形成离线问答能力；客户端状态层同时协调本地推理、云端知识检索与结果回填，避免多端结果不一致</li><li><strong>工程结果</strong>：平台在试点场景中稳定支持 30+ 并发用户，AI 答疑准确率达到 85%+，且 Docker Compose 一键部署显著降低了跨端联调与试点交付成本</li><li><strong>技术栈</strong>：Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · NPU acceleration</li>"
+            },
+            "swiftsweep_client": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块</li><li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink 逃逸检测），零误删事故</li><li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService 注册系统级 Helper</li><li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测；实现鉴权机制和用户数据隔离；实现插件系统；通过 Developer ID 签名 + Notarization 发布</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_client": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>核心工作</strong>：设计 RV32IMACFG 处理器并移植 OS；基于 C++ 构建仿真验证环境与 CI 流水线，设计 50+ 测试用例</li><li><strong>系统认知</strong>：深入理解计算机体系结构、流水线技术与软硬件协同设计</li><li><strong>技术栈</strong>：C++ · Python · Makefile · SystemVerilog · RISC-V · RTOS</li>"
+            },
+            "ns3_client": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_fullstack": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长 · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将文本生成、分镜规划、图像/配音/视频推理到 FFmpeg 合成的串行工作流重构为桌面端 + 服务端协同系统，带领 5 人在 2 周内交付 MVP，并在 8GB 显存下稳定生成 30s 720p 视频</li><li><strong>架构取舍</strong>：多模态任务混跑时，常规 FIFO 队列与同步编排会放大 GPU/内存争用并拖垮尾任务；因此拆分 API 层、调度层、推理层，采用 Redis + Asynq 优先级队列与令牌桶限速，按任务类型、显存占用和时延敏感度动态调度</li><li><strong>机制设计</strong>：定义创建/执行/暂停/恢复/取消/重试/降级的统一状态机，引入 checkpoint-resume 与素材指纹缓存，避免单阶段失败触发全链路重跑，长任务恢复率 95%+，缓存复用率从 25% 提升至 65%</li><li><strong>端侧优化</strong>：针对实时预览阶段的 UI 卡顿与线程阻塞，采用 Qt/QML MVVM 分层、QThread + Signal-Slot 线程解耦与帧缓冲复用，内存峰值降低 30%，渲染帧率从 30fps 提升至 60fps</li><li><strong>技术栈</strong>：Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen / Stable Diffusion / Stable Video Diffusion / Text-to-Speech · MySQL/MinIO</li>"
+            },
+            "teaching_fullstack": {
+                "title": "AI 智能教学平台",
+                "meta": "本科毕业设计 · 独立全栈开发 · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将以课程为中心的传统教学平台重构为学生中心的 AI 教学系统，支撑桌面端、企业微信 H5 与移动端统一协同，在华中科技大学课程试点覆盖 200+ 研究生，稳定支持 30+ 并发用户</li><li><strong>架构取舍</strong>：原方案将学情状态散落在课程维度表结构中，无法支撑跨课程追踪与个性化干预；因此重建学生画像、学习档案与长期学情模型，并将 React 前端、Go 服务与 Python AI 服务拆为可独立演进的三层系统</li><li><strong>AI 机制</strong>：为降低专业问答 hallucination 与检索错配，放弃仅靠关键词/向量召回的轻量方案，引入 Qwen3 + GraphRAG + Tool Calling，把知识点检索、学情查询与建议生成拆成可追踪链路，AI 答疑准确率提升至 85%+</li><li><strong>工程落地</strong>：围绕作业批改与高频答疑设计 Redis 缓存、异步数据同步与 Docker Compose 一键部署，兼顾教师试点环境的低运维成本与跨端交付效率，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
+            },
+            "swiftsweep_fullstack": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块</li><li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink 逃逸检测），零误删事故</li><li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService 注册系统级 Helper</li><li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测；实现鉴权机制和用户数据隔离；实现插件系统；通过 Developer ID 签名 + Notarization 发布</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_fullstack": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_fullstack": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_server": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长（后端架构设计与开发） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将文本→分镜→图像/语音/视频生成→合成导出的多模态推理链路重构为 API、调度、推理三层解耦系统，在 8GB 显存约束下稳定支撑 30s+ 视频生成</li><li><strong>架构取舍</strong>：未采用同步 REST 直连推理和单机内存队列，因为混部场景下会放大尾任务阻塞与显存争用；转而采用 Go + Gin 接入层、Redis + Asynq 分布式优先级队列与令牌桶限速，把任务按资源画像与时延敏感度分层调度</li><li><strong>机制设计</strong>：抽象创建/执行/暂停/恢复/取消/重试/降级的统一任务状态机，并实现 checkpoint-resume 与幂等重试，避免任一子任务失败触发整链路重跑；在目标压测场景下未再出现 OOM，长任务恢复率 95%+</li><li><strong>成本优化</strong>：围绕脚本内容、分镜参数、模型配置与素材指纹构建分层缓存，减少重复 Stable Diffusion 推理与无效合成开销，缓存复用率从 25% 提升至 65%，内存峰值降低 30%</li><li><strong>技术栈</strong>：Go/Gin · FastAPI · Redis/Asynq · Docker · MySQL · MinIO</li>"
+            },
+            "teaching_server": {
+                "title": "AI 智能教学平台",
+                "meta": "独立全栈开发（侧重后端架构） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：为个性化答疑、学习轨迹分析与智能批改重建教学后端，使 30+ 并发场景下的学情查询、知识检索与 AI 响应可稳定协同</li><li><strong>架构取舍</strong>：未继续沿用课程中心的单体式数据组织，因为它难以表达跨课程学情与长期记忆；转而设计学生画像、学习档案与知识检索分层模型，并将 Go/Gin 业务服务与 Python/FastAPI AI 服务解耦</li><li><strong>机制设计</strong>：围绕高频问答路径引入 Redis 缓存、异步数据同步与 Tool Calling，把学情查询、知识点召回和答案生成拆成可观测链路，降低长链路调用放大的尾延迟</li><li><strong>工程结果</strong>：Docker Compose 一键部署降低试点环境接入成本，服务在 30+ 并发目标场景下保持稳定，且为后续继续扩展推荐、批改与统计模块保留独立演进空间</li><li><strong>技术栈</strong>：Go/Gin · FastAPI · Redis · MySQL · Docker Compose</li>"
+            },
+            "swiftsweep_server": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统优化工具（GUI + CLI），覆盖系统监控/磁盘分析/卸载残留/包与仓库管理/相似媒体检测等 14+ 模块</li><li><strong>安全设计</strong>：为避免用户误删系统文件，设计统一清理链路（dry-run 预览 + allowlist 白名单 + symlink 逃逸检测），零误删事故</li><li><strong>权限隔离</strong>：为避免主进程获取 root 权限带来安全风险，采用 XPC Helper 实现特权操作隔离，通过 SMAppService 注册系统级 Helper</li><li><strong>核心成果</strong>：pHash + LSH 实现相似图片/视频检测；实现鉴权机制和用户数据隔离；实现插件系统；通过 Developer ID 签名 + Notarization 发布</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_server": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_server": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_system": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长（C++/Qt 系统层开发） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将 Qt/C++ 跨平台视频生成系统从“前端壳 + 后端推理”重构为深度感知资源压力的桌面端协同系统，在 Linux/Windows 环境下稳定承载长任务生成</li><li><strong>系统取舍</strong>：未采用计算与交互共享事件循环的常规模式，因为该模式会在长任务、轮询和预览回刷叠加时放大线程阻塞；改为在 Qt 事件循环之上定义异步任务调度框架，并通过 QThread + Signal-Slot 隔离 UI 与计算线程</li><li><strong>资源治理</strong>：围绕 GPU/内存竞争建立优先级队列、令牌桶限速与帧缓冲复用三层治理机制，使多模态混部任务在 8GB 显存目标场景下不再出现 OOM，内存峰值降低 30%，渲染帧率从 30fps 提升至 60fps</li><li><strong>恢复机制</strong>：客户端与 Go/FastAPI 推理侧通过可恢复任务协议协作，支持异步结果拉取、断点续跑与失败补偿，长任务恢复率提升至 95%+</li><li><strong>技术栈</strong>：C++ 17 / Qt 6 / QML / QThread · FFmpeg · Linux/Windows 跨平台</li>"
+            },
+            "teaching_system": {
+                "title": "AI 智能教学平台",
+                "meta": "本科毕业设计 · 独立全栈开发 · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将以课程为中心的传统教学平台重构为学生中心的 AI 教学系统，支撑桌面端、企业微信 H5 与移动端统一协同，在华中科技大学课程试点覆盖 200+ 研究生，稳定支持 30+ 并发用户</li><li><strong>架构取舍</strong>：原方案将学情状态散落在课程维度表结构中，无法支撑跨课程追踪与个性化干预；因此重建学生画像、学习档案与长期学情模型，并将 React 前端、Go 服务与 Python AI 服务拆为可独立演进的三层系统</li><li><strong>AI 机制</strong>：为降低专业问答 hallucination 与检索错配，放弃仅靠关键词/向量召回的轻量方案，引入 Qwen3 + GraphRAG + Tool Calling，把知识点检索、学情查询与建议生成拆成可追踪链路，AI 答疑准确率提升至 85%+</li><li><strong>工程落地</strong>：围绕作业批改与高频答疑设计 Redis 缓存、异步数据同步与 Docker Compose 一键部署，兼顾教师试点环境的低运维成本与跨端交付效率，作业批改覆盖 80% 常见题型</li><li><strong>技术栈</strong>：Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
+            },
+            "swiftsweep_system": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · OS 系统层工程 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统工具，深入 OS 层面的进程/权限/文件系统管理，GUI + CLI 双模式，14+ 功能模块</li><li><strong>特权隔离架构</strong>：主进程严禁 root 权限；采用 XPC Helper 进程实现特权操作隔离（符合 macOS App Sandbox 约束）；通过 SMAppService 注册系统级 LaunchDaemon，安全处理 root 操作</li><li><strong>文件系统安全</strong>：设计统一清理链路（dry-run 预览 → allowlist 白名单过滤 → symlink 逃逸检测 → 实际删除），防止误删系统文件，零事故记录</li><li><strong>算法实现</strong>：实现 pHash + LSH 相似图片/视频检测；设计索引缓存加速大规模文件扫描；通过 mmap 优化大文件 IO</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · XPC / SMAppService · Mach IPC · POSIX / FileManager · pHash/LSH</li>"
+            },
+            "riscv_system": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_system": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_frontend": {
+                "title": "端到端 AI 视频生成系统（跨平台多模态任务平台）",
+                "meta": "字节剪映 · 工程营实习生小组长（QML/C++ UI 核心开发） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将跨平台桌面端打造成支持实时分镜编辑、任务追踪、预览导出一体化的 AI 视频工作台，原生体验下把实时预览帧率从 30fps 提升至 60fps，并在 2 周内完成 MVP</li><li><strong>架构取舍</strong>：放弃把任务轮询、预览刷新和导出状态堆叠在单页面状态树中的常规做法，采用 Qt/QML 的 MVVM 分层，把进度流、预览流和操作命令拆成独立数据通道，降低状态耦合与组件回流成本</li><li><strong>机制设计</strong>：通过 QThread + Signal-Slot 隔离渲染线程与计算线程，并为暂停/恢复/取消等破坏性操作定义统一确认与状态回滚语义，避免长任务场景下 UI 假死和多线程竞争</li><li><strong>工程结果</strong>：帧缓冲复用与增量刷新让多模态实时预览在资源紧张场景下仍保持流畅，配合统一组件规范与 CI/CD 流程，使 5 人协作下的跨端交付节奏稳定可控</li><li><strong>技术栈</strong>：Qt 6 / QML / C++ · MVVM · FFmpeg 渲染 · Go/Gin 后端对接</li>"
+            },
+            "teaching_frontend": {
+                "title": "AI 智能教学平台",
+                "meta": "本科毕业设计 · 独立前端开发（Vite/React/Tauri） · 2025.11 - 至今",
+                "points": "<li><strong>项目定位</strong>：将教学平台前端重构为覆盖 Tauri 桌面端、企业微信 H5 与移动端的一体化交互层，在 200+ 研究生试点场景中承载学生画像、学习轨迹与 AI 对话的高频操作</li><li><strong>架构取舍</strong>：未采用页面级状态堆叠与一次性返回答案的简单方案，因为它难以支撑长文本问答、跨端共享与复杂交互；转而构建组件化 SPA，利用 React Query 管理异步状态与缓存，并统一桌面端与 Web 端的数据流语义</li><li><strong>机制设计</strong>：抽象学生画像可视化、学习轨迹热力图与 AI 对话框等核心组件，封装统一的 Server-Sent Events 流式渲染器，解决长文本答疑中首字延迟高、内容闪烁和滚动抖动的问题</li><li><strong>端侧协同</strong>：桌面端接入 NPU 加速本地推理，使离线智能答疑成为可用路径；前端通过统一状态层协调本地推理与云端服务回退，兼顾低时延体验与跨端一致性</li><li><strong>技术栈</strong>：Vite · React 18 · TypeScript · Tauri · React Query · Tailwind CSS</li>"
+            },
+            "swiftsweep_frontend": {
+                "title": "SwiftSweep · macOS 系统优化工具",
+                "meta": "个人开源 · SwiftUI 原生 UI 开发 · 2025.12 - 至今",
+                "points": "<li><strong>项目定位</strong>：原生 macOS 系统工具，SwiftUI 声明式 UI，覆盖系统监控/磁盘分析/相似媒体检测等 14+ 模块</li><li><strong>UI 架构</strong>：纯 SwiftUI 实现，MVVM 分层，使用 @Observable + Combine 驱动响应式数据流；模块化侧边栏导航 + 内容视图组合，保持高扩展性</li><li><strong>交互设计</strong>：设计 dry-run 预览（操作前展示变更摘要确认）、进度动画与实时扫描状态反馈；CLI 模式下保持一致的操作语义</li><li><strong>技术栈</strong>：Swift 5.9 · SwiftUI · @Observable / Combine · SwiftPM · Argument Parser</li>"
+            },
+            "riscv_frontend": {
+                "title": "RISC-V CPU 设计与仿真",
+                "meta": "集创赛二等奖<br>2025.03 - 2025.07",
+                "points": "<li><strong>项目定位</strong>：基于 RV32IMACFG 指令集的四路超标量处理器设计与验证，支持动态分支预测与乱序执行</li><li><strong>技术选型</strong>：引入动态分支预测，选择 gshare 算法，分支预测准确率从 50% 提升至 70%（+20%），IPC 从 0.8 提升至 1.2</li><li><strong>核心成果</strong>：基于 Python + Makefile 构建 CI 流水线，设计 50+ 测试用例覆盖指令集；成功移植 RT-Thread RTOS 并运行 Dhrystone 基准测试</li><li><strong>技术栈</strong>：SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_frontend": {
+                "title": "基于 ns-3 的网络协议仿真平台",
+                "meta": "华为海思 · C++ 核心开发 · 2023.03 - 2024.06",
+                "points": "<li><strong>项目定位</strong>：构建高性能网络协议功能架构级仿真验证平台，支持大规模复杂拓扑场景的吞吐率/时延/丢包率精细化计算与分析</li><li><strong>核心职责</strong>：深入理解离散事件驱动模型（Event Scheduler / Time Model）；实现协议栈分析模块扩展与时延/端到端时延统计系统</li><li><strong>工程治理</strong>：独立完成 ns-3 大版本迁移（3.31 → 3.38），解决底层 C++ CMake 构建环境解耦问题，保障团队研发流程不中断</li><li><strong>技术栈</strong>：C++ · Linux · Python · CMake · Git</li>"
+            }
+        }
+    },
+    "en": {
+        "meta": {
+            "title": "Hu Aodong - Resume",
+            "description": "Hu Aodong resume: cross-platform clients, system architecture, and AI multimodal engineering."
+        },
+        "nav": {
+            "home": "Home",
+            "projects": "Projects",
+            "skills": "Skills",
+            "notes": "Notes",
+            "essays": "Essays",
+            "contact": "Contact"
+        },
+        "header": {
+            "homepage": "Homepage"
+        },
+        "section": {
+            "core": "Summary",
+            "education": "Education",
+            "skills": "Skills",
+            "projects": "Projects",
+            "campus": "Campus Experience",
+            "hobbies": "Interests"
+        },
+        "download": {
+            "pdf": "📄 Download PDF"
+        },
+        "tag": {
+            "fullstack": "Full-stack",
+            "system": "System",
+            "apple": "Apple"
+        },
+        "education": {
+            "school": "Huazhong University of Science and Technology",
+            "major": " · Integrated Circuits Design and Systems (B.Eng.)",
+            "date": "2022.09 - 2026.06"
+        },
+        "campus": {
+            "list": "<li><strong>Dian Team (Qiming College)</strong> · HiSilicon Group: Ported Huawei HiSilicon network simulation algorithms to NS-3 platform (C++), developed delay/end-to-end delay calculation modules with deep TCP/IP stack understanding | Media Group: Official Account manager (5k+ followers)</li><li><strong>HUST Guizhou Admissions Team</strong> · Core Member: Led 500+ community &amp; 1000+ outreach</li>"
+        },
+        "core": {
+            "role_btn": "Full-stack",
+            "summary": "<span class=\"highlight\">Full-stack engineer &amp; AI multimodal builder</span>, focusing on <span class=\"highlight\">client architecture</span> and <span class=\"highlight\">end-to-end AI product delivery</span>. Strong in system analysis and design, integrating AI capabilities into engineering practices with solid ownership and collaboration.",
+            "tags": "<span class=\"core-tag primary\">C++</span><span class=\"core-tag primary\">AI Agent / RAG</span><span class=\"core-tag\">System Architecture</span><span class=\"core-tag\">Full-stack Delivery</span><span class=\"core-tag\">iOS Native</span><span class=\"core-tag\">React Native</span>",
+            "role_btn_ai": "AI App",
+            "summary_ai": "<span class=\"highlight\">AI Application Engineer</span>, specialized in <span class=\"highlight\">LLM deployment</span> and <span class=\"highlight\">Agent system design</span>. Expert in RAG, prompt engineering and fine-tuning. Proficient in building scalable intelligent applications with Python/LangChain.",
+            "tags_ai": "<span class=\"core-tag primary\">Python</span><span class=\"core-tag primary\">LLM Agent</span><span class=\"core-tag\">RAG / GraphRAG</span><span class=\"core-tag\">Model Fine-tuning</span><span class=\"core-tag\">Qwen / Llama</span><span class=\"core-tag\">LangChain</span>",
+            "role_btn_client": "Client",
+            "summary_client": "<span class=\"highlight\">PC Client Developer</span>, focused on <span class=\"highlight\">Windows/macOS/Linux cross-platform desktop development</span> and <span class=\"highlight\">performance optimization</span>. Expert in C++ (STL/Modern C++) and Swift, with deep understanding of OS memory management, process/thread scheduling and IPC. Full-stack client experience from UI rendering to network programming, proficient in GDB/LLDB + Instruments profiling.",
+            "tags_client": "<span class=\"core-tag primary\">C++ (STL/Qt)</span><span class=\"core-tag primary\">Swift / SwiftUI</span><span class=\"core-tag\">Windows / macOS / Linux</span><span class=\"core-tag\">Performance Optimization</span><span class=\"core-tag\">Network Programming</span><span class=\"core-tag\">XPC / IPC</span>",
+            "role_btn_fullstack": "Full-stack",
+            "summary_fullstack": "<span class=\"highlight\">Full-stack Engineer</span> with <span class=\"highlight\">end-to-end product delivery capability</span>. Proficient in modern web stack (React/Go/Python) and distributed system design. Capable of handling complex engineering challenges.",
+            "tags_fullstack": "<span class=\"core-tag primary\">Go / Gin</span><span class=\"core-tag primary\">React / TypeScript</span><span class=\"core-tag\">Python / FastAPI</span><span class=\"core-tag\">Docker / K8s</span><span class=\"core-tag\">Microservices</span><span class=\"core-tag\">Database Design</span>",
+            "role_btn_server": "Server",
+            "summary_server": "<span class=\"highlight\">Server-side Engineer</span>, focused on <span class=\"highlight\">high-concurrency system design</span> and <span class=\"highlight\">distributed middleware</span> with Go / C++ as primary stacks. Independently owned backend architecture for a ByteDance bootcamp project — built a distributed task scheduling system with Redis + Asynq to support stable high-concurrency multimodal inference. C++ systems background in ns-3 network simulation brings deep understanding of TCP/IP protocols and OS internals, providing full-stack engineering perspective from protocol layer to service layer.",
+            "tags_server": "<span class=\"core-tag primary\">Go / C++</span><span class=\"core-tag primary\">High-Concurrency</span><span class=\"core-tag\">Redis / Asynq</span><span class=\"core-tag\">MySQL Tuning</span><span class=\"core-tag\">TCP / Linux</span><span class=\"core-tag\">Docker Deploy</span>",
+            "role_btn_system": "System",
+            "summary_system": "<span class=\"highlight\">Systems Engineer</span>, focused on <span class=\"highlight\">high-performance C++</span> and <span class=\"highlight\">OS underlying mechanisms</span>. Possesses full-stack systems engineering vision from CPU architecture (RISC-V), kernel communication (IPC/XPC) to network protocol stacks (ns-3 / TCP). Adept at tackling complex concurrency and memory management scaling challenges, pursuing ultimate hardware-software codesign and optimization.",
+            "tags_system": "<span class=\"core-tag primary\">C++ 17 / C</span><span class=\"core-tag primary\">OS Internals</span><span class=\"core-tag\">Linux / macOS</span><span class=\"core-tag\">Concurrency</span><span class=\"core-tag\">Networking</span><span class=\"core-tag\">Computer Architecture</span>",
+            "role_btn_frontend": "Front-end",
+            "summary_frontend": "<span class=\"highlight\">Frontend Engineer</span>, focusing on <span class=\"highlight\">cross-platform apps</span> and <span class=\"highlight\">complex UI interactions</span>. Proficient in React ecosystem and modern Web engineering, with solid experience building native-feeling desktop apps via Tauri/Qt. Adept at component-driven architectures and performance tuning, specially experienced in AI applications and multimodal rendering.",
+            "tags_frontend": "<span class=\"core-tag primary\">React / Vue</span><span class=\"core-tag primary\">TypeScript</span><span class=\"core-tag\">Cross-platform (Tauri/Qt)</span><span class=\"core-tag\">Architecture</span><span class=\"core-tag\">Performance</span><span class=\"core-tag\">Web Tooling</span>"
+        },
+        "skills": {
+            "all_lang": {
+                "label": "Languages/Frameworks",
+                "value": "C++ (STL/Modern C++/Qt), Python (PyTorch, FastAPI), Swift (SwiftUI), TypeScript (React/Tauri)"
+            },
+            "all_ai": {
+                "label": "AI / Multimodal",
+                "value": "LLM agents (fine-tuning, tool calling), SD/SVD generation, TTS, GraphRAG, pHash/LSH similarity"
+            },
+            "all_platform": {
+                "label": "Systems/Platforms",
+                "value": "Windows/macOS/Linux cross-platform desktop, App Sandbox/Notarization/XPC, Network programming (Socket/HTTP), Docker"
+            },
+            "all_tools": {
+                "label": "Architecture/Tools",
+                "value": "MVVM/Clean Architecture, GDB/LLDB/Instruments profiling, CMake/Makefile, Git workflow, CI/CD"
+            },
+            "all_devflow": {
+                "label": "AI-Driven Engineering",
+                "value": "Architecture-first design, Code spec &amp; style standards, Functional/compositional decoupling, Prompt engineering &amp; multi-agent orchestration, AI-assisted coding for accelerated delivery"
+            },
+            "ai_lang": {
+                "label": "Languages/Frameworks",
+                "value": "Python, PyTorch, FastAPI, C++ (STL/Qt), TypeScript (React/Tauri)"
+            },
+            "ai_ai": {
+                "label": "AI / Multimodal",
+                "value": "LLM agents (fine-tuning, tool calling), SD/SVD generation, TTS, GraphRAG, pHash/LSH similarity"
+            },
+            "ai_platform": {
+                "label": "Systems/Platforms",
+                "value": "Linux, Docker containerization, Network programming (HTTP/WebSocket)"
+            },
+            "ai_devflow": {
+                "label": "AI-Driven Engineering",
+                "value": "Architecture-first design, Code spec standards, Prompt engineering &amp; multi-agent orchestration, AI-assisted coding"
+            },
+            "client_lang": {
+                "label": "Languages/Frameworks",
+                "value": "C++ (STL/Modern C++/Qt), Swift (SwiftUI), Python, TypeScript (React/Tauri)"
+            },
+            "client_platform": {
+                "label": "Systems/Platforms",
+                "value": "Windows/macOS/Linux cross-platform desktop, Network programming (Socket/HTTP), Docker"
+            },
+            "client_tools": {
+                "label": "Architecture/Tools",
+                "value": "MVVM/Clean Architecture, GDB/LLDB/Instruments profiling, CMake/Makefile, Git workflow, CI/CD"
+            },
+            "client_devflow": {
+                "label": "AI-Driven Engineering",
+                "value": "Architecture-first design, Code spec &amp; style standards, Functional/compositional decoupling, Prompt engineering &amp; multi-agent orchestration, AI-assisted coding"
+            },
+            "fullstack_lang": {
+                "label": "Languages/Frameworks",
+                "value": "Go/Gin, C++ (STL/Modern C++), Python/FastAPI, TypeScript/React/Tauri"
+            },
+            "fullstack_os": {
+                "label": "System / OS",
+                "value": "Linux, Windows/macOS cross-platform, TCP/IP Network Programming, Docker"
+            },
+            "fullstack_backend": {
+                "label": "Backend / Middleware",
+                "value": "Go/Gin RESTful API · Redis + Asynq Task Queue · MySQL Tuning · MinIO · Goroutine"
+            },
+            "fullstack_tools": {
+                "label": "Architecture / Tools",
+                "value": "MVVM/Clean Architecture, Profiling, Git Workflow, CI/CD"
+            },
+            "server_lang": {
+                "label": "Languages/Frameworks",
+                "value": "Go/Gin, C++ (STL/Modern C++), Python/FastAPI, TypeScript/React"
+            },
+            "server_os": {
+                "label": "System / OS",
+                "value": "Linux System Programming, TCP/IP &amp; Network Programming (Socket/HTTP), Process/Thread Scheduling, Docker Deployment"
+            },
+            "server_backend": {
+                "label": "Backend / Middleware",
+                "value": "Go/Gin RESTful API · Redis + Asynq Distributed Task Queue · MySQL Indexing Optimization · MinIO Object Storage · Docker Compose · Goroutine Concurrency"
+            },
+            "server_tools": {
+                "label": "Architecture / Tools",
+                "value": "Microservices Architecture, GDB/LLDB Profiling, CMake/Makefile, Git Workflow, CI/CD"
+            },
+            "system_lang": {
+                "label": "Languages",
+                "value": "C/C++ (STL/Modern C++), SystemVerilog, Python, Assembly/ISAs"
+            },
+            "system_os": {
+                "label": "Operating Systems",
+                "value": "Linux/macOS Memory Management, Process/Thread Scheduling, IPC (XPC/Mach), POSIX API, App Sandbox"
+            },
+            "system_arch": {
+                "label": "Architecture",
+                "value": "RISC-V Microarchitecture, Dynamic Branch Prediction, Pipelining, Out-of-Order Execution"
+            },
+            "system_network": {
+                "label": "Networking/Sim",
+                "value": "TCP/HTTP Protocol Stack, Socket Programming, Discrete Event-Driven Simulation (ns-3)"
+            },
+            "system_tools": {
+                "label": "Tooling",
+                "value": "CMake/Makefile, GDB/LLDB/Instruments Profiling, Git Workflow, CI/CD Pipelines"
+            },
+            "frontend_lang": {
+                "label": "Languages/Frameworks",
+                "value": "HTML/CSS/JavaScript, TypeScript, React 18, Vue.js"
+            },
+            "frontend_cross": {
+                "label": "Cross-platform",
+                "value": "Tauri for desktop apps, Qt/QML for native clients, React Native &amp; WeChat ecosystem"
+            },
+            "frontend_arch": {
+                "label": "Architecture",
+                "value": "State management (Redux/Zustand), Data fetching (React Query), Component-driven design"
+            },
+            "frontend_engineering": {
+                "label": "Engineering",
+                "value": "Vite/Webpack build tools, CI/CD pipelines, Frontend testing and code standard governance"
+            },
+            "frontend_perf": {
+                "label": "Performance",
+                "value": "Browser rendering pipeline, Event loop, FCP optimization, SSE streaming UI, Memory leak profiling"
+            }
+        },
+        "projects": {
+            "story_all": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Re-architected the serial workflow from text generation, storyboard planning, image/voice/video inference to FFmpeg composition into a desktop-service collaborative system; led 5 engineers to ship MVP in 2 weeks and sustained 30s 720p output under 8GB VRAM</li><li><strong>Trade-off</strong>: FIFO queues and synchronous orchestration amplified GPU/RAM contention and tail-task blocking under mixed multimodal workloads; replaced them with decoupled API, scheduling, and inference layers, plus Redis + Asynq priority queues and token-bucket rate limiting for workload-aware scheduling</li><li><strong>Mechanism</strong>: Defined a unified task state machine for create/run/pause/resume/cancel/retry/fallback, added checkpoint-resume and asset fingerprint caching to avoid full-pipeline reruns after single-stage failures, raising long-task recovery to 95%+ and cache reuse from 25% to 65%</li><li><strong>Client-side Performance</strong>: Eliminated preview-stage UI stalls via Qt/QML MVVM layering, QThread + signal-slot thread isolation, and frame-buffer reuse, cutting peak memory by 30% and doubling render FPS from 30 to 60</li><li><strong>Stack</strong>: Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen / Stable Diffusion / Stable Video Diffusion / Text-to-Speech · MySQL/MinIO</li>"
+            },
+            "teaching_all": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Undergraduate Thesis · Full-stack Developer · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt a course-centric teaching platform into a student-centric AI learning system spanning desktop, WeCom H5, and mobile clients; the pilot covered 200+ graduate students at HUST and remained stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: The original schema scattered learning state across course-level tables, which broke cross-course tracking and personalized intervention; replaced it with student profiles, learning portfolios, and long-horizon learning records, then split the system into independently evolving React, Go, and Python AI layers</li><li><strong>AI Mechanism</strong>: To reduce domain-specific hallucinations and retrieval mismatch, rejected lightweight keyword/vector-only lookup and introduced Qwen3 + GraphRAG + Tool Calling, separating knowledge retrieval, learning-state lookup, and recommendation generation into traceable steps; domain Q&amp;A accuracy reached 85%+</li><li><strong>Operational Delivery</strong>: Added Redis caching, asynchronous data synchronization, and one-command Docker Compose deployment for grading and high-frequency Q&amp;A, keeping pilot rollout lightweight while covering 80% of common assignment types</li><li><strong>Stack</strong>: Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
+            },
+            "swiftsweep_all": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Safety Design</strong>: To prevent accidental system file deletion, designed unified cleanup pipeline (dry-run preview + allowlist + symlink-escape detection), achieving zero accidental deletions</li><li><strong>Privilege Isolation</strong>: To avoid main process acquiring root privileges, adopted XPC Helper for privileged operation isolation via SMAppService</li><li><strong>Impact</strong>: pHash + LSH similar image/video detection; auth mechanism and user data isolation; plugin system; shipped with Developer ID signing + Notarization</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_all": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_all": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_ai": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead (Multimodal AI Core) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Replaced the coarse “text directly to video” flow with a five-stage pipeline covering script understanding, structured storyboard generation, prompt compilation, model execution, and composition export, sustaining 30s 720p output under 8GB VRAM while reducing script-scene drift</li><li><strong>Trade-off</strong>: Rejected single-pass free-form LLM generation for long videos because it amplified hallucinations, scene jumps, and character inconsistency; instead Qwen produces structured storyboards that drive Stable Diffusion, Stable Video Diffusion, and Text-to-Speech in separate stages</li><li><strong>Mechanism</strong>: Unified prompt compilation, model invocation, asset persistence, and composition export under one task abstraction, then combined Redis + Asynq priority scheduling, token-bucket throttling, and cache reuse to control VRAM contention across heterogeneous model workloads, lowering peak memory by 30%</li><li><strong>Engineering Outcome</strong>: FastAPI inference services support multi-model orchestration and checkpoint recovery, lifting long-task recovery to 95%+; layered caching reduced repeated Stable Diffusion runs, improving cache reuse from 25% to 65%, while client preview FPS improved from 30 to 60</li><li><strong>Stack</strong>: Qwen · Stable Diffusion · Stable Video Diffusion · Text-to-Speech · FastAPI · Go/Gin · Redis/Asynq · Docker · FFmpeg</li>"
+            },
+            "teaching_ai": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Undergraduate Thesis · AI Core Developer · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Built a student-centric AI layer for higher education that unifies personalized Q&amp;A, grading, and learning analytics under a traceable RAG + agent pipeline; the HUST pilot covered 200+ graduate students and raised domain Q&amp;A accuracy to 85%+</li><li><strong>Trade-off</strong>: Faced with cross-course reasoning and student-specific context, rejected the common vector-retrieval + single-prompt pattern because it struggles with multi-hop reasoning and learning-state grounding; replaced it with GraphRAG for course knowledge, Tool Calling for student profiles and records, and Qwen3 for personalized responses</li><li><strong>Mechanism</strong>: Split retrieval, learning-state lookup, answer generation, and grading judgment into observable substeps, then applied Supervised Fine-Tuning to strengthen domain expression and reduce hallucination and knowledge mismatch; grading now covers 80% of common assignment types</li><li><strong>Edge-Cloud Collaboration</strong>: Added NPU-accelerated local inference on the desktop client for offline Q&amp;A, while FastAPI services and central knowledge-base updates remain in the cloud so low-latency local interaction and centralized model iteration can evolve together</li><li><strong>Stack</strong>: Qwen3 · GraphRAG · Supervised Fine-Tuning · Large Language Model Agent / Tool Calling · NPU acceleration · FastAPI · Python</li>"
+            },
+            "swiftsweep_ai": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Safety Design</strong>: To prevent accidental system file deletion, designed unified cleanup pipeline (dry-run preview + allowlist + symlink-escape detection), achieving zero accidental deletions</li><li><strong>Privilege Isolation</strong>: To avoid main process acquiring root privileges, adopted XPC Helper for privileged operation isolation via SMAppService</li><li><strong>Impact</strong>: pHash + LSH similar image/video detection; auth mechanism and user data isolation; plugin system; shipped with Developer ID signing + Notarization</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_ai": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_ai": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_client": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead (Client/Multimodal) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Turned the cross-platform desktop client from a fire-and-forget submission tool into an AI production workbench with real-time storyboard editing, progress feedback, checkpoint recovery, and export; shipped MVP in 2 weeks and raised preview FPS from 30 to 60</li><li><strong>Trade-off</strong>: Polling inference state and refreshing previews on the UI thread caused freezes during long-running jobs; replaced that with Qt/QML MVVM layering, QThread + signal-slot isolation, and separately refreshable async modules for task state, preview frames, and export pipelines</li><li><strong>Mechanism</strong>: Standardized task semantics for create/pause/resume/cancel/retry so the client consumes traceable state streams and incremental outputs instead of tangled page-level state; combined frame-buffer reuse and async backfill to keep multimodal previews interactive under long jobs</li><li><strong>Coordinated Optimization</strong>: The client collaborates with backend throttling and fallback strategies under resource pressure, reducing stalls and failures from VRAM contention; long-task recovery reached 95%+, peak memory fell 30%, and cache reuse improved from 25% to 65%</li><li><strong>Stack</strong>: Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen / Stable Diffusion / Stable Video Diffusion / Text-to-Speech</li>"
+            },
+            "teaching_client": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Undergraduate Thesis · Full-stack Developer (Cross-platform Client focus) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt the teaching client into a unified interaction layer across Windows/macOS/Linux desktop, WeCom H5, and mobile clients so student profiles, learning trajectories, and AI Q&amp;A can continue seamlessly across endpoints</li><li><strong>Trade-off</strong>: Rejected the original course-centric, static page flow because it could not support cross-course learning-state tracking or edge-side intelligence; replaced it with student profiles and learning portfolios as the core protocol abstractions shared by desktop and web clients</li><li><strong>Mechanism</strong>: The desktop client uses Vite + React + Tauri for single-codebase distribution and adds NPU-accelerated local inference for offline Q&amp;A; the client state layer coordinates local execution, cloud retrieval, and result backfill to prevent cross-end inconsistency</li><li><strong>Engineering Outcome</strong>: The platform remained stable under 30+ concurrent users in the pilot scenario, Q&amp;A accuracy reached 85%+, and one-command Docker Compose deployment sharply reduced cross-client integration and rollout cost</li><li><strong>Stack</strong>: Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · MySQL/MinIO · Docker Compose · Qwen3 · NPU acceleration</li>"
+            },
+            "swiftsweep_client": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Safety Design</strong>: To prevent accidental system file deletion, designed unified cleanup pipeline (dry-run preview + allowlist + symlink-escape detection), achieving zero accidental deletions</li><li><strong>Privilege Isolation</strong>: To avoid main process acquiring root privileges, adopted XPC Helper for privileged operation isolation via SMAppService</li><li><strong>Impact</strong>: pHash + LSH similar image/video detection; auth mechanism and user data isolation; plugin system; shipped with Developer ID signing + Notarization</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_client": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Core Work</strong>: Designed RV32IMACFG core & ported RTOS; Built simulation/CI pipeline with C++, designed 50+ test cases</li><li><strong>System Insight</strong>: Deep understanding of computer architecture, pipelining, and HW/SW co-design</li><li><strong>Stack</strong>: C++ · Python · Makefile · SystemVerilog · RISC-V · RTOS</li>"
+            },
+            "ns3_client": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_fullstack": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Re-architected the serial workflow from text generation, storyboard planning, image/voice/video inference to FFmpeg composition into a desktop-service collaborative system; led 5 engineers to ship MVP in 2 weeks and sustained 30s 720p output under 8GB VRAM</li><li><strong>Trade-off</strong>: FIFO queues and synchronous orchestration amplified GPU/RAM contention and tail-task blocking under mixed multimodal workloads; replaced them with decoupled API, scheduling, and inference layers, plus Redis + Asynq priority queues and token-bucket rate limiting for workload-aware scheduling</li><li><strong>Mechanism</strong>: Defined a unified task state machine for create/run/pause/resume/cancel/retry/fallback, added checkpoint-resume and asset fingerprint caching to avoid full-pipeline reruns after single-stage failures, raising long-task recovery to 95%+ and cache reuse from 25% to 65%</li><li><strong>Client-side Performance</strong>: Eliminated preview-stage UI stalls via Qt/QML MVVM layering, QThread + signal-slot thread isolation, and frame-buffer reuse, cutting peak memory by 30% and doubling render FPS from 30 to 60</li><li><strong>Stack</strong>: Qt/QML/C++ · Go/Gin · FastAPI · Redis/Asynq · Docker · FFmpeg · Qwen / Stable Diffusion / Stable Video Diffusion / Text-to-Speech · MySQL/MinIO</li>"
+            },
+            "teaching_fullstack": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Undergraduate Thesis · Full-stack Developer · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt a course-centric teaching platform into a student-centric AI learning system spanning desktop, WeCom H5, and mobile clients; the pilot covered 200+ graduate students at HUST and remained stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: The original schema scattered learning state across course-level tables, which broke cross-course tracking and personalized intervention; replaced it with student profiles, learning portfolios, and long-horizon learning records, then split the system into independently evolving React, Go, and Python AI layers</li><li><strong>AI Mechanism</strong>: To reduce domain-specific hallucinations and retrieval mismatch, rejected lightweight keyword/vector-only lookup and introduced Qwen3 + GraphRAG + Tool Calling, separating knowledge retrieval, learning-state lookup, and recommendation generation into traceable steps; domain Q&amp;A accuracy reached 85%+</li><li><strong>Operational Delivery</strong>: Added Redis caching, asynchronous data synchronization, and one-command Docker Compose deployment for grading and high-frequency Q&amp;A, keeping pilot rollout lightweight while covering 80% of common assignment types</li><li><strong>Stack</strong>: Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
+            },
+            "swiftsweep_fullstack": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Safety Design</strong>: To prevent accidental system file deletion, designed unified cleanup pipeline (dry-run preview + allowlist + symlink-escape detection), achieving zero accidental deletions</li><li><strong>Privilege Isolation</strong>: To avoid main process acquiring root privileges, adopted XPC Helper for privileged operation isolation via SMAppService</li><li><strong>Impact</strong>: pHash + LSH similar image/video detection; auth mechanism and user data isolation; plugin system; shipped with Developer ID signing + Notarization</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_fullstack": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_fullstack": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_server": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead (Backend Architecture) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt the multimodal inference chain from text, storyboard, image/voice/video generation to composition export into decoupled API, scheduling, and inference layers, sustaining 30s+ generation under an 8GB VRAM ceiling</li><li><strong>Trade-off</strong>: Rejected synchronous REST-to-inference calls and in-memory FIFO queues because they magnified tail latency and VRAM contention under mixed workloads; introduced Go + Gin ingress, Redis + Asynq distributed priority queues, and token-bucket rate limiting for resource-aware scheduling</li><li><strong>Mechanism</strong>: Standardized the full task lifecycle across create/run/pause/resume/cancel/retry/fallback, then added checkpoint-resume and idempotent retries to prevent full-pipeline reruns after single-stage failures; no OOM reappeared in the target stress scenario and long-task recovery reached 95%+</li><li><strong>Cost Control</strong>: Added layered caching over script content, storyboard parameters, model configuration, and asset fingerprints to cut repeated Stable Diffusion inference and redundant composition, improving cache reuse from 25% to 65% while lowering peak memory by 30%</li><li><strong>Stack</strong>: Go/Gin · FastAPI · Redis/Asynq · Docker · MySQL · MinIO</li>"
+            },
+            "teaching_server": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Full-stack Developer (Backend-focused) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt the teaching backend for personalized Q&amp;A, learning trajectory analysis, and intelligent grading so learning-state lookup, retrieval, and AI responses remain stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: Rejected the original course-centric monolithic data model because it could not represent cross-course learning state or long-term memory; replaced it with layered student profiles, learning portfolios, and retrieval domains, then decoupled Go/Gin business services from Python/FastAPI AI services</li><li><strong>Mechanism</strong>: Added Redis caching, asynchronous data synchronization, and Tool Calling around the hot Q&amp;A path so learning-state lookup, knowledge retrieval, and answer generation become observable steps instead of a single opaque long chain, reducing amplified tail latency</li><li><strong>Engineering Outcome</strong>: One-command Docker Compose deployment lowered rollout cost for the pilot environment, while the service remained stable in the 30+ concurrency target scenario and preserved room for future recommendation, grading, and analytics modules to evolve independently</li><li><strong>Stack</strong>: Go/Gin · FastAPI · Redis · MySQL · Docker Compose</li>"
+            },
+            "swiftsweep_server": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS tool (GUI + CLI) spanning 14+ modules across monitoring, disk analysis, uninstall cleanup, package/repo management, and similar-media detection</li><li><strong>Safety Design</strong>: To prevent accidental system file deletion, designed unified cleanup pipeline (dry-run preview + allowlist + symlink-escape detection), achieving zero accidental deletions</li><li><strong>Privilege Isolation</strong>: To avoid main process acquiring root privileges, adopted XPC Helper for privileged operation isolation via SMAppService</li><li><strong>Impact</strong>: pHash + LSH similar image/video detection; auth mechanism and user data isolation; plugin system; shipped with Developer ID signing + Notarization</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · SwiftPM · XPC Helper/SMAppService · Argument Parser · pHash/LSH</li>"
+            },
+            "riscv_server": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_server": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_system": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead (C++/Qt Systems) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Reworked the Qt/C++ cross-platform generator from a thin frontend shell into a desktop system that reacts to resource pressure, keeping long-running generation stable across Linux and Windows targets</li><li><strong>Systems Trade-off</strong>: Avoided the common model where compute work and interaction share one event loop because long jobs, polling, and preview repainting would amplify thread blocking; instead built an async scheduler on top of the Qt event loop and isolated UI and compute paths via QThread + signal-slot</li><li><strong>Resource Governance</strong>: Combined priority queues, token-bucket throttling, and frame-buffer reuse to manage GPU/RAM contention so mixed multimodal jobs stopped triggering OOM in the 8GB VRAM target scenario, peak memory dropped 30%, and render FPS improved from 30 to 60</li><li><strong>Recovery Protocol</strong>: The client and Go/FastAPI inference services cooperate through a recoverable task contract that supports async result pulling, checkpoint resume, and failure compensation, pushing long-task recovery to 95%+</li><li><strong>Stack</strong>: C++ 17 / Qt 6 / QML / QThread · FFmpeg · Linux/Windows cross-platform</li>"
+            },
+            "teaching_system": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Undergraduate Thesis · Full-stack Developer · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt a course-centric teaching platform into a student-centric AI learning system spanning desktop, WeCom H5, and mobile clients; the pilot covered 200+ graduate students at HUST and remained stable under 30+ concurrent users</li><li><strong>Trade-off</strong>: The original schema scattered learning state across course-level tables, which broke cross-course tracking and personalized intervention; replaced it with student profiles, learning portfolios, and long-horizon learning records, then split the system into independently evolving React, Go, and Python AI layers</li><li><strong>AI Mechanism</strong>: To reduce domain-specific hallucinations and retrieval mismatch, rejected lightweight keyword/vector-only lookup and introduced Qwen3 + GraphRAG + Tool Calling, separating knowledge retrieval, learning-state lookup, and recommendation generation into traceable steps; domain Q&amp;A accuracy reached 85%+</li><li><strong>Operational Delivery</strong>: Added Redis caching, asynchronous data synchronization, and one-command Docker Compose deployment for grading and high-frequency Q&amp;A, keeping pilot rollout lightweight while covering 80% of common assignment types</li><li><strong>Stack</strong>: Vite/React/TypeScript/Tauri · Go/Gin/GORM · Python/FastAPI · Redis · MySQL/MinIO · Docker Compose · Qwen3 · GraphRAG · NPU acceleration</li>"
+            },
+            "swiftsweep_system": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · OS Systems Engineering · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS system tool with deep OS-level process/permission/filesystem management; GUI + CLI dual-mode, 14+ modules</li><li><strong>Privilege Isolation Architecture</strong>: Main process strictly forbidden from root; XPC Helper subprocess for privileged operations (conforming to macOS App Sandbox); SMAppService for system-level LaunchDaemon registration to safely handle root tasks</li><li><strong>Filesystem Safety</strong>: Unified cleanup pipeline (dry-run preview → allowlist filtering → symlink escape detection → actual deletion) prevents system file loss; zero accident record</li><li><strong>Algorithm Implementation</strong>: pHash + LSH for similar image/video detection; indexed cache to accelerate large-scale file scanning; mmap optimization for large-file I/O</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · XPC / SMAppService · Mach IPC · POSIX / FileManager · pHash/LSH</li>"
+            },
+            "riscv_system": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_system": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            },
+            "story_frontend": {
+                "title": "StoryToVideo: Cross-platform AI Video Generation",
+                "meta": "ByteDance CapCut Bootcamp · Team Lead (QML/C++ UI Core) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Shaped the cross-platform desktop client into an AI video workstation that combines storyboard editing, task tracking, preview, and export in one native workflow, improving live preview from 30 to 60 FPS and shipping MVP in 2 weeks</li><li><strong>Trade-off</strong>: Avoided the common approach of piling polling, preview refresh, and export state into a single page-level store; instead adopted Qt/QML MVVM layering and split progress streams, preview streams, and command channels to reduce state coupling and UI churn</li><li><strong>Mechanism</strong>: Isolated rendering and compute paths with QThread + signal-slot, then defined consistent confirmation and rollback semantics for pause/resume/cancel so long-running jobs do not turn into frozen UI states or thread contention bugs</li><li><strong>Engineering Outcome</strong>: Frame-buffer reuse and incremental refresh kept multimodal previews smooth under resource pressure, while unified component conventions and CI/CD stabilized collaboration and cross-platform delivery for a 5-person team</li><li><strong>Stack</strong>: Qt 6 / QML / C++ · MVVM · FFmpeg rendering · Go/Gin backend integration</li>"
+            },
+            "teaching_frontend": {
+                "title": "AI-powered Teaching Platform",
+                "meta": "Undergraduate Thesis · Front-end Developer (Vite/React/Tauri) · 2025.11 - Present",
+                "points": "<li><strong>Overview</strong>: Rebuilt the teaching frontend into a unified interaction layer across Tauri desktop, WeCom H5, and mobile clients, supporting high-frequency workflows around student profiles, learning trajectories, and AI dialogue in a 200+ graduate-student pilot</li><li><strong>Trade-off</strong>: Avoided page-level state sprawl and one-shot answer rendering because they break down under long-form responses, cross-platform sharing, and complex interactions; replaced them with a componentized SPA that uses React Query to unify async state and caching semantics across desktop and web</li><li><strong>Mechanism</strong>: Abstracted student profile visualizations, learning-trajectory heatmaps, and AI chat panels into reusable components, then wrapped long-form output behind a shared Server-Sent Events renderer to reduce first-token latency, content flicker, and scroll jitter</li><li><strong>Edge Coordination</strong>: Added NPU-accelerated local inference on desktop so offline Q&amp;A becomes a viable path, while the frontend state layer coordinates local execution and cloud fallback to balance low latency with cross-platform consistency</li><li><strong>Stack</strong>: Vite · React 18 · TypeScript · Tauri · React Query · Tailwind CSS</li>"
+            },
+            "swiftsweep_frontend": {
+                "title": "SwiftSweep · macOS Optimization Tool",
+                "meta": "Open Source (Solo) · SwiftUI Native UI · 2025.12 - Present",
+                "points": "<li><strong>Overview</strong>: Native macOS system tool with SwiftUI declarative UI, covering system monitoring, disk analysis, similar media detection, and 14+ modules</li><li><strong>UI Architecture</strong>: Pure SwiftUI, MVVM layering; @Observable + Combine reactive data flow; modular sidebar navigation + content view composition for high extensibility</li><li><strong>Interaction Design</strong>: Dry-run preview (change summary before execution), progress animations, and real-time scan status feedback; consistent operation semantics in CLI mode</li><li><strong>Stack</strong>: Swift 5.9 · SwiftUI · @Observable / Combine · SwiftPM · Argument Parser</li>"
+            },
+            "riscv_frontend": {
+                "title": "RISC-V CPU Design & Simulation",
+                "meta": "IC Innovation Contest · 2nd Prize<br>2025.03 - 2025.07",
+                "points": "<li><strong>Overview</strong>: 4-wide superscalar core on RV32IMACFG with dynamic branch prediction and out-of-order execution</li><li><strong>Tech Selection</strong>: Compared static prediction (Always Taken/Not Taken) vs dynamic, chose gshare algorithm, improving branch prediction from 65% to 85% (+20%), IPC from 0.8 to 1.2</li><li><strong>Impact</strong>: Built CI pipeline with Python + Makefile, designed 50+ test cases covering instruction set; successfully ported RT-Thread RTOS and ran Dhrystone benchmark</li><li><strong>Stack</strong>: SystemVerilog · C++ · Python · Makefile · Scala/SpinalHDL</li>"
+            },
+            "ns3_frontend": {
+                "title": "ns-3 Network Protocol Simulation Platform",
+                "meta": "Huawei HiSilicon · Core C++ Developer · 2023.03 - 2024.06",
+                "points": "<li><strong>Overview</strong>: Built high-performance functional-architecture level simulation verification platform for new network protocols, supporting fine-grained calculation of throughput/delay/packet-loss in large-scale complex topologies.</li><li><strong>Core Responsibilities</strong>: Deeply analyzed Discrete Event-Driven Model (Event Scheduler / Time Model); extended protocol stack analysis modules and end-to-end delay statistical system.</li><li><strong>Engineering Operations</strong>: Independently migrated major ns-3 open-source version (3.31 → 3.38), decoupled underlying C++ CMake build environments to guarantee uninterrupted team R&D workflow.</li><li><strong>Stack</strong>: C++ · Linux · Python · CMake · Git</li>"
+            }
+        }
+    }
+};
+
+			const getNested = (obj, key) =>
+				key.split(".").reduce((acc, part) => (acc ? acc[part] : undefined), obj);
+
+			const applyLang = (lang) => {
+				const picked = SUPPORTED.has(lang) ? lang : DEFAULT_LANG;
+				document.documentElement.lang = picked === "en" ? "en" : "zh-CN";
+				const dict = translations[picked];
+
+				const metaTitle = getNested(dict, "meta.title");
+				if (typeof metaTitle === "string") document.title = metaTitle;
+				const metaDescription = getNested(dict, "meta.description");
+				const metaDescriptionEl = document.querySelector('meta[name="description"]');
+				if (metaDescriptionEl && typeof metaDescription === "string") {
+					metaDescriptionEl.setAttribute("content", metaDescription);
+				}
+
+				for (const el of document.querySelectorAll("[data-i18n]")) {
+					const key = el.getAttribute("data-i18n");
+					const value = getNested(dict, key);
+					if (typeof value === "string") el.textContent = value;
+				}
+
+				for (const el of document.querySelectorAll("[data-i18n-html]")) {
+					const key = el.getAttribute("data-i18n-html");
+					const value = getNested(dict, key);
+					if (typeof value === "string") el.innerHTML = value;
+				}
+
+				const toggle = document.querySelector("[data-lang-toggle]");
+				if (toggle) toggle.textContent = picked === "en" ? "中文" : "EN";
+
+				try {
+					localStorage.setItem(STORAGE_KEY, picked);
+				} catch {
+					/* ignore */
+				}
+			};
+
+			const readPreferredLang = () => {
+				const url = new URL(window.location.href);
+				const fromQuery = url.searchParams.get("lang")?.toLowerCase();
+				if (fromQuery && SUPPORTED.has(fromQuery)) return fromQuery;
+				try {
+					const saved = localStorage.getItem(STORAGE_KEY);
+					if (saved && SUPPORTED.has(saved)) return saved;
+				} catch {
+					/* ignore */
+				}
+				return DEFAULT_LANG;
+			};
+
+			let currentLang = readPreferredLang();
+			applyLang(currentLang);
+
+			const toggle = document.querySelector("[data-lang-toggle]");
+			if (toggle) {
+				toggle.addEventListener("click", () => {
+					currentLang = currentLang === "en" ? "zh" : "en";
+					applyLang(currentLang);
+					try {
+						const url = new URL(window.location.href);
+						url.searchParams.set("lang", currentLang);
+						history.replaceState(null, "", url.toString());
+					} catch {
+						/* ignore */
+					}
+				});
+			}
+
+			// --- Role Switching Logic ---
+			const STORAGE_ROLE_KEY = "site_role";
+			const SUPPORTED_ROLES = new Set(["all", "ai", "client", "fullstack", "server", "system", "frontend"]);
+			const DEFAULT_ROLE = "all";
+
+			const readPreferredRole = () => {
+				const url = new URL(window.location.href);
+				const fromQuery = url.searchParams.get("role")?.toLowerCase();
+				if (fromQuery && SUPPORTED_ROLES.has(fromQuery)) return fromQuery;
+				try {
+					const saved = localStorage.getItem(STORAGE_ROLE_KEY);
+					if (saved && SUPPORTED_ROLES.has(saved)) return saved;
+				} catch { /* ignore */ }
+				return DEFAULT_ROLE;
+			};
+
+			let currentRole = readPreferredRole();
+
+			const links = document.querySelectorAll('a[href*="assets/resume.pdf"]');
+
+			const updateHref = (link) => {
+				const rawHref = link.getAttribute("href") || "assets/resume.pdf";
+				const baseHref = rawHref.split("?")[0];
+
+				// Determine filename based on current role
+				let filename = "resume.pdf";
+				if (currentRole === "ai") filename = "resume-ai.pdf";
+				else if (currentRole === "client") filename = "resume-client.pdf";
+				else if (currentRole === "fullstack") filename = "resume-fullstack.pdf";
+				else if (currentRole === "server") filename = "resume-server.pdf";
+				else if (currentRole === "system") filename = "resume-system.pdf";
+				else if (currentRole === "frontend") filename = "resume-frontend.pdf";
+
+				// Update the base href to point to the correct file
+				const newHref = baseHref.replace(/resume(-[a-z]+)?\.pdf$/, filename);
+				const url = new URL(newHref, window.location.href);
+
+				url.searchParams.set("v", Date.now().toString());
+				// Also propagate the role param, though usually file is static
+				// url.searchParams.set("role", currentRole);
+				link.href = url.toString();
+			};
+
+			const applyRole = (role) => {
+				const picked = SUPPORTED_ROLES.has(role) ? role : DEFAULT_ROLE;
+
+				// Update Body Class
+				document.body.classList.remove("role-all", "role-ai", "role-client", "role-fullstack", "role-server", "role-system", "role-frontend");
+				document.body.classList.add(`role-${picked}`);
+
+				// Update Buttons
+				document.querySelectorAll("[data-role-btn]").forEach(btn => {
+					if (btn.dataset.roleBtn === picked) {
+						btn.classList.add("active");
+					} else {
+						btn.classList.remove("active");
+					}
+				});
+
+				// Update PDF Link immediately
+				if (links.length) {
+					for (const link of links) {
+						updateHref(link);
+					}
+				}
+
+				try {
+					localStorage.setItem(STORAGE_ROLE_KEY, picked);
+				} catch { /* ignore */ }
+			};
+
+			applyRole(currentRole);
+
+			if (links.length) {
+				for (const link of links) {
+					link.addEventListener("pointerdown", () => updateHref(link));
+					link.addEventListener("keydown", (event) => {
+						if (event.key === "Enter" || event.key === " ") updateHref(link);
+					});
+					updateHref(link);
+				}
+			}
+
+			document.querySelectorAll("[data-role-btn]").forEach(btn => {
+				btn.addEventListener("click", () => {
+					currentRole = btn.dataset.roleBtn;
+					applyRole(currentRole);
+					try {
+						const url = new URL(window.location.href);
+						if (currentRole === DEFAULT_ROLE) {
+							url.searchParams.delete("role");
+						} else {
+							url.searchParams.set("role", currentRole);
+						}
+						history.replaceState(null, "", url.toString());
+					} catch { /* ignore */ }
+				});
+			});
+		})();
+	</script>
+</body>
+
+</html>
