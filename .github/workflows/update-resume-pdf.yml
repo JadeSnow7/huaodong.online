@@ -55,17 +55,17 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          resume_files=(assets/resume*.pdf)
-          changes="$(git status --porcelain --untracked-files=all -- "${resume_files[@]}")"
+          resume_outputs=(resume.html assets/resume*.pdf)
+          changes="$(git status --porcelain --untracked-files=all -- "${resume_outputs[@]}")"
 
           if [ -z "${changes}" ]; then
-            echo "Resume PDFs unchanged; skipping commit."
+            echo "Generated resume artifacts unchanged; skipping commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add "${resume_files[@]}"
-          git commit -m "chore(resume): update PDF"
+          git add "${resume_outputs[@]}"
+          git commit -m "chore(resume): update generated artifacts"
           git push

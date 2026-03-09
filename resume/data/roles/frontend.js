@@ -13,14 +13,14 @@ export default {
         }
     },
     en: {
-        summary: '<span class="highlight">Frontend Engineer</span>, focusing on <span class="highlight">cross-platform apps</span> and <span class="highlight">complex UI interactions</span>. Proficient in React ecosystem and modern Web engineering, with solid experience building native-feeling desktop apps via Tauri/Qt. Adept at component-driven architectures and performance tuning, specially experienced in AI applications and multimodal rendering.',
-        tags: '<span class="core-tag primary">React / Vue</span><span class="core-tag primary">TypeScript</span><span class="core-tag">Cross-platform (Tauri/Qt)</span><span class="core-tag">Architecture</span><span class="core-tag">Performance</span><span class="core-tag">Web Tooling</span>',
+        summary: "Frontend engineer focused on complex interaction models, cross-platform desktop interfaces, and high-performance rendering. Turns AI product requirements into maintainable frontend architectures, with hands-on work in TypeScript, React 18, Server-Sent Events (SSE) streaming, and real-time preview pipelines across Web, WeCom H5, and Tauri desktop clients.",
+        tags: '<span class="core-tag primary">React 18</span><span class="core-tag primary">TypeScript</span><span class="core-tag">Tauri / Qt</span><span class="core-tag">Frontend Architecture</span><span class="core-tag">Performance Tuning</span><span class="core-tag">Web Tooling</span>',
         skills: {
-            lang: { label: "Languages/Frameworks", value: "HTML/CSS/JavaScript, TypeScript, React 18, Vue.js" },
-            cross: { label: "Cross-platform", value: "Tauri for desktop apps, Qt/QML for native clients, React Native &amp; WeChat ecosystem" },
-            arch: { label: "Architecture", value: "State management (Redux/Zustand), Data fetching (React Query), Component-driven design" },
-            engineering: { label: "Engineering", value: "Vite/Webpack build tools, CI/CD pipelines, Frontend testing and code standard governance" },
-            perf: { label: "Performance", value: "Browser rendering pipeline, Event loop, FCP optimization, SSE streaming UI, Memory leak profiling" },
+            lang: { label: "Languages/Frameworks", value: "TypeScript, JavaScript (ES6+), HTML5, CSS3, React 18, Vue 3, Tailwind CSS" },
+            arch: { label: "Frontend Architecture", value: "Component design, state management, Redux, Zustand, React Query, SWR, maintainable UI layering" },
+            cross: { label: "Cross-platform/Interaction", value: "Tauri, Qt/QML, WeCom H5, responsive layouts, Server-Sent Events (SSE), real-time preview pipelines" },
+            perf: { label: "Performance Engineering", value: "Browser rendering, event loop behavior, initial-load optimization, list virtualization, frame rendering, memory leak diagnosis" },
+            engineering: { label: "Tooling/Delivery", value: "Vite, Webpack, modular builds, code standards, automated builds, CI/CD" },
         }
-    }
+    },
 };

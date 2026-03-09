@@ -13,13 +13,14 @@ export default {
         }
     },
     en: {
-        summary: '<span class="highlight">Full-stack Engineer</span> with <span class="highlight">end-to-end product delivery capability</span>. Proficient in modern web stack (React/Go/Python) and distributed system design. Capable of handling complex engineering challenges.',
-        tags: '<span class="core-tag primary">Go / Gin</span><span class="core-tag primary">React / TypeScript</span><span class="core-tag">Python / FastAPI</span><span class="core-tag">Docker / K8s</span><span class="core-tag">Microservices</span><span class="core-tag">Database Design</span>',
+        summary: "Full-stack engineer centered on Go service architecture and end-to-end product delivery, able to close the loop from React/TypeScript clients and Go/Python services to storage, middleware, and deployment. Focused on microservice decomposition, RESTful API design, high-concurrency task orchestration, and cross-end collaboration in multimodal inference and education platforms.",
+        tags: '<span class="core-tag primary">Go / Gin</span><span class="core-tag primary">React 18</span><span class="core-tag">Python / FastAPI</span><span class="core-tag">High-concurrency Scheduling</span><span class="core-tag">Redis / MySQL</span><span class="core-tag">Microservices</span>',
         skills: {
-            lang: { label: "Languages/Frameworks", value: "Go/Gin, C++ (STL/Modern C++), Python/FastAPI, TypeScript/React/Tauri" },
-            os: { label: "System / OS", value: "Linux, Windows/macOS cross-platform, TCP/IP Network Programming, Docker" },
-            backend: { label: "Backend / Middleware", value: "Go/Gin RESTful API · Redis + Asynq Task Queue · MySQL Tuning · MinIO · Goroutine" },
-            tools: { label: "Architecture / Tools", value: "MVVM/Clean Architecture, Profiling, Git Workflow, CI/CD" },
+            lang: { label: "Languages/Frameworks", value: "Go, Gin, Python, FastAPI, TypeScript, React 18, GORM, Tauri" },
+            arch: { label: "Service Architecture", value: "Microservices, RESTful APIs, service layering, asynchronous task orchestration, rate limiting, cache design" },
+            dist: { label: "Middleware/Storage", value: "Redis, Asynq, MySQL, MinIO, object storage, data modeling" },
+            deploy: { label: "Deployment/Delivery", value: "Docker, Docker Compose, Linux, environment isolation, configuration-driven deployment, CI/CD" },
+            perf: { label: "Systems/Performance", value: "TCP/IP, HTTP, goroutine concurrency, task lifecycle management, memory optimization, high-concurrency reliability" },
         }
-    }
+    },
 };
